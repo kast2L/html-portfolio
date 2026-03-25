@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume — Douglas Hill</title>
+  <meta name="description" content="Resume of Douglas Hill — IT Solutions Engineer and Cloud Architect at Arizona Public Service. Expertise in AWS, Azure, Power Platform, and enterprise architecture.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Resume — Douglas Hill">
+  <meta property="og:description" content="IT Solutions Engineer and Cloud Architect. Enterprise cloud infrastructure, Power Platform solutions, and TOGAF-informed architecture practice.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://douglashillres.llcdouglashill.com/resume.html">
+  <meta property="og:image" content="https://douglashillres.llcdouglashill.com/assets/images/IMG_9852.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    /* === RESUME PAGE LAYOUT === */
+
+    /* Outer wrapper: constrains to max-w and adds section padding */
+    .resume-outer {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--section-px);
+    }
+
+    /* Resume header block — sits above the sidebar/content split */
+    .resume-header {
+      padding: 52px 0 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .resume-name {
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 40px;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+      color: var(--text);
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
+
+    .resume-title {
+      font-size: 17px;
+      color: var(--text-secondary);
+      font-weight: 400;
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+
+    .resume-contact {
+      font-size: 13px;
+      color: var(--text-light);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 0;
+      align-items: center;
+      margin-bottom: 28px;
+    }
+
+    .resume-contact a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.15s ease;
+    }
+    .resume-contact a:hover { color: var(--accent-text); }
+
+    .resume-contact-sep {
+      margin: 0 8px;
+      color: var(--border-hover);
+      user-select: none;
+    }
+
+    /* === RESUME BODY LAYOUT: sidebar + content === */
+    .resume-body {
+      display: flex;
+      gap: 0;
+      align-items: flex-start;
+      padding-bottom: 80px;
+    }
+
+    /* Sidebar — hidden on mobile (scroll-spy-nav CSS handles mobile strip) */
+    .resume-sidebar {
+      width: 160px;
+      flex-shrink: 0;
+      padding-top: 40px;
+    }
+
+    /* Content area */
+    .resume-content {
+      flex: 1;
+      min-width: 0;
+      padding-top: 40px;
+      padding-left: 48px;
+      border-left: 1px solid var(--border);
+    }
+
+    /* Mobile: collapse sidebar into horizontal strip handled by CSS scroll-spy-nav styles */
+    @media (max-width: 767px) {
+      .resume-body {
+        flex-direction: column;
+        gap: 0;
+        padding-bottom: 48px;
+      }
+
+      /* Hide the vertical sidebar on mobile — the scroll-spy-nav itself becomes a strip */
+      .resume-sidebar {
+        display: none;
+      }
+
+      .resume-content {
+        padding-left: 0;
+        padding-top: 28px;
+        border-left: none;
+      }
+    }
+
+    /* === RESUME SECTION TYPOGRAPHY === */
+
+    /* Each scroll-spy-section gets consistent vertical rhythm */
+    .scroll-spy-section {
+      padding: 0 0 56px;
+    }
+    .scroll-spy-section:last-child {
+      padding-bottom: 0;
+    }
+
+    .resume-section-title {
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: -0.2px;
+      color: var(--text);
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* === SUMMARY === */
+    .resume-summary-text {
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+
+    .resume-differentiators {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .resume-differentiators li {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .resume-differentiators li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* === EXPERIENCE === */
+    .resume-role {
+      /* single role block */
+    }
+
+    .resume-company {
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 19px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .resume-role-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 12px;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+
+    .resume-role-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    .resume-role-dates {
+      font-size: 13px;
+      color: var(--text-light);
+      font-weight: 400;
+    }
+
+    .resume-role-location {
+      font-size: 13px;
+      color: var(--text-light);
+      margin-bottom: 14px;
+    }
+
+    .resume-role-desc {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+    }
+
+    .resume-achievements {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .resume-achievements li {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .resume-achievements li::before {
+      content: '';
+      position: absolute;
+      left: 1px;
+      top: 8px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--text-light);
+    }
+
+    /* Highlight quantified numbers inside achievement bullets */
+    .resume-achievements li strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .resume-tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding-top: 4px;
+    }
+
+    /* === SKILLS === */
+    .resume-skill-groups {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px 48px;
+    }
+
+    @media (max-width: 600px) {
+      .resume-skill-groups {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+
+    .resume-skill-group-label {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-light);
+      margin-bottom: 10px;
+    }
+
+    .resume-skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    /* === EDUCATION === */
+    .resume-edu-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .resume-edu-entry {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .resume-edu-degree {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .resume-edu-field {
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .resume-edu-detail {
+      font-size: 13px;
+      color: var(--text-light);
+    }
+
+    /* === CERTIFICATIONS === */
+    /* reuses cert-callout from styles.css */
+    .cert-callout--resume {
+      /* override flex direction for vertical stacking on resume */
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* === PRINT OVERRIDES FOR RESUME === */
+    @media print {
+      .resume-body {
+        flex-direction: row !important;
+        padding-bottom: 0;
+      }
+      .resume-sidebar {
+        display: none !important;
+      }
+      .resume-content {
+        padding-left: 0 !important;
+        border-left: none !important;
+      }
+      .resume-name { font-size: 28pt; }
+      .scroll-spy-section { padding-bottom: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Skip link -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Navigation -->
+  <nav class="nav" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo">Douglas Hill</a>
+
+    <div class="nav-links">
+      <a href="projects.html" class="nav-link">Projects</a>
+      <a href="resume.html" class="nav-link nav-link--resume">Resume</a>
+      <a href="contact.html" class="nav-cta">Get in touch</a>
+    </div>
+
+    <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile nav overlay -->
+  <div class="nav-overlay" aria-label="Mobile navigation">
+    <a href="projects.html">Projects</a>
+    <a href="resume.html">Resume</a>
+    <a href="contact.html">Get in touch</a>
+  </div>
+
+  <!-- Main content -->
+  <main id="main">
+
+    <!-- ==================== RESUME HEADER ==================== -->
+    <div class="resume-outer">
+      <header class="resume-header">
+
+        <h1 class="resume-name">Douglas Hill</h1>
+        <p class="resume-title">IT Solutions Engineer &amp; Cloud Architect</p>
+
+        <address class="resume-contact" style="font-style:normal;">
+          <span>Phoenix, AZ</span>
+          <span class="resume-contact-sep" aria-hidden="true">·</span>
+          <a href="mailto:douglas@douglashill.dev">douglas@douglashill.dev</a>
+          <span class="resume-contact-sep" aria-hidden="true">·</span>
+          <a href="https://linkedin.com/in/douglashill" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <span class="resume-contact-sep" aria-hidden="true">·</span>
+          <a href="https://github.com/douglashill" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </address>
+
+        <div class="flex flex-wrap gap-3">
+          <a href="assets/Douglas-Hill-Resume.pdf" class="btn-dark" download>Download PDF ↓</a>
+          <button class="btn-outline" onclick="window.print()">Print</button>
+        </div>
+
+      </header>
+    </div>
+
+    <!-- Mobile scroll-spy strip (shown below nav on mobile via CSS) -->
+    <nav class="scroll-spy-nav" aria-label="Resume sections">
+      <a href="#summary" class="scroll-spy-link">Summary</a>
+      <a href="#experience" class="scroll-spy-link">Experience</a>
+      <a href="#skills" class="scroll-spy-link">Skills</a>
+      <a href="#education" class="scroll-spy-link">Education</a>
+      <a href="#certifications" class="scroll-spy-link">Certifications</a>
+    </nav>
+
+    <!-- ==================== RESUME BODY ==================== -->
+    <div class="resume-outer">
+      <div class="resume-body">
+
+        <!-- Sidebar (desktop only — same links, vertical sticky) -->
+        <aside class="resume-sidebar" aria-hidden="true">
+          <nav aria-label="Resume section navigation (desktop)">
+            <a href="#summary" class="scroll-spy-link" tabindex="-1">Summary</a>
+            <a href="#experience" class="scroll-spy-link" tabindex="-1">Experience</a>
+            <a href="#skills" class="scroll-spy-link" tabindex="-1">Skills</a>
+            <a href="#education" class="scroll-spy-link" tabindex="-1">Education</a>
+            <a href="#certifications" class="scroll-spy-link" tabindex="-1">Certifications</a>
+          </nav>
+        </aside>
+
+        <!-- Content -->
+        <div class="resume-content">
+
+          <!-- ========== SUMMARY ========== -->
+          <section id="summary" class="scroll-spy-section" aria-labelledby="summary-heading">
+            <h2 class="resume-section-title" id="summary-heading">Summary</h2>
+
+            <p class="resume-summary-text">
+              IT Solutions Engineer and Cloud Architect at Arizona Public Service with deep expertise in enterprise cloud infrastructure across AWS and Azure. I bridge business strategy and technical execution — translating organizational goals into scalable, measurable solutions through platform modernization, automation, and rigorous architecture practice.
+            </p>
+            <p class="resume-summary-text">
+              My work spans the full solution lifecycle: from stakeholder alignment and roadmapping to hands-on delivery across the Power Platform, Dynamics 365, and SharePoint ecosystems. Guided by TOGAF and ArchiMate frameworks, I design systems built to last — and teams built to ship on time.
+            </p>
+
+            <ul class="resume-differentiators" aria-label="Key differentiators">
+              <li>Enterprise-scale cloud architecture across AWS and Azure serving critical utility infrastructure</li>
+              <li>Power Platform solutions designed and delivered for over 1 million customers</li>
+              <li>TOGAF- and ArchiMate-informed architecture practice ensuring alignment between strategy and execution</li>
+            </ul>
+          </section>
+
+          <!-- ========== EXPERIENCE ========== -->
+          <section id="experience" class="scroll-spy-section" aria-labelledby="experience-heading">
+            <h2 class="resume-section-title" id="experience-heading">Experience</h2>
+
+            <div class="resume-role">
+              <h3 class="resume-company">Arizona Public Service (APS)</h3>
+
+              <div class="resume-role-meta">
+                <span class="resume-role-title">IT Solutions Engineer / Analyst</span>
+                <span class="resume-role-dates">Current Role</span>
+              </div>
+
+              <p class="resume-role-location">Phoenix, AZ</p>
+
+              <p class="resume-role-desc">
+                Drive business outcomes through cloud architecture, enterprise automation, and platform modernization across one of Arizona's largest utilities. Partner with IT Security and cross-functional stakeholders to architect and deliver scalable solutions that align with regulatory requirements and long-term strategic goals.
+              </p>
+
+              <ul class="resume-achievements" aria-label="Key achievements">
+                <li>Implemented Power Platform Dynamics 365 enterprise CRM framework providing critical account and service information for <strong>1M+ customers</strong></li>
+                <li>Drove measurable customer engagement improvements through enhanced communication workflows within <strong>6 months</strong> of CRM system rollout</li>
+                <li>Automated enterprise travel approval process end-to-end, reducing turnaround time by <strong>50%</strong> through Power Automate orchestration</li>
+                <li>Led SharePoint 2010 to cloud migration managing an India-based delivery team — delivered <strong>2 weeks ahead of schedule</strong> and under budget</li>
+                <li>Improved employee onboarding efficiency by <strong>50%</strong> by designing and deploying a Power Platform automation solution across HR workflows</li>
+              </ul>
+
+              <div class="resume-tech-tags" aria-label="Technologies used">
+                <span class="tag tag--core">Power Platform</span>
+                <span class="tag tag--core">Dynamics 365</span>
+                <span class="tag tag--core">Azure</span>
+                <span class="tag tag--core">AWS</span>
+                <span class="tag">SharePoint</span>
+                <span class="tag">Power Automate</span>
+                <span class="tag">Azure DevOps</span>
+                <span class="tag">TOGAF</span>
+                <span class="tag">ArchiMate</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- ========== SKILLS ========== -->
+          <section id="skills" class="scroll-spy-section" aria-labelledby="skills-heading">
+            <h2 class="resume-section-title" id="skills-heading">Technical Skills</h2>
+
+            <div class="resume-skill-groups">
+
+              <div>
+                <h3 class="resume-skill-group-label">Cloud</h3>
+                <div class="resume-skill-tags">
+                  <span class="tag tag--core">AWS</span>
+                  <span class="tag tag--core">Azure</span>
+                  <span class="tag">CloudFront</span>
+                  <span class="tag">S3</span>
+                  <span class="tag">EC2</span>
+                </div>
+              </div>
+
+              <div>
+                <h3 class="resume-skill-group-label">Power Platform</h3>
+                <div class="resume-skill-tags">
+                  <span class="tag tag--core">Power Apps</span>
+                  <span class="tag tag--core">Power Automate</span>
+                  <span class="tag tag--core">Dynamics 365</span>
+                  <span class="tag">Power Pages</span>
+                </div>
+              </div>
+
+              <div>
+                <h3 class="resume-skill-group-label">Enterprise</h3>
+                <div class="resume-skill-tags">
+                  <span class="tag tag--core">SharePoint</span>
+                  <span class="tag">Teams Admin</span>
+                  <span class="tag">Office 365</span>
+                  <span class="tag">Azure DevOps</span>
+                </div>
+              </div>
+
+              <div>
+                <h3 class="resume-skill-group-label">Architecture</h3>
+                <div class="resume-skill-tags">
+                  <span class="tag tag--core">ArchiMate</span>
+                  <span class="tag tag--core">TOGAF</span>
+                  <span class="tag">Solution Design</span>
+                  <span class="tag">Roadmapping</span>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- ========== EDUCATION ========== -->
+          <section id="education" class="scroll-spy-section" aria-labelledby="education-heading">
+            <h2 class="resume-section-title" id="education-heading">Education</h2>
+
+            <div class="resume-edu-list">
+
+              <div class="resume-edu-entry">
+                <p class="resume-edu-degree">Master of Business Administration (MBA)</p>
+                <p class="resume-edu-field">Concentration: Finance</p>
+              </div>
+
+              <div class="resume-edu-entry">
+                <p class="resume-edu-degree">Bachelor of Science (BS)</p>
+                <p class="resume-edu-field">Information Technology</p>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- ========== CERTIFICATIONS ========== -->
+          <section id="certifications" class="scroll-spy-section" aria-labelledby="certifications-heading">
+            <h2 class="resume-section-title" id="certifications-heading">Certifications</h2>
+
+            <div class="cert-callout cert-callout--resume">
+              <div class="cert-item">
+                <div class="cert-badge cert-badge--aws" aria-label="AWS certification badge">A</div>
+                <span>AWS Solutions Architect Associate</span>
+              </div>
+              <div class="cert-item">
+                <div class="cert-badge cert-badge--azure" aria-label="Azure certification badge">Az</div>
+                <span>Azure Fundamentals</span>
+              </div>
+              <div class="cert-item">
+                <div class="cert-badge cert-badge--pp" aria-label="Power Platform certification badge">PP</div>
+                <span>Power Platform Fundamentals</span>
+              </div>
+            </div>
+          </section>
+
+        </div><!-- /.resume-content -->
+      </div><!-- /.resume-body -->
+    </div><!-- /.resume-outer -->
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <span>&copy; 2026 Douglas Hill</span>
+    <nav class="footer-links" aria-label="Social links">
+      <a href="https://linkedin.com/in/douglashill" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://github.com/douglashill" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="mailto:douglas@douglashill.dev">Email</a>
+    </nav>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
