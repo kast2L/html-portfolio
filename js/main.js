@@ -21,6 +21,16 @@
         document.body.style.overflow = '';
       });
     });
+
+    // Close overlay on Escape key
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && overlay.classList.contains('active')) {
+        overlay.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+        hamburger.focus();
+      }
+    });
   }
 
   // === SCROLL SPY (for resume page) ===

@@ -10,8 +10,9 @@
   <meta property="og:title" content="Douglas Hill — IT Solutions Engineer &amp; Cloud Architect">
   <meta property="og:description" content="Building enterprise cloud solutions that scale. AWS, Azure, and Power Platform specialist at Arizona Public Service.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://douglashill.dev">
-  <meta property="og:image" content="assets/images/IMG_9852.jpg">
+  <meta property="og:url" content="https://douglashillres.llcdouglashill.com">
+  <meta property="og:image" content="https://douglashillres.llcdouglashill.com/assets/images/IMG_9852.jpg">
+  <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -120,6 +121,18 @@
 
     /* === CTA SECTION === */
     .cta-section { text-align: center; }
+
+    /* === SPACING HELPERS === */
+    .hero-emoji { font-size: 24px; line-height: 1; margin-bottom: 16px; }
+    .hero-title { margin-bottom: 20px; }
+    .bio-text--hero { margin-bottom: 16px; }
+    .credibility--hero { margin-bottom: 28px; }
+    .section--flush-top { padding-top: 0; }
+    .label--spaced { margin-bottom: 10px; }
+    .cert-callout--spaced { margin-top: 32px; }
+    .cta-title--spaced { margin-bottom: 16px; }
+    .cta-copy { margin-bottom: 8px; }
+    .cta-location { font-size: 14px; color: var(--text-light); margin-bottom: 32px; }
   </style>
 </head>
 <body>
@@ -145,7 +158,7 @@
   </nav>
 
   <!-- Mobile nav overlay -->
-  <div class="nav-overlay" role="dialog" aria-label="Mobile navigation">
+  <div class="nav-overlay" aria-label="Mobile navigation">
     <a href="projects.html">Projects</a>
     <a href="resume.html">Resume</a>
     <a href="contact.html">Get in touch</a>
@@ -160,17 +173,17 @@
 
         <!-- Text -->
         <div class="flex-1 max-w-lg">
-          <div style="font-size: 24px; line-height: 1; margin-bottom: 16px;" aria-label="Wave hello">👋</div>
+          <div class="hero-emoji" aria-label="Wave hello">👋</div>
 
-          <h1 class="hero-title" style="margin-bottom: 20px;">
+          <h1 class="hero-title">
             I build <em>enterprise cloud</em> solutions that scale.
           </h1>
 
-          <p class="bio-text" style="margin-bottom: 16px;">
+          <p class="bio-text bio-text--hero">
             IT Solutions Engineer and Cloud Architect with deep expertise in cloud infrastructure, enterprise automation, and platform modernization — turning complex technical challenges into measurable business outcomes.
           </p>
 
-          <p class="credibility" style="margin-bottom: 28px;">
+          <p class="credibility credibility--hero">
             Currently at <strong>Arizona Public Service</strong> · Phoenix, AZ
           </p>
 
@@ -197,7 +210,7 @@
     </section>
 
     <!-- ==================== POSITIONING ==================== -->
-    <section class="section" style="padding-top: 0;">
+    <section class="section section--flush-top">
       <p class="positioning-text">
         I specialize in bridging the gap between business strategy and technical execution — architecting cloud-native solutions on AWS and Azure, modernizing enterprise workflows through the Power Platform, and designing scalable systems informed by TOGAF and ArchiMate frameworks. My work spans platforms serving over a million customers, from full-lifecycle CRM implementations to on-schedule cloud migrations.
       </p>
@@ -313,7 +326,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
 
         <div class="skill-group">
-          <p class="label" style="margin-bottom: 10px;">Cloud</p>
+          <h3 class="label label--spaced">Cloud</h3>
           <div class="flex flex-wrap gap-2">
             <span class="tag tag--core">AWS</span>
             <span class="tag tag--core">Azure</span>
@@ -324,7 +337,7 @@
         </div>
 
         <div class="skill-group">
-          <p class="label" style="margin-bottom: 10px;">Power Platform</p>
+          <h3 class="label label--spaced">Power Platform</h3>
           <div class="flex flex-wrap gap-2">
             <span class="tag tag--core">Power Apps</span>
             <span class="tag tag--core">Power Automate</span>
@@ -334,7 +347,7 @@
         </div>
 
         <div class="skill-group">
-          <p class="label" style="margin-bottom: 10px;">Enterprise</p>
+          <h3 class="label label--spaced">Enterprise</h3>
           <div class="flex flex-wrap gap-2">
             <span class="tag tag--core">SharePoint</span>
             <span class="tag">Teams Admin</span>
@@ -344,7 +357,7 @@
         </div>
 
         <div class="skill-group">
-          <p class="label" style="margin-bottom: 10px;">Architecture</p>
+          <h3 class="label label--spaced">Architecture</h3>
           <div class="flex flex-wrap gap-2">
             <span class="tag tag--core">ArchiMate</span>
             <span class="tag tag--core">TOGAF</span>
@@ -356,7 +369,7 @@
       </div>
 
       <!-- Certifications callout -->
-      <div class="cert-callout" style="margin-top: 32px;">
+      <div class="cert-callout cert-callout--spaced">
         <div class="cert-item">
           <div class="cert-badge cert-badge--aws" aria-label="AWS certification badge">A</div>
           <span>AWS Solutions Architect Associate</span>
@@ -377,13 +390,13 @@
 
     <!-- ==================== CONTACT CTA ==================== -->
     <section class="section cta-section" aria-labelledby="cta-heading">
-      <h2 class="cta-title" id="cta-heading" style="margin-bottom: 16px;">Let's work together.</h2>
+      <h2 class="cta-title cta-title--spaced" id="cta-heading">Let's work together.</h2>
 
-      <p class="bio-text" style="margin-bottom: 8px;">
+      <p class="bio-text cta-copy">
         Whether you're modernizing infrastructure, automating enterprise workflows, or architecting a new cloud platform — I'd love to hear about it.
       </p>
 
-      <p style="font-size: 14px; color: var(--text-light); margin-bottom: 32px;">
+      <p class="cta-location">
         Phoenix, AZ · Open to remote opportunities
       </p>
 
