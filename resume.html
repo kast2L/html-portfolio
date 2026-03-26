@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Resume — Douglas Hill</title>
-  <meta name="description" content="Resume of Douglas Hill — Lead Power Platform Developer and Cloud Architect. Federal-scale Power Platform delivery across IRS, DHS, and DoD with security clearance.">
+  <meta name="description" content="Resume of Douglas Hill — Power Platform Solution Architect with 7+ years delivering enterprise solutions across Power Apps, Power Automate, Dataverse, and Power BI for government and Fortune 50 clients.">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Resume — Douglas Hill | Lead Power Platform Developer">
-  <meta property="og:description" content="Lead Power Platform Developer and Cloud Architect delivering cloud modernization solutions across federal agencies including IRS, DHS, and DoD.">
+  <meta property="og:title" content="Resume — Douglas Hill | Power Platform Solution Architect">
+  <meta property="og:description" content="Power Platform Solution Architect with 7+ years delivering enterprise solutions for government and Fortune 50 commercial clients.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://douglashillres.llcdouglashill.com/resume.html">
   <meta property="og:image" content="https://douglashillres.llcdouglashill.com/assets/images/IMG_9852.jpg">
@@ -277,9 +277,49 @@
 
     /* === AGENCY SUB-SECTIONS === */
     .resume-agency {
-      border-left: 2px solid rgba(233, 69, 96, 0.3);
+      border-left: 2px solid var(--border);
       padding-left: 16px;
       margin-top: 20px;
+    }
+
+    .resume-agency--federal {
+      border-left-color: rgba(233, 69, 96, 0.3);
+    }
+
+    /* Commercial client sub-section (blue border) */
+    .resume-agency--commercial {
+      border-left: 2px solid rgba(21, 101, 192, 0.3);
+      padding-left: 16px;
+      margin-top: 20px;
+    }
+
+    /* Featured skill group */
+    .resume-skill-group--featured {
+      padding: 12px 16px;
+      background: var(--bg-warm);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+
+    /* In-progress certification */
+    .cert-item--in-progress {
+      opacity: 0.85;
+    }
+
+    .cert-badge--progress {
+      background: transparent;
+      border: 2px dashed #7b1fa2;
+      color: #7b1fa2;
+    }
+
+    .cert-status {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-light);
+      margin-top: 2px;
     }
 
     .resume-agency-title {
@@ -465,7 +505,15 @@
       <header class="resume-header">
 
         <h1 class="resume-name">Douglas Hill</h1>
-        <p class="resume-title">Lead Power Platform Developer | Cloud Architect</p>
+        <p class="resume-title">Power Platform Solution Architect</p>
+
+        <div class="flex flex-wrap gap-2" style="margin-bottom:16px;">
+          <span class="tag tag--core">Dataverse</span>
+          <span class="tag tag--core">Power Apps</span>
+          <span class="tag tag--core">Power Automate</span>
+          <span class="tag tag--core">Power Pages</span>
+          <span class="tag tag--core">Power BI</span>
+        </div>
 
         <address class="resume-contact" style="font-style:normal;">
           <span>Tempe, AZ</span>
@@ -519,19 +567,65 @@
             <h2 class="resume-section-title" id="summary-heading">Summary</h2>
 
             <p class="resume-summary-text">
-              Lead Power Platform Developer and Cloud Architect with a security clearance (Public Trust; Secret adjudication pending), delivering cloud modernization solutions across federal agencies including IRS, DHS, and DoD. I design and deploy cost-focused cloud solutions using Power Apps, Power Automate, and Power BI that balance security and operational simplicity.
+              Power Platform Solution Architect with 7+ years in the Microsoft ecosystem. I build and architect enterprise solutions across Power Apps, Power Automate, Dataverse, Power Pages, and Power BI — from government agencies to Fortune 50 commercial clients. I've governed Power Platform at scale, including 200+ environment tenants, DLP policy design, CoE deployment, and licensing guidance for large business units. My work focuses on replacing manual, legacy processes with scalable, low-code solutions that actually get adopted.
             </p>
-
-            <ul class="resume-differentiators" aria-label="Key differentiators">
-              <li>Federal-scale Power Platform delivery across IRS, DHS, and DoD with security clearance</li>
-              <li>Full-stack Power Platform: model-driven apps, canvas apps, Power BI (DAX, Power Query, RLS), Power Automate</li>
-              <li>HIPAA-compliant Azure architecture, D365 CRM across 8 departments, legacy modernization at scale</li>
-            </ul>
           </section>
 
           <!-- ========== EXPERIENCE ========== -->
           <section id="experience" class="scroll-spy-section" aria-labelledby="experience-heading">
             <h2 class="resume-section-title" id="experience-heading">Experience</h2>
+
+            <!-- Douglas Hill Consulting LLC -->
+            <div class="resume-role">
+              <h3 class="resume-company">Douglas Hill Consulting LLC</h3>
+
+              <div class="resume-role-meta">
+                <span class="resume-role-title">Power Platform Solution Architect (Independent Consultant)</span>
+                <span class="resume-role-dates">Feb 2023 – Present</span>
+              </div>
+
+              <p class="resume-role-location">Tempe, AZ</p>
+
+              <p class="resume-role-desc">
+                Independent consulting practice delivering Power Platform architecture, governance, and solution design for enterprise and government clients.
+              </p>
+
+              <!-- MN Dept of Commerce — PetroFund -->
+              <div class="resume-agency resume-agency--commercial" aria-label="Minnesota Department of Commerce engagement">
+                <h4 class="resume-agency-title">Minnesota Dept of Commerce — PetroFund Abandoned Tank Program</h4>
+                <p class="resume-role-dates" style="margin-bottom:8px;">Sept 2025 – Present</p>
+                <ul class="resume-achievements" aria-label="PetroFund achievements">
+                  <li>Architecting a Dataverse-backed Model-Driven App and Power Pages external portal to replace a fully manual, Excel and email-based process managing <strong>1,188+</strong> historical petroleum cleanup records across three program tracks</li>
+                  <li>Designed Power Pages portal authentication using Account/Contact tables to support multi-role external access — solution targets <strong>90% reduction</strong> in application processing errors and <strong>50% reduction</strong> in staff processing time</li>
+                  <li>Built multi-stage Power Automate approval routing with automated notifications and SharePoint audit history, architected to eliminate <strong>75%+</strong> of manual paper, email, and spreadsheet steps</li>
+                  <li>Implemented ALM strategy using Power Platform Pipelines with environment variables across DEV/TEST/PROD; designed Dataverse alternate keys to enable reliable upsert via dataflows for legacy data migration</li>
+                  <li>Modeled siteleak table as central data hub enforcing <strong>$2M</strong> lifetime reimbursement limits across related records, applying parental cascade relationships to maintain referential integrity</li>
+                </ul>
+              </div>
+
+              <!-- Humana -->
+              <div class="resume-agency resume-agency--commercial" aria-label="Humana engagement">
+                <h4 class="resume-agency-title">Humana</h4>
+                <p class="resume-role-dates" style="margin-bottom:8px;">March 2024 – Nov 2024</p>
+                <ul class="resume-achievements" aria-label="Humana achievements">
+                  <li>Administered Power Platform governance for a Fortune 50 healthcare enterprise spanning <strong>200+ environments</strong>, serving as the primary point of contact for business units seeking environment provisioning, licensing guidance, and platform access</li>
+                  <li>Designed and implemented tenant-level and environment-specific DLP policies to enforce data governance standards across a large-scale maker community</li>
+                  <li>Deployed and operated the Power Platform CoE Starter Kit to establish visibility into app inventory, flow usage, and compliance posture across the organization</li>
+                  <li>Fielded licensing requests from business units, advising on standard vs. premium entitlements and capacity planning to align platform usage with organizational cost controls</li>
+                </ul>
+              </div>
+
+              <div class="resume-tech-tags" aria-label="Technologies used" style="margin-top: 20px;">
+                <span class="tag tag--core">Dataverse</span>
+                <span class="tag tag--core">Power Pages</span>
+                <span class="tag tag--core">Power Automate</span>
+                <span class="tag tag--core">Power Apps</span>
+                <span class="tag">CoE Starter Kit</span>
+                <span class="tag">DLP</span>
+                <span class="tag">ALM</span>
+                <span class="tag">Power BI</span>
+              </div>
+            </div>
 
             <!-- ECS Tech -->
             <div class="resume-role">
@@ -545,35 +639,35 @@
               <p class="resume-role-location">Phoenix, AZ</p>
 
               <p class="resume-role-desc">
-                Led and implemented Power Platform and cloud modernization solutions across multiple federal agencies (IRS → DHS → DoD). Responsible for requirements, secure solution design, tenant governance, ALM/CI-CD practices, and delivery of model-driven and canvas Power Apps, Power Automate flows, and Power BI reporting.
+                Delivered Power Platform and cloud modernization solutions across multiple government agencies. Responsible for requirements, secure solution design, tenant governance, ALM/CI-CD practices, and end-to-end delivery of Model-Driven and Canvas Power Apps, Power Automate flows, and Power BI reporting.
               </p>
 
               <!-- IRS sub-section -->
-              <div class="resume-agency" aria-label="IRS engagement">
+              <div class="resume-agency resume-agency--federal" aria-label="IRS engagement">
                 <h4 class="resume-agency-title">IRS — Legacy Modernization &amp; Compliance</h4>
                 <ul class="resume-achievements" aria-label="IRS achievements">
-                  <li>Led conversion of legacy Nintex workflows and Access databases into Power Platform solutions; implemented validation rules and automated audit trails for IRS compliance</li>
-                  <li>Re-architected an Access-based application into a modern Power Platform solution to improve data integrity and role-based security</li>
-                  <li>Delivered Power BI dashboards from Dataverse/Power Platform sources to improve operational visibility</li>
+                  <li>Eliminated end-of-life platform risk and achieved IRS compliance standards by migrating legacy Nintex workflows to Power Automate with automated audit trails and validation rules</li>
+                  <li>Enabled real-time decision-making for program stakeholders by replacing manually refreshed Excel reports with live Power BI dashboards — eliminating stale data from the reporting cycle entirely</li>
+                  <li>Restored data integrity and enforced role-based access control across stakeholder groups by replacing an ungoverned Access database with a structured Model-Driven Power App</li>
                 </ul>
               </div>
 
               <!-- DHS sub-section -->
-              <div class="resume-agency" aria-label="DHS engagement">
+              <div class="resume-agency resume-agency--federal" aria-label="DHS engagement">
                 <h4 class="resume-agency-title">DHS — Model-Driven Apps, Governance &amp; Automations</h4>
                 <ul class="resume-achievements" aria-label="DHS achievements">
-                  <li>Led and implemented a security-hardened model-driven Power App (with embedded canvas app) augmented with JavaScript customizations and Power Automate flows for DHS intake workflows</li>
-                  <li>Built Power BI reports to surface KPIs and operational metrics for stakeholders</li>
+                  <li>Architected and delivered a security-hardened Model-Driven Power App with embedded Canvas app, JavaScript customizations, and Power Automate flows supporting DHS intake workflows</li>
+                  <li>Built parallel Power BI report surfacing KPIs and operational metrics per business analyst requirements, enabling stakeholder visibility into program performance</li>
                 </ul>
               </div>
 
               <!-- DoD sub-section -->
-              <div class="resume-agency" aria-label="DoD engagement">
+              <div class="resume-agency resume-agency--federal" aria-label="DoD engagement">
                 <h4 class="resume-agency-title">DoD — SharePoint Data Modeling &amp; Reporting</h4>
                 <ul class="resume-achievements" aria-label="DoD achievements">
-                  <li>Led SharePoint-backed data sources and built data model and Power BI reports for DoD reporting needs</li>
-                  <li>Implemented data modeling and reporting best practices for reliable Power BI deliverables</li>
-                  <li>Created runbooks and handoff documentation for operations</li>
+                  <li>Designed SharePoint-backed data model and Power BI reporting suite to meet DoD program reporting requirements; selected SharePoint for cost efficiency, scalability, and operational simplicity</li>
+                  <li>Established data modeling and reporting best practices enabling repeatable, reliable Power BI deliverables for program stakeholders</li>
+                  <li>Created runbooks and handoff documentation to support operations and future development cycles</li>
                 </ul>
               </div>
 
@@ -586,7 +680,7 @@
                 <span class="tag">Power Automate</span>
                 <span class="tag">Dataverse</span>
                 <span class="tag">SharePoint</span>
-                <span class="tag">Federal</span>
+                <span class="tag">Government</span>
               </div>
             </div>
 
@@ -602,23 +696,19 @@
               <p class="resume-role-location">Tempe, AZ</p>
 
               <p class="resume-role-desc">
-                Owned HIPAA-compliant Azure tenant as product owner and architect while collaborating with cross-functional teams to design, configure, and deploy cloud architecture solutions utilizing AWS, Azure, GCP, and Power Platform.
+                Owned HIPAA-compliant Azure tenant and led cross-functional collaboration to design, configure, and deploy cloud architecture and Power Platform solutions.
               </p>
 
               <ul class="resume-achievements" aria-label="Key achievements">
-                <li>Architected and led deployment of a scalable CRM solution across <strong>8 departments</strong>, integrating with existing enterprise systems</li>
-                <li>Designed and implemented Google Cloud DLP automation to redact PII from resumes, reducing manual processing time by <strong>40%</strong></li>
-                <li>Investigated and resolved architectural issues in AWS GIS ARK Enterprise, ensuring reliable maps for thousands of students and faculty</li>
-                <li>Configured and deployed HIPAA-compliant Azure tenant for research data; implemented data governance and conditional access policies</li>
-                <li>Led and mentored <strong>2 Junior SharePoint Administrators</strong></li>
+                <li>Centralized fragmented CRM data across <strong>8 departments</strong> — migrating teams off individual OneNotes and Google Sheets into a unified D365 solution, establishing a single source of truth for customer engagement and sales activity</li>
+                <li>Protected sensitive research data for HIPAA compliance by architecting a dedicated Azure tenant with SharePoint Online storage, enforcing conditional access policies that prevented unauthorized downloads on non-ASU devices</li>
               </ul>
 
               <div class="resume-tech-tags" aria-label="Technologies used">
                 <span class="tag tag--core">Azure</span>
                 <span class="tag tag--core">D365</span>
                 <span class="tag tag--core">Power Platform</span>
-                <span class="tag">AWS</span>
-                <span class="tag">Google Cloud</span>
+                <span class="tag">SharePoint</span>
                 <span class="tag">HIPAA</span>
               </div>
             </div>
@@ -635,29 +725,20 @@
               <p class="resume-role-location">Phoenix, AZ</p>
 
               <p class="resume-role-desc">
-                The largest electric utility in Arizona with 5K+ employees serving 1.2M customers. Collaborated with stakeholders to conduct research, develop, and implement IT solutions to drive enterprise performance improvements.
+                The largest electric utility in Arizona with 5K+ employees serving 1.2M customers across 11 counties.
               </p>
 
-              <p class="resume-achievements-heading">Business Alignment &amp; Strategy</p>
-              <ul class="resume-achievements" aria-label="Business alignment achievements">
-                <li>Drove prioritized business goals using business capability roadmaps aligned with IT investments</li>
-                <li>Developed technology strategies referencing architectures to ensure alignment with requirements</li>
-                <li>Subject Matter Expert (SME) for Azure DevOps, SharePoint, Power Platform, Power Automate, and Power Apps</li>
-              </ul>
-
-              <p class="resume-achievements-heading">Solution Development &amp; Implementation</p>
-              <ul class="resume-achievements" aria-label="Solution development achievements">
-                <li>Implemented Power Platform Dynamics 365 enterprise CRM providing critical information for <strong>1M+ customers</strong></li>
-                <li>Automated enterprise travel approval process, reducing workload by <strong>50%</strong></li>
-                <li>Led SharePoint 2010 to cloud migration managing India-based team, delivered <strong>2 weeks ahead of schedule</strong></li>
-                <li>Configured Microsoft tenant for Teams, SharePoint, OneDrive and DLP for Power Platform</li>
+              <ul class="resume-achievements" aria-label="Key achievements">
+                <li>Enabled personalized, multi-channel communications for <strong>1.2M utility customers</strong> by implementing a D365 Marketing solution that automated customer journeys based on engagement behavior — routing unresponsive email recipients to physical mail</li>
+                <li>Eliminated on-premises SharePoint infrastructure by leading cloud migration of legacy SharePoint 2010 workflows, managing an India-based delivery team and completing the project <strong>one month ahead of schedule</strong></li>
+                <li>Reduced enterprise travel approval workload by <strong>50%</strong> by designing and implementing an automated Power Automate approval process, replacing a manual, email-based routing system</li>
+                <li>Served as internal SME for Power Platform, SharePoint, and Azure DevOps — advising stakeholders and lead engineers on solution design and platform governance</li>
               </ul>
 
               <div class="resume-tech-tags" aria-label="Technologies used">
                 <span class="tag tag--core">Power Platform</span>
                 <span class="tag tag--core">Dynamics 365</span>
                 <span class="tag tag--core">Azure</span>
-                <span class="tag">AWS</span>
                 <span class="tag">SharePoint</span>
                 <span class="tag">Power Automate</span>
                 <span class="tag">Azure DevOps</span>
@@ -673,62 +754,110 @@
             <div class="resume-skill-groups">
 
               <div>
-                <h3 class="resume-skill-group-label">Power Platform &amp; Microsoft 365</h3>
+                <h3 class="resume-skill-group-label">Power Platform</h3>
                 <div class="resume-skill-tags">
-                  <span class="tag tag--core">Power BI</span>
                   <span class="tag tag--core">Power Apps</span>
                   <span class="tag tag--core">Power Automate</span>
+                  <span class="tag tag--core">Power BI</span>
+                  <span class="tag tag--core">Power Pages</span>
                   <span class="tag tag--core">Dynamics 365</span>
+                  <span class="tag tag--core">Copilot Studio</span>
+                </div>
+                <div class="resume-skill-detail">
+                  <span class="tag">Canvas Apps</span>
+                  <span class="tag">Model-Driven Apps</span>
+                  <span class="tag">Power Fx</span>
+                  <span class="tag">Approval Workflows</span>
+                  <span class="tag">Cloud Flows</span>
+                </div>
+              </div>
+
+              <div>
+                <h3 class="resume-skill-group-label">Microsoft 365 &amp; SharePoint</h3>
+                <div class="resume-skill-tags">
                   <span class="tag tag--core">SharePoint Online</span>
                   <span class="tag tag--core">M365</span>
+                </div>
+                <div class="resume-skill-detail">
+                  <span class="tag">Site Architecture</span>
+                  <span class="tag">Permissions</span>
+                  <span class="tag">REST API</span>
+                  <span class="tag">Legacy Migration</span>
+                  <span class="tag">Teams</span>
+                  <span class="tag">OneDrive</span>
+                </div>
+              </div>
+
+              <div class="resume-skill-group--featured">
+                <h3 class="resume-skill-group-label">Power Platform Governance &amp; Administration</h3>
+                <div class="resume-skill-tags">
+                  <span class="tag tag--core">PPAC</span>
+                  <span class="tag tag--core">CoE Starter Kit</span>
+                </div>
+                <div class="resume-skill-detail">
+                  <span class="tag">DLP Policy Design</span>
+                  <span class="tag">Environment Strategy</span>
+                  <span class="tag">Licensing</span>
+                  <span class="tag">ALM</span>
+                  <span class="tag">Power Platform Pipelines</span>
+                </div>
+              </div>
+
+              <div>
+                <h3 class="resume-skill-group-label">Azure</h3>
+                <div class="resume-skill-tags">
+                  <span class="tag tag--core">Azure AD</span>
+                  <span class="tag tag--core">Azure SQL</span>
+                </div>
+                <div class="resume-skill-detail">
+                  <span class="tag">Conditional Access</span>
+                  <span class="tag">Blob Storage</span>
+                  <span class="tag">RBAC</span>
+                  <span class="tag">HIPAA Tenant Config</span>
+                </div>
+              </div>
+
+              <div>
+                <h3 class="resume-skill-group-label">Data &amp; Integration</h3>
+                <div class="resume-skill-tags">
+                  <span class="tag tag--core">Dataverse</span>
+                  <span class="tag tag--core">SQL</span>
                 </div>
                 <div class="resume-skill-detail">
                   <span class="tag">DAX</span>
                   <span class="tag">Power Query (M)</span>
                   <span class="tag">Data Modeling</span>
                   <span class="tag">RLS</span>
-                  <span class="tag">Canvas Apps</span>
-                  <span class="tag">Model-Driven Apps</span>
-                  <span class="tag">Component Libraries</span>
-                  <span class="tag">Approval Flows</span>
-                  <span class="tag">Dataverse Integration</span>
+                  <span class="tag">Composite Models</span>
+                  <span class="tag">Dataflows</span>
                 </div>
               </div>
 
               <div>
-                <h3 class="resume-skill-group-label">Data &amp; Cloud Platforms</h3>
+                <h3 class="resume-skill-group-label">AWS</h3>
                 <div class="resume-skill-tags">
-                  <span class="tag tag--core">Dataverse</span>
-                  <span class="tag tag--core">Azure</span>
-                  <span class="tag tag--core">AWS</span>
+                  <span class="tag tag--core">S3</span>
+                  <span class="tag tag--core">IAM</span>
                 </div>
                 <div class="resume-skill-detail">
-                  <span class="tag">SQL</span>
-                  <span class="tag">Azure SQL</span>
-                  <span class="tag">Azure AD</span>
-                  <span class="tag">Conditional Access</span>
-                  <span class="tag">Blob Storage</span>
-                  <span class="tag">RBAC</span>
-                  <span class="tag">S3</span>
-                  <span class="tag">IAM</span>
                   <span class="tag">CloudWatch</span>
                   <span class="tag">EC2</span>
+                  <span class="tag">Well-Architected Framework</span>
                 </div>
               </div>
 
               <div>
-                <h3 class="resume-skill-group-label">Tools &amp; Development</h3>
+                <h3 class="resume-skill-group-label">Tools &amp; DevOps</h3>
                 <div class="resume-skill-tags">
                   <span class="tag tag--core">Azure DevOps</span>
                   <span class="tag tag--core">GitHub</span>
                 </div>
                 <div class="resume-skill-detail">
-                  <span class="tag">ShareGate</span>
-                  <span class="tag">Postman</span>
                   <span class="tag">PowerShell</span>
                   <span class="tag">VS Code</span>
-                  <span class="tag">JSON</span>
+                  <span class="tag">Postman</span>
                   <span class="tag">REST APIs</span>
+                  <span class="tag">JSON</span>
                   <span class="tag">HTML/CSS</span>
                   <span class="tag">JavaScript</span>
                 </div>
@@ -779,15 +908,14 @@
                 <div class="cert-badge cert-badge--pp" aria-label="Power Platform certification badge">PP</div>
                 <span>Power Platform Fundamentals</span>
               </div>
-              <div class="cert-item">
-                <div class="cert-badge cert-badge--scrum" aria-label="Scrum Product Owner badge">SP</div>
-                <span>Scrum Product Owner (SPOC) Trained</span>
+              <div class="cert-item cert-item--in-progress">
+                <div class="cert-badge cert-badge--progress" aria-label="In progress certification badge">PB</div>
+                <div>
+                  <span>Power BI Data Analyst (PL-300)</span>
+                  <span class="cert-status">In Progress</span>
+                </div>
               </div>
             </div>
-
-            <p class="resume-clearance-note" aria-label="Security clearance status">
-              <strong>Security Clearance:</strong> Public Trust; Secret adjudication pending
-            </p>
 
           </section>
 
