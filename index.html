@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://william.llcdouglashill.com/">
   <title>Douglas Hill — Power Platform Solution Architect</title>
   <meta name="description" content="Douglas Hill is a Power Platform Solution Architect with 7+ years building enterprise solutions across Power Apps, Power Automate, Dataverse, and Power BI for government and Fortune 50 clients.">
 
@@ -10,8 +11,10 @@
   <meta property="og:title" content="Douglas Hill — Power Platform Solution Architect">
   <meta property="og:description" content="Power Platform Solution Architect with 7+ years building enterprise solutions for government and Fortune 50 clients.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://douglashillres.llcdouglashill.com">
-  <meta property="og:image" content="https://douglashillres.llcdouglashill.com/assets/images/IMG_9852.jpg">
+  <meta property="og:url" content="https://william.llcdouglashill.com">
+  <meta property="og:image" content="https://william.llcdouglashill.com/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicon -->
@@ -22,21 +25,50 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
   <!-- Styles -->
   <link rel="stylesheet" href="css/styles.css">
 
   <style>
-    /* === HERO PHOTO === */
-    .hero-photo {
-      border-radius: var(--radius-photo);
-      box-shadow: var(--shadow-card);
-      border: 1px solid var(--border);
-      object-fit: cover;
-      display: block;
+    /* === HERO === */
+    .hero-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      align-items: flex-start;
     }
+    .hero-text { max-width: 640px; }
+    .hero-photo-wrap { flex-shrink: 0; }
+    .hero-photo {
+      width: 200px;
+      height: auto;
+      aspect-ratio: 330 / 440;
+      object-fit: cover;
+      border-radius: var(--radius-photo);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-card);
+      display: block;
+      animation: rise-in 0.6s var(--ease-out-expo) 0.28s backwards;
+    }
+    @media (min-width: 768px) {
+      .hero-grid {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 48px;
+      }
+      .hero-photo { width: 240px; }
+    }
+    /* Signature entrance: hero lines rise in once on load (enhances an
+       already-visible default; reduced-motion collapses it to instant). */
+    @keyframes rise-in {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: none; }
+    }
+    .hero-text > * { animation: rise-in 0.55s var(--ease-out-expo) backwards; }
+    .hero-text > *:nth-child(2) { animation-delay: 70ms; }
+    .hero-text > *:nth-child(3) { animation-delay: 140ms; }
+    .hero-text > *:nth-child(4) { animation-delay: 210ms; }
+    .hero-text > *:nth-child(5) { animation-delay: 280ms; }
 
     /* === PROJECT ROWS === */
     .project-rows-list {
@@ -94,11 +126,11 @@
       font-size: 20px;
       line-height: 1;
       flex-shrink: 0;
-      transition: color 0.15s ease, opacity 0.15s ease;
+      transition: color 0.15s ease, opacity 0.15s ease, transform 0.2s var(--ease-out-quart);
     }
     @media (min-width: 768px) {
       .project-chevron { opacity: 0; }
-      .project-row:hover .project-chevron { opacity: 1; color: var(--text-secondary); }
+      .project-row:hover .project-chevron { opacity: 1; color: var(--text-secondary); transform: translateX(3px); }
     }
 
     /* === CREDIBILITY LINE === */
@@ -119,11 +151,42 @@
       margin-bottom: 0;
     }
 
+    /* === HERO ACTIONS === */
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px 24px;
+    }
+    .hero-textlink {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+    .hero-textlink:hover { color: var(--accent-text); }
+    .hero-resume {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 8px 0;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-light);
+      text-decoration: underline;
+      text-decoration-color: var(--border-hover);
+      text-underline-offset: 3px;
+      transition: color 0.15s ease, text-decoration-color 0.15s ease;
+    }
+    .hero-resume:hover { color: var(--text); text-decoration-color: var(--text); }
+
     /* === CTA SECTION === */
     .cta-section { text-align: center; }
 
     /* === SPACING HELPERS === */
-    .hero-emoji { font-size: 24px; line-height: 1; margin-bottom: 16px; }
     .hero-title { margin-bottom: 20px; }
     .bio-text--hero { margin-bottom: 16px; }
     .credibility--hero { margin-bottom: 28px; }
@@ -133,7 +196,57 @@
     .cta-title--spaced { margin-bottom: 16px; }
     .cta-copy { margin-bottom: 8px; }
     .cta-location { font-size: 14px; color: var(--text-light); margin-bottom: 32px; }
+    .cta-reassure { margin-top: 18px; font-size: 14px; color: var(--text-secondary); }
     .cert-badge--scrum { background: #e8f5e9; color: #2e7d32; }
+
+    /* === IMPACT STAT STRIP === */
+    .impact-strip {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--section-px);
+    }
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      padding: 32px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .impact-stat { text-align: left; }
+    .impact-num {
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 36px;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: -0.5px;
+      line-height: 1;
+    }
+    .impact-num em {
+      font-style: normal;
+      color: var(--accent);
+    }
+    .impact-label {
+      font-size: 13px;
+      color: var(--text-light);
+      margin-top: 8px;
+      line-height: 1.4;
+    }
+    @media (max-width: 640px) {
+      .impact-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; padding: 24px 0; }
+      .impact-num { font-size: 28px; }
+    }
+
+    /* === EDUCATION LINE === */
+    .edu-line {
+      font-size: 13px;
+      color: var(--text-light);
+      margin-top: 16px;
+    }
+    .edu-line strong {
+      color: var(--text-secondary);
+      font-weight: 600;
+    }
   </style>
 </head>
 <body>
@@ -146,9 +259,10 @@
     <a href="index.html" class="nav-logo">Douglas Hill</a>
 
     <div class="nav-links">
+      <a href="services.html" class="nav-link">Services</a>
       <a href="projects.html" class="nav-link">Projects</a>
       <a href="resume.html" class="nav-link nav-link--resume">Resume</a>
-      <a href="contact.html" class="nav-cta">Get in touch</a>
+      <a href="contact.html" class="nav-cta">Book a call</a>
     </div>
 
     <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
@@ -160,9 +274,10 @@
 
   <!-- Mobile nav overlay -->
   <nav class="nav-overlay" aria-label="Mobile navigation">
+    <a href="services.html">Services</a>
     <a href="projects.html">Projects</a>
     <a href="resume.html">Resume</a>
-    <a href="contact.html">Get in touch</a>
+    <a href="contact.html">Book a call</a>
   </nav>
 
   <!-- Main content -->
@@ -170,51 +285,68 @@
 
     <!-- ==================== HERO ==================== -->
     <section class="section">
-      <div class="flex flex-col-reverse md:flex-row md:items-center md:justify-between gap-10">
-
-        <!-- Text -->
-        <div class="flex-1 max-w-lg">
-          <div class="hero-emoji" aria-label="Wave hello">👋</div>
-
+      <div class="hero-grid">
+        <div class="hero-text">
           <h1 class="hero-title">
             I architect <em>enterprise platforms</em> that actually get adopted.
           </h1>
 
           <p class="bio-text bio-text--hero">
-            Power Platform Solution Architect with 7+ years in the Microsoft ecosystem, delivering solutions from government agencies to Fortune 50 commercial clients. I replace manual, legacy processes with scalable low-code solutions — Power Apps, Power Automate, Dataverse, Power Pages, and Power BI.
+            Power Platform Solution Architect with 7+ years in the Microsoft ecosystem, from government agencies to Fortune 50 commercial clients. I replace manual, legacy processes with scalable, low-code solutions.
           </p>
 
           <p class="credibility credibility--hero">
             <strong>Douglas Hill Consulting LLC</strong> · Tempe, AZ
           </p>
 
-          <div class="flex flex-wrap gap-3">
-            <a href="#projects" class="btn-dark">See my work</a>
-            <a href="assets/Douglas-Hill-Resume.pdf" class="btn-outline" download>
-              Download resume ↓
-            </a>
+          <div class="hero-actions">
+            <a href="contact.html" class="btn-dark">Book a call</a>
+            <a href="#projects" class="hero-textlink">See my work →</a>
           </div>
+          <a href="assets/Douglas_Hill_Resume.pdf" class="hero-resume" download>Download resume (PDF) ↓</a>
         </div>
 
-        <!-- Photo -->
-        <div class="flex justify-center md:justify-end flex-shrink-0">
+        <div class="hero-photo-wrap">
           <img
             src="assets/images/IMG_9852.jpg"
-            alt="Douglas Hill"
-            width="220"
-            height="270"
+            alt="Douglas Hill, Power Platform Solution Architect"
+            width="330"
+            height="440"
             class="hero-photo"
+            fetchpriority="high"
           >
         </div>
-
       </div>
     </section>
 
     <!-- ==================== POSITIONING ==================== -->
     <section class="section section--flush-top">
       <p class="positioning-text">
-        I specialize in replacing manual, legacy processes with scalable Power Platform solutions — modernizing workflows into Power Automate, building model-driven and canvas Power Apps, governing platforms at scale with DLP and CoE, and delivering Power BI reporting that drives real decisions. My work spans government agencies, Fortune 50 healthcare, state programs, higher education, and utilities.
+        In practice, that means modernizing workflows into Power Automate, building model-driven and canvas Power Apps, governing platforms at scale with DLP and CoE, and turning Power BI into reporting that drives real decisions.
       </p>
+    </section>
+
+    <!-- ==================== IMPACT STATS ==================== -->
+    <section class="impact-strip" aria-labelledby="impact-heading">
+      <h2 class="sr-only" id="impact-heading">By the numbers</h2>
+      <div class="impact-grid" role="list">
+        <div class="impact-stat" role="listitem">
+          <div class="impact-num"><em>7+</em></div>
+          <div class="impact-label">Years architecting in the Microsoft ecosystem</div>
+        </div>
+        <div class="impact-stat" role="listitem">
+          <div class="impact-num"><em>200+</em></div>
+          <div class="impact-label">Power Platform environments governed at a Fortune&nbsp;50 healthcare enterprise</div>
+        </div>
+        <div class="impact-stat" role="listitem">
+          <div class="impact-num"><em>1.2M+</em></div>
+          <div class="impact-label">Utility customers reached via Dynamics&nbsp;365 marketing journeys</div>
+        </div>
+        <div class="impact-stat" role="listitem">
+          <div class="impact-num"><em>$2M</em></div>
+          <div class="impact-label">Lifetime reimbursement limits enforced through Dataverse data modeling</div>
+        </div>
+      </div>
     </section>
 
     <hr class="divider">
@@ -226,10 +358,53 @@
         <a href="projects.html" class="section-link">View all →</a>
       </div>
 
-      <div class="project-rows-list" role="list">
+      <div class="project-rows-list">
+
+        <!-- MN Dept of Commerce / PetroFund -->
+        <a href="projects.html#petrofund" class="project-row">
+          <div class="project-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M11 2.5c-3 0-5 2-5 4.5 0 3 5 7.5 5 7.5s5-4.5 5-7.5c0-2.5-2-4.5-5-4.5z" stroke="var(--accent-text)" stroke-width="1.7" stroke-linejoin="round"/>
+              <circle cx="11" cy="7" r="1.6" fill="var(--accent-text)"/>
+              <path d="M5.5 18h11" stroke="var(--accent-text)" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="project-title">MN Dept of Commerce — PetroFund</div>
+            <div class="project-desc">Architected a Dataverse-backed Model-Driven App and Power Pages portal that replaced an Excel- and email-based program managing 1,188+ petroleum cleanup records.</div>
+            <div class="tags-row">
+              <span class="tag tag--core">Dataverse</span>
+              <span class="tag tag--core">Power Pages</span>
+              <span class="tag tag--core">Power Automate</span>
+              <span class="tag">ALM</span>
+              <span class="tag tag--impact">State Government</span>
+            </div>
+          </div>
+          <span class="project-chevron" aria-hidden="true">›</span>
+        </a>
+
+        <!-- Humana Power Platform Governance -->
+        <a href="projects.html#humana" class="project-row">
+          <div class="project-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M3 11h4l2-5 4 10 2-5h4" stroke="var(--accent-text)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="project-title">Humana — Power Platform Governance</div>
+            <div class="project-desc">Administered Power Platform governance across 200+ environments for a Fortune 50 healthcare enterprise: DLP policy design, CoE Starter Kit, and licensing guidance for the maker community.</div>
+            <div class="tags-row">
+              <span class="tag tag--core">Power Platform</span>
+              <span class="tag tag--core">CoE Starter Kit</span>
+              <span class="tag">DLP</span>
+              <span class="tag tag--impact">Fortune 50 Healthcare</span>
+            </div>
+          </div>
+          <span class="project-chevron" aria-hidden="true">›</span>
+        </a>
 
         <!-- IRS Legacy Modernization -->
-        <a href="projects.html#irs" class="project-row" role="listitem">
+        <a href="projects.html#irs" class="project-row">
           <div class="project-icon" aria-hidden="true">
             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M11 3a8 8 0 1 1 0 16A8 8 0 0 1 11 3z" stroke="var(--accent-text)" stroke-width="1.8" stroke-linecap="round"/>
@@ -243,7 +418,7 @@
           </div>
           <div class="flex-1 min-w-0">
             <div class="project-title">IRS Legacy Modernization</div>
-            <div class="project-desc">Converted Nintex workflows and Access databases to Power Platform with automated audit trails</div>
+            <div class="project-desc">Retired legacy Nintex workflows and Access databases, replacing them with a Power Platform system carrying automated, audit-ready trails.</div>
             <div class="tags-row">
               <span class="tag tag--core">Power Platform</span>
               <span class="tag tag--core">Power BI</span>
@@ -255,7 +430,7 @@
         </a>
 
         <!-- DHS Security Application -->
-        <a href="projects.html#dhs" class="project-row" role="listitem">
+        <a href="projects.html#dhs" class="project-row">
           <div class="project-icon" aria-hidden="true">
             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M11 2.5L4 5.5v5c0 3.9 2.9 7.5 7 8.5 4.1-1 7-4.6 7-8.5v-5l-7-3z" stroke="var(--accent-text)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
@@ -264,7 +439,7 @@
           </div>
           <div class="flex-1 min-w-0">
             <div class="project-title">DHS Security Application</div>
-            <div class="project-desc">Security-hardened model-driven Power App with JavaScript customizations for DHS operations</div>
+            <div class="project-desc">Hardened a model-driven Power App for DHS operations, adding JavaScript-driven security controls to meet operational requirements.</div>
             <div class="tags-row">
               <span class="tag tag--core">Model-Driven Apps</span>
               <span class="tag tag--core">JavaScript</span>
@@ -276,7 +451,7 @@
         </a>
 
         <!-- Enterprise CRM Platform -->
-        <a href="projects.html#crm" class="project-row" role="listitem">
+        <a href="projects.html#crm" class="project-row">
           <div class="project-icon" aria-hidden="true">
             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <rect x="2" y="2" width="8" height="8" rx="2" fill="var(--accent-text)" opacity="0.9"/>
@@ -287,7 +462,7 @@
           </div>
           <div class="flex-1 min-w-0">
             <div class="project-title">Enterprise CRM Platform</div>
-            <div class="project-desc">Power Platform Dynamics 365 solution serving over 1 million customers</div>
+            <div class="project-desc">Scaled a Power Platform and Dynamics 365 solution to serve over 1 million customers.</div>
             <div class="tags-row">
               <span class="tag tag--core">Power Platform</span>
               <span class="tag tag--core">Dynamics 365</span>
@@ -299,7 +474,7 @@
         </a>
 
         <!-- Cloud Migration -->
-        <a href="projects.html#migration" class="project-row" role="listitem">
+        <a href="projects.html#migration" class="project-row">
           <div class="project-icon" aria-hidden="true">
             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M6 15.5A4.5 4.5 0 0 1 6 6.5a5.5 5.5 0 0 1 10 1.5h1a3 3 0 0 1 0 6H6z" stroke="var(--accent-text)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
@@ -308,7 +483,7 @@
           </div>
           <div class="flex-1 min-w-0">
             <div class="project-title">Cloud Migration</div>
-            <div class="project-desc">Led SharePoint 2010 to cloud migration — delivered 2 weeks ahead of schedule</div>
+            <div class="project-desc">Delivered a SharePoint 2010-to-cloud migration two weeks ahead of schedule.</div>
             <div class="tags-row">
               <span class="tag tag--core">SharePoint</span>
               <span class="tag tag--core">Azure</span>
@@ -379,6 +554,10 @@
           <span>AWS Solutions Architect Associate</span>
         </div>
         <div class="cert-item">
+          <div class="cert-badge cert-badge--scrum" aria-label="Scrum Product Owner certification badge">SP</div>
+          <span>Scrum Product Owner</span>
+        </div>
+        <div class="cert-item">
           <div class="cert-badge cert-badge--azure" aria-label="Azure Fundamentals certification badge">Az</div>
           <span>Azure Fundamentals</span>
         </div>
@@ -390,11 +569,11 @@
           <div class="cert-badge cert-badge--azure" aria-label="Azure Data Fundamentals certification badge">Az</div>
           <span>Azure Data Fundamentals</span>
         </div>
-        <div class="cert-item">
-          <div class="cert-badge cert-badge--scrum" aria-label="Scrum Product Owner certification badge">SP</div>
-          <span>Scrum Product Owner</span>
-        </div>
       </div>
+
+      <p class="edu-line">
+        <strong>Education:</strong> MBA in Finance and BS in Information Technology, Grand Canyon University
+      </p>
 
     </section>
 
@@ -402,20 +581,19 @@
 
     <!-- ==================== CONTACT CTA ==================== -->
     <section class="section cta-section" aria-labelledby="cta-heading">
-      <h2 class="cta-title cta-title--spaced" id="cta-heading">Let's work together.</h2>
+      <h2 class="cta-title cta-title--spaced" id="cta-heading">Have a process worth modernizing?</h2>
 
       <p class="bio-text cta-copy">
-        Whether you're modernizing infrastructure, automating enterprise workflows, or architecting a new cloud platform — I'd love to hear about it.
+        Whether you're automating enterprise workflows, replacing legacy systems, or architecting a new cloud platform, I'd love to hear about it.
       </p>
 
-      <p class="cta-location">
-        Tempe, AZ · Open to remote opportunities
-      </p>
+      <p class="cta-location">Based in Tempe, AZ · serving clients remotely across the US</p>
 
       <div class="flex flex-wrap justify-center gap-3">
-        <a href="mailto:w.douglas.hill.mba@gmail.com" class="btn-dark">Send me an email</a>
+        <a href="contact.html" class="btn-dark">Book a call</a>
         <a href="https://linkedin.com/in/w-douglas-hill-mba/" class="btn-outline" target="_blank" rel="noopener noreferrer">LinkedIn →</a>
       </div>
+      <p class="cta-reassure">A 30-minute scoping call. No pitch, no obligation.</p>
     </section>
 
   </main>
@@ -425,8 +603,8 @@
     <span>&copy; 2026 Douglas Hill</span>
     <nav class="footer-links" aria-label="Social links">
       <a href="https://linkedin.com/in/w-douglas-hill-mba/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      <a href="https://github.com/douglashill" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a href="mailto:w.douglas.hill.mba@gmail.com">Email</a>
+      <a href="https://github.com/kast2L" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="mailto:DouglasHill@llcdouglashill.com">Email</a>
     </nav>
   </footer>
 

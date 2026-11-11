@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact — Douglas Hill</title>
-  <meta name="description" content="Get in touch with Douglas Hill — IT Solutions Engineer and Cloud Architect based in Tempe, AZ. Open to new opportunities and remote work.">
+  <link rel="canonical" href="https://william.llcdouglashill.com/contact.html">
+  <title>Book a call — Douglas Hill | Power Platform Solution Architect</title>
+  <meta name="description" content="Book a 30-minute architecture call with Douglas Hill — Power Platform Solution Architect. Governance, Dataverse apps, workflow modernization, Power BI reporting, and Power Pages delivery.">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Contact — Douglas Hill">
-  <meta property="og:description" content="I'm always happy to hear about new opportunities, projects, or ideas. Reach out via email or LinkedIn.">
+  <meta property="og:title" content="Book a call — Douglas Hill | Power Platform Solution Architect">
+  <meta property="og:description" content="Bring the problem, leave with a plan. Book a 30-minute architecture call, or send project details.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://douglashillres.llcdouglashill.com/contact.html">
-  <meta property="og:image" content="https://douglashillres.llcdouglashill.com/assets/images/IMG_9852.jpg">
+  <meta property="og:url" content="https://william.llcdouglashill.com/contact.html">
+  <meta property="og:image" content="https://william.llcdouglashill.com/assets/images/IMG_9852.jpg">
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicon -->
@@ -22,19 +23,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
   <!-- Styles -->
   <link rel="stylesheet" href="css/styles.css">
 
   <style>
-    /* === CONTACT PAGE === */
-
-    /* Page intro */
-    .contact-intro {
-      margin-bottom: 52px;
-    }
+    /* === CONTACT / QUALIFICATION PAGE === */
+    .contact-hero { padding-bottom: 0; }
     .contact-page-title {
       font-family: 'Newsreader', Georgia, serif;
       font-size: 52px;
@@ -42,149 +36,169 @@
       letter-spacing: -0.75px;
       line-height: 1.1;
       color: var(--text);
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
+    @media (max-width: 480px) { .contact-page-title { font-size: 40px; } }
     .contact-page-subtitle {
       font-size: 17px;
       line-height: 1.75;
       color: var(--text-secondary);
-      max-width: 480px;
+      max-width: 560px;
     }
 
-    /* Contact method list */
-    .contact-list {
-      border: 1px solid var(--border);
-      border-radius: var(--radius-card);
-      overflow: hidden;
-      margin-bottom: 36px;
-    }
-
-    .contact-row {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      padding: 20px 20px;
-      text-decoration: none;
-      color: var(--text);
-      transition: background 0.15s ease;
-      border-bottom: 1px solid var(--border);
-    }
-    .contact-row:last-child {
-      border-bottom: none;
-    }
-    .contact-row:hover {
-      background: var(--bg-hover);
-    }
-
-    /* Icon container */
-    .contact-icon {
-      width: 42px;
-      height: 42px;
-      border-radius: 10px;
-      background: var(--bg-warm);
-      border: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      transition: background 0.15s ease, border-color 0.15s ease;
-    }
-    .contact-row:hover .contact-icon {
-      background: white;
-      border-color: var(--border-hover);
-    }
-
-    /* Text inside row */
-    .contact-row-body {
-      flex: 1;
-      min-width: 0;
-    }
-    .contact-row-label {
+    /* Step blocks */
+    .contact-step { margin-top: 48px; }
+    .contact-step:first-of-type { margin-top: 40px; }
+    .contact-step-eyebrow {
       font-size: 12px;
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 1.2px;
-      color: var(--text-light);
-      margin-bottom: 2px;
+      letter-spacing: 1.5px;
+      color: var(--accent-text);
+      margin-bottom: 8px;
     }
-    .contact-row-value {
-      font-size: 15px;
-      font-weight: 500;
+    .contact-block-title {
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 26px;
+      font-weight: 600;
+      letter-spacing: -0.3px;
       color: var(--text);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      margin-bottom: 8px;
+    }
+    .contact-block-sub {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      max-width: 560px;
+      margin-bottom: 18px;
     }
 
-    /* Arrow indicator */
-    .contact-arrow {
-      color: var(--text-light);
-      flex-shrink: 0;
-      opacity: 0;
-      transform: translateX(-4px);
-      transition: opacity 0.15s ease, transform 0.15s ease, color 0.15s ease;
+    /* Calendly embed */
+    .calendly-inline-widget {
+      min-width: 320px;
+      height: 680px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      margin-top: 20px;
     }
-    .contact-row:hover .contact-arrow {
-      opacity: 1;
-      transform: translateX(0);
+    .calendly-fallback {
+      font-size: 13px;
+      color: var(--text-light);
+      margin-top: 10px;
+    }
+    .calendly-fallback a { color: var(--accent-text); }
+
+    /* Qualification form */
+    .qual-form {
+      max-width: 620px;
+      margin-top: 8px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .qual-field { display: flex; flex-direction: column; gap: 6px; }
+    .qual-field--full { grid-column: 1 / -1; }
+    .qual-field label {
+      font-size: 13px;
+      font-weight: 600;
       color: var(--text-secondary);
     }
-    @media (max-width: 767px) {
-      .contact-arrow { opacity: 1; transform: none; }
+    .qual-field label .req { color: var(--accent); }
+    .qual-field input,
+    .qual-field select,
+    .qual-field textarea {
+      font-family: inherit;
+      font-size: 15px;
+      color: var(--text);
+      background: var(--bg);
+      border: 1px solid var(--border-hover);
+      border-radius: var(--radius);
+      padding: 10px 12px;
+      width: 100%;
+      transition: border-color 0.15s ease;
+    }
+    .qual-field input:focus,
+    .qual-field select:focus,
+    .qual-field textarea:focus {
+      outline: 2px solid var(--accent);
+      outline-offset: 1px;
+      border-color: var(--accent);
+    }
+    .qual-field textarea { resize: vertical; min-height: 96px; }
+    .qual-submit-row { grid-column: 1 / -1; }
+
+    /* Chip choice groups (replace native selects) */
+    .chip-group { border: 0; padding: 0; margin: 0; min-width: 0; }
+    .chip-group legend {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      padding: 0;
+      margin-bottom: 8px;
+    }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip { cursor: pointer; }
+    .chip input {
+      position: absolute;
+      opacity: 0;
+      width: 1px; height: 1px;
+    }
+    .chip span {
+      display: inline-block;
+      padding: 7px 14px;
+      border-radius: 100px;
+      border: 1px solid var(--border-hover);
+      background: transparent;
+      font-size: 14px;
+      color: var(--text-secondary);
+      transition: all 0.15s ease;
+    }
+    .chip:hover span { background: var(--bg-hover); color: var(--text); }
+    .chip input:checked + span {
+      background: var(--text);
+      color: #fff;
+      border-color: var(--text);
+    }
+    .chip input:focus-visible + span {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+    @media (max-width: 560px) {
+      .qual-form { grid-template-columns: 1fr; }
     }
 
-    /* Location line */
+    /* Hero CTA row */
+    .contact-cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+    .contact-cta-note { font-size: 13px; color: var(--text-light); margin-top: 12px; }
+    .contact-cta-note strong { color: var(--text-secondary); font-weight: 600; }
+    .qual-hp { display: none; }
+
+    /* Fallback block */
+    .contact-fallback {
+      margin-top: 52px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+    }
+    .contact-fallback-links {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.9;
+    }
+    .contact-fallback-links a { color: var(--text); font-weight: 500; text-decoration: none; }
+    .contact-fallback-links a:hover { color: var(--accent-text); }
+    .contact-fallback-sep { color: var(--border-hover); margin: 0 8px; }
     .contact-location {
       font-size: 14px;
       color: var(--text-light);
+      margin-top: 10px;
       display: flex;
       align-items: center;
       gap: 8px;
     }
     .contact-location-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--accent);
-      flex-shrink: 0;
-      opacity: 0.6;
-    }
-
-    /* Staggered fade-in on load */
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    .contact-intro {
-      animation: fadeUp 0.4s ease both;
-      animation-delay: 0.05s;
-    }
-    .contact-list {
-      animation: fadeUp 0.4s ease both;
-      animation-delay: 0.15s;
-    }
-    .contact-location-row {
-      animation: fadeUp 0.4s ease both;
-      animation-delay: 0.25s;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .contact-intro,
-      .contact-list,
-      .contact-location-row {
-        animation: none;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .contact-page-title { font-size: 40px; }
-      .contact-row { padding: 16px; }
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent); flex-shrink: 0; opacity: 0.6;
     }
   </style>
 </head>
@@ -198,9 +212,10 @@
     <a href="index.html" class="nav-logo">Douglas Hill</a>
 
     <div class="nav-links">
+      <a href="services.html" class="nav-link">Services</a>
       <a href="projects.html" class="nav-link">Projects</a>
       <a href="resume.html" class="nav-link nav-link--resume">Resume</a>
-      <a href="contact.html" class="nav-cta">Get in touch</a>
+      <a href="contact.html" class="nav-cta" aria-current="page">Book a call</a>
     </div>
 
     <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
@@ -212,119 +227,96 @@
 
   <!-- Mobile nav overlay -->
   <nav class="nav-overlay" aria-label="Mobile navigation">
+    <a href="services.html">Services</a>
     <a href="projects.html">Projects</a>
     <a href="resume.html">Resume</a>
-    <a href="contact.html">Get in touch</a>
+    <a href="contact.html">Book a call</a>
   </nav>
 
   <!-- Main content -->
   <main id="main">
-    <section class="section">
 
-      <!-- Intro -->
-      <div class="contact-intro">
-        <h1 class="contact-page-title">Get in touch</h1>
-        <p class="contact-page-subtitle">
-          I'm always happy to hear about new opportunities, projects, or ideas.
-        </p>
+    <!-- Hero -->
+    <section class="section contact-hero">
+      <h1 class="contact-page-title">Let's scope the fix.</h1>
+      <p class="contact-page-subtitle">
+        Power Platform governance, Dataverse apps, workflow modernization, Power BI reporting, or Power Pages delivery — bring the problem, and leave with a plan and a straight answer on whether it's worth doing.
+      </p>
+      <div class="contact-cta-row">
+        <a href="https://calendly.com/douglashill-llcdouglashill/30min" class="btn-dark" target="_blank" rel="noopener noreferrer" onclick="openCalendly();return false;">Book a 30-minute call</a>
+        <a href="#send" class="btn-outline">Send project details</a>
       </div>
+      <p class="contact-cta-note"><strong>Fastest:</strong> book a call. <strong>Prefer to send context first?</strong> Use the form below.</p>
+    </section>
 
-      <!-- Contact methods -->
-      <div class="contact-list" role="list">
-
-        <!-- Email -->
-        <a
-          href="mailto:w.douglas.hill.mba@gmail.com"
-          class="contact-row"
-          role="listitem"
-          aria-label="Email Douglas at w.douglas.hill.mba@gmail.com"
-        >
-          <div class="contact-icon" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect x="2" y="4.5" width="16" height="11" rx="2" stroke="var(--accent-text)" stroke-width="1.5"/>
-              <path d="M2 7l7.116 4.478a1.6 1.6 0 0 0 1.768 0L18 7" stroke="var(--accent-text)" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="contact-row-body">
-            <div class="contact-row-label">Email</div>
-            <div class="contact-row-value">w.douglas.hill.mba@gmail.com</div>
-          </div>
-          <svg class="contact-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-
-        <!-- LinkedIn -->
-        <a
-          href="https://linkedin.com/in/w-douglas-hill-mba/"
-          class="contact-row"
-          role="listitem"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Douglas Hill on LinkedIn (opens in new tab)"
-        >
-          <div class="contact-icon" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect x="2" y="2" width="16" height="16" rx="3" stroke="var(--accent-text)" stroke-width="1.5"/>
-              <path d="M6 8.5v5.5" stroke="var(--accent-text)" stroke-width="1.5" stroke-linecap="round"/>
-              <circle cx="6" cy="6.25" r="0.9" fill="var(--accent-text)"/>
-              <path d="M9.5 14V11a2 2 0 0 1 4 0v3" stroke="var(--accent-text)" stroke-width="1.5" stroke-linecap="round"/>
-              <path d="M9.5 8.5V14" stroke="var(--accent-text)" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="contact-row-body">
-            <div class="contact-row-label">LinkedIn</div>
-            <div class="contact-row-value">linkedin.com/in/w-douglas-hill-mba/</div>
-          </div>
-          <svg class="contact-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-
-        <!-- GitHub -->
-        <a
-          href="https://github.com/douglashill"
-          class="contact-row"
-          role="listitem"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Douglas Hill on GitHub (opens in new tab)"
-        >
-          <div class="contact-icon" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M10 2a8 8 0 0 0-2.529 15.591c.4.074.546-.174.546-.386
-                   0-.19-.007-.693-.011-1.36-2.226.484-2.695-1.073-2.695-1.073-.364-.924-.888-1.17-.888-1.17
-                   -.726-.496.055-.486.055-.486.802.056 1.225.824 1.225.824.713 1.222 1.871.869 2.327.664
-                   .072-.516.279-.869.507-1.068-1.776-.202-3.644-.888-3.644-3.953
-                   0-.873.311-1.587.822-2.147-.082-.202-.356-1.015.078-2.117
-                   0 0 .671-.215 2.2.82a7.653 7.653 0 0 1 2-.27c.679.004 1.362.092 2 .27
-                   1.527-1.035 2.198-.82 2.198-.82.435 1.102.161 1.915.079 2.117
-                   .512.56.822 1.274.822 2.147 0 3.073-1.871 3.749-3.653 3.947
-                   .287.248.543.736.543 1.482 0 1.069-.01 1.932-.01 2.194
-                   0 .214.144.463.55.385A8.001 8.001 0 0 0 10 2z"
-                fill="var(--accent-text)"
-              />
-            </svg>
-          </div>
-          <div class="contact-row-body">
-            <div class="contact-row-label">GitHub</div>
-            <div class="contact-row-value">github.com/douglashill</div>
-          </div>
-          <svg class="contact-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-
-      </div>
-
-      <!-- Location -->
-      <p class="contact-location contact-location-row">
-        <span class="contact-location-dot" aria-hidden="true"></span>
-        Tempe, AZ &middot; Open to remote opportunities
+    <!-- Send project details -->
+    <section class="section contact-step" id="send" aria-labelledby="form-heading">
+      <p class="contact-step-eyebrow">Prefer context first</p>
+      <h2 class="contact-block-title" id="form-heading">Send project details</h2>
+      <p class="contact-block-sub">
+        A few lines is plenty — enough to tell whether it's a fit and come prepared. I read every one.
       </p>
 
+      <form class="qual-form" action="https://formspree.io/f/xgobdbaq" method="POST">
+        <input type="hidden" name="_subject" value="New project inquiry — Douglas Hill Consulting">
+        <input type="hidden" name="_next" value="https://william.llcdouglashill.com/thank-you.html">
+        <input type="text" name="_gotcha" class="qual-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="qual-field">
+          <label for="f-name">Name <span class="req" aria-hidden="true">*</span></label>
+          <input type="text" id="f-name" name="name" autocomplete="name" required>
+        </div>
+        <div class="qual-field">
+          <label for="f-email">Work email <span class="req" aria-hidden="true">*</span></label>
+          <input type="email" id="f-email" name="email" autocomplete="email" required>
+        </div>
+        <div class="qual-field qual-field--full">
+          <label for="f-org">Organization</label>
+          <input type="text" id="f-org" name="organization" autocomplete="organization">
+        </div>
+        <div class="qual-field qual-field--full">
+          <label for="f-problem">What are you trying to fix? <span class="req" aria-hidden="true">*</span></label>
+          <textarea id="f-problem" name="what_to_fix" required placeholder="e.g. approvals run on email + a shared spreadsheet; monthly report built by hand; Power Apps sprawl with no DLP…"></textarea>
+        </div>
+        <fieldset class="qual-field qual-field--full chip-group">
+          <legend>Timeline</legend>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="timeline" value="ASAP"><span>ASAP</span></label>
+            <label class="chip"><input type="radio" name="timeline" value="1–3 months"><span>1–3 months</span></label>
+            <label class="chip"><input type="radio" name="timeline" value="3–6 months"><span>3–6 months</span></label>
+            <label class="chip"><input type="radio" name="timeline" value="Just exploring"><span>Just exploring</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="qual-field qual-field--full chip-group">
+          <legend>Budget / engagement type</legend>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="engagement" value="Fixed-scope project"><span>Fixed-scope project</span></label>
+            <label class="chip"><input type="radio" name="engagement" value="Assessment / review"><span>Assessment / review</span></label>
+            <label class="chip"><input type="radio" name="engagement" value="Monthly retainer"><span>Monthly retainer</span></label>
+            <label class="chip"><input type="radio" name="engagement" value="Not sure yet"><span>Not sure yet</span></label>
+          </div>
+        </fieldset>
+        <div class="qual-submit-row">
+          <button type="submit" class="btn-dark">Send project details</button>
+        </div>
+      </form>
     </section>
+
+    <!-- Fallback -->
+    <section class="section contact-fallback" aria-labelledby="direct-heading">
+      <p class="contact-step-eyebrow" id="direct-heading">Or reach me directly</p>
+      <p class="contact-fallback-links">
+        <a href="mailto:DouglasHill@llcdouglashill.com">DouglasHill@llcdouglashill.com</a>
+        <span class="contact-fallback-sep" aria-hidden="true">·</span>
+        <a href="https://linkedin.com/in/w-douglas-hill-mba/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <span class="contact-fallback-sep" aria-hidden="true">·</span>
+        <a href="https://github.com/kast2L" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </p>
+      <p class="contact-location">
+        <span class="contact-location-dot" aria-hidden="true"></span>
+        Based in Tempe, AZ · serving clients remotely across the US
+      </p>
+    </section>
+
   </main>
 
   <!-- Footer -->
@@ -332,11 +324,26 @@
     <span>&copy; 2026 Douglas Hill</span>
     <nav class="footer-links" aria-label="Social links">
       <a href="https://linkedin.com/in/w-douglas-hill-mba/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      <a href="https://github.com/douglashill" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a href="mailto:w.douglas.hill.mba@gmail.com">Email</a>
+      <a href="https://github.com/kast2L" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="mailto:DouglasHill@llcdouglashill.com">Email</a>
     </nav>
   </footer>
 
+  <!-- Calendly popup — lazy-loaded only when the user clicks "Book a call" (no third-party weight on load) -->
+  <script>
+    function openCalendly() {
+      var url = 'https://calendly.com/douglashill-llcdouglashill/30min';
+      if (window.Calendly) { window.Calendly.initPopupWidget({ url: url }); return; }
+      var css = document.createElement('link');
+      css.rel = 'stylesheet';
+      css.href = 'https://assets.calendly.com/assets/external/widget.css';
+      document.head.appendChild(css);
+      var js = document.createElement('script');
+      js.src = 'https://assets.calendly.com/assets/external/widget.js';
+      js.onload = function () { window.Calendly.initPopupWidget({ url: url }); };
+      document.body.appendChild(js);
+    }
+  </script>
   <script src="js/main.js"></script>
 </body>
 </html>

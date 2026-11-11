@@ -1,0 +1,16 @@
+# Adobe credentials (secrets)
+.adobe-credentials.json
+
+# Build artifacts and dependencies
+node_modules/
+
+# OS and editor noise
+.DS_Store
+
+# Python build output
+__pycache__/
+*.pyc
+*.egg-info/
+
+# Local tool session state
+.superpowers/
