@@ -1,0 +1,17 @@
+---
+import SimpleLayout from '../layouts/SimpleLayout.astro';
+import BookCall from '../components/BookCall.astro';
+import { SITE } from '../lib/site';
+---
+
+<SimpleLayout
+  title="Thank you | Douglas Hill Consulting"
+  description="Your note to Douglas Hill Consulting has been received."
+  path="/thank-you"
+  heading="Thank you. Your note is with me."
+>
+  <p>I read every note myself and reply by email. If you would rather talk it through now, book a time below.</p>
+  <BookCall location="thank-you" />
+  <p class="thanks-email">Or email <a class="text-link" href={`mailto:${SITE.email}`}>{SITE.email}</a></p>
+  <p><a class="text-link" href="/">Back to the home page</a></p>
+</SimpleLayout>

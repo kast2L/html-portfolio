@@ -1,0 +1,280 @@
+---
+import Icon from '../Icon.astro';
+
+const pillars = [
+  {
+    id: 'pillar-apps',
+    accent: 'coral',
+    icon: 'layers' as const,
+    kicker: 'Web & Business Applications',
+    title: 'Custom Web Apps, Power Apps & External Portals',
+    lead: 'When a critical operation outgrows spreadsheets or off-the-shelf templates, I design and ship bespoke software tailored to every user role.',
+    bullets: [
+      'Full-stack custom web applications in React, TypeScript, Astro, and modern JavaScript',
+      'Canvas & Model-Driven Power Apps backed by clean Microsoft Dataverse schemas',
+      'Public-facing Power Pages portals for external applicants, vendors, and citizens',
+      'Row-level security, custom API connectors, and DEV / TEST / PROD ALM pipelines',
+    ],
+    tags: ['React & TypeScript', 'Power Apps', 'Power Pages', 'Dataverse', 'REST APIs'],
+  },
+  {
+    id: 'pillar-bi',
+    accent: 'sky',
+    icon: 'chart' as const,
+    kicker: 'Analytics & Decision Support',
+    title: 'Power BI Dashboards & Semantic Data Models',
+    lead: 'Stop rebuilding the same slide deck or Excel rollup every month. Get live executive visibility wired straight to your systems of record.',
+    bullets: [
+      'Interactive Power BI KPI suites for leadership, analysts, and program directors',
+      'Clean star-schema data modeling and DAX measures over SQL, Dataverse, or SharePoint',
+      'Automated scheduled refresh and role-based audience distribution',
+      'Operational telemetry tied directly to your intake apps and workflows',
+    ],
+    tags: ['Power BI', 'DAX & Modeling', 'SQL & Dataverse', 'Executive KPIs'],
+  },
+  {
+    id: 'pillar-auto',
+    accent: 'amber',
+    icon: 'flow' as const,
+    kicker: 'Process & Legacy Modernization',
+    title: 'Intelligent Workflow Automation & Integrations',
+    lead: 'Replace fragile Nintex workflows, aging Access databases, and inbox sign-off chains with resilient cloud orchestration that audits itself.',
+    bullets: [
+      'Multi-stage Power Automate orchestration with parallel, conditional, and delegated routing',
+      'Seamless bridges across Microsoft 365, Teams, Dynamics 365, SQL, and third-party APIs',
+      'Automated validation, exception handling, and immutable compliance histories',
+      'Legacy migrations delivered without disrupting day-to-day operations',
+    ],
+    tags: ['Power Automate', 'System Integration', 'Legacy Modernization', 'Audit Ready'],
+  },
+  {
+    id: 'pillar-gov',
+    accent: 'mint',
+    icon: 'shield' as const,
+    kicker: 'Enterprise Guardrails & Cloud',
+    title: 'Platform Governance, CoE & Cloud Architecture',
+    lead: 'Scale citizen and pro-code development safely across dozens or hundreds of environments — backed by sound Azure and AWS foundations.',
+    bullets: [
+      'Power Platform Center of Excellence (CoE Starter Kit) deployment and telemetry',
+      'Tenant- and environment-level Data Loss Prevention (DLP) policy architecture',
+      'Licensing optimization, capacity planning, and automated solution pipelines',
+      'Cloud migrations and serverless/web architecture across Azure and AWS',
+    ],
+    tags: ['CoE Starter Kit', 'DLP & Security', 'Azure', 'AWS Solutions Architect'],
+  },
+];
+---
+
+<section class="capabilities surface-silk" id="capabilities" aria-labelledby="capabilities-title">
+  <div class="container">
+    <div class="cap-header" data-reveal-solo>
+      <h2 class="section-heading cap-heading" id="capabilities-title">
+        One senior architect across the <span class="serif-italic">entire ecosystem.</span>
+      </h2>
+
+      <p class="section-lead">
+        You never have to guess whether your bottleneck needs a custom React web app, a Dataverse portal, a Power&nbsp;BI
+        model, or an automated cloud flow. Bring the business problem — I architect and build the right fit.
+      </p>
+    </div>
+
+    <div class="bento-grid" data-reveal-group>
+      {
+        pillars.map((p) => (
+          <article class:list={['bento-card', `bento-card--${p.accent}`]} id={p.id} data-reveal data-spotlight>
+            <div class="bento-top">
+              <span class="bento-icon-wrap">
+                <Icon name={p.icon} class="bento-icon" />
+              </span>
+              <span class="bento-kicker">{p.kicker}</span>
+            </div>
+
+            <h3 class="bento-title">{p.title}</h3>
+            <p class="bento-lead">{p.lead}</p>
+
+            <ul class="bento-list">
+              {p.bullets.map((b) => (
+                <li>
+                  <Icon name="check" class="bento-check" />
+                  <span>{b}</span>
+                </li>
+              ))}
+            </ul>
+
+            <ul class="bento-tags" aria-label={`${p.title} stack`}>
+              {p.tags.map((t) => (
+                <li class="pill-tag">{t}</li>
+              ))}
+            </ul>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .capabilities {
+    padding-block: var(--section-pad);
+  }
+
+  .cap-header {
+    display: grid;
+    gap: var(--s-4);
+    justify-items: start;
+    max-width: 52rem;
+  }
+
+  .cap-heading {
+    color: var(--c-ink);
+  }
+
+  .bento-grid {
+    margin-top: clamp(2.5rem, 2rem + 2vw, 4rem);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(1.25rem, 1rem + 1vw, 1.75rem);
+  }
+
+  .bento-card {
+    --spot-x: 50%;
+    --spot-y: 0%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    padding: clamp(1.5rem, 1.2rem + 1.4vw, 2.35rem);
+    border-radius: var(--r-card);
+    background:
+      radial-gradient(
+        420px circle at var(--spot-x) var(--spot-y),
+        var(--card-tint, rgba(255, 107, 74, 0.08)),
+        transparent 70%
+      ),
+      var(--c-silk-card);
+    border: 1px solid var(--c-line-light);
+    box-shadow: var(--shadow-soft);
+    transition:
+      transform var(--dur) var(--ease-spring),
+      box-shadow var(--dur) var(--ease-fluid),
+      border-color var(--dur-fast) var(--ease-fluid);
+  }
+
+  .bento-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lift);
+    border-color: var(--c-line-light-strong);
+  }
+
+  .bento-card--coral {
+    --card-tint: rgba(255, 107, 74, 0.09);
+    --accent-fg: var(--c-coral-ink);
+    --accent-bg: rgba(255, 107, 74, 0.12);
+  }
+
+  .bento-card--sky {
+    --card-tint: rgba(94, 194, 255, 0.12);
+    --accent-fg: var(--c-sky-ink);
+    --accent-bg: rgba(94, 194, 255, 0.16);
+  }
+
+  .bento-card--amber {
+    --card-tint: rgba(255, 170, 92, 0.13);
+    --accent-fg: var(--c-amber-ink);
+    --accent-bg: rgba(255, 170, 92, 0.18);
+  }
+
+  .bento-card--mint {
+    --card-tint: rgba(43, 181, 154, 0.11);
+    --accent-fg: var(--c-mint-ink);
+    --accent-bg: rgba(94, 234, 212, 0.22);
+  }
+
+  .bento-top {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .bento-icon-wrap {
+    width: 2.85rem;
+    height: 2.85rem;
+    border-radius: 0.95rem;
+    display: grid;
+    place-items: center;
+    background: var(--accent-bg);
+    color: var(--accent-fg);
+    flex: none;
+  }
+
+  .bento-icon {
+    width: 1.35rem;
+    height: 1.35rem;
+  }
+
+  .bento-kicker {
+    font-size: var(--fs-label);
+    font-weight: var(--w-semibold);
+    color: var(--accent-fg);
+  }
+
+  .bento-title {
+    font-size: var(--fs-h3);
+    line-height: 1.2;
+    color: var(--c-ink);
+  }
+
+  .bento-lead {
+    font-size: var(--fs-small);
+    line-height: 1.6;
+    color: var(--c-ink-2);
+  }
+
+  .bento-list {
+    display: grid;
+    gap: 0.6rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--c-line-light);
+  }
+
+  .bento-list li {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.65rem;
+    align-items: start;
+    font-size: var(--fs-small);
+    line-height: 1.5;
+    color: var(--c-ink-2);
+  }
+
+  .bento-check {
+    width: 1.05rem;
+    height: 1.05rem;
+    margin-top: 0.18rem;
+    color: var(--accent-fg);
+  }
+
+  .bento-tags {
+    margin-top: auto;
+    padding-top: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.42rem;
+  }
+
+  @media (min-width: 860px) {
+    .bento-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .bento-card {
+      transition: border-color var(--dur-fast) ease;
+    }
+
+    .bento-card:hover {
+      transform: none;
+    }
+  }
+</style>

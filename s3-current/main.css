@@ -1,0 +1,25 @@
+* {
+    
+    margin: auto;
+}
+body{
+    background-color: #f4f4f4;
+    color: #555555;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6em;
+}
+.container{
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+}
+.resumeitems{
+    width: 70%;
+    margin: auto;
+    border: 2px gray solid;
+
+}
+.sidebar{
+    display: flex;
+        
+}

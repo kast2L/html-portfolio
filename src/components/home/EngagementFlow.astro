@@ -1,0 +1,244 @@
+---
+import BookCall from '../BookCall.astro';
+
+const tracks = [
+  {
+    badge: '2 – 6 Weeks',
+    title: 'Focused Build',
+    body: 'Ship a high-impact Power BI executive dashboard, a targeted Power App or web tool, or an automated cloud workflow with clear milestones and zero scope creep.',
+  },
+  {
+    badge: 'End-to-End Delivery',
+    title: 'Product & Platform Architecture',
+    body: 'Design and launch multi-role Dataverse applications, public Power Pages portals, custom React/TypeScript web apps, or legacy Nintex & Access migrations.',
+  },
+  {
+    badge: 'Tenant & Cloud Guardrails',
+    title: 'Governance & Advisory',
+    body: 'Audit sprawling environments, deploy the CoE Starter Kit, establish DLP & ALM pipelines, or architect scalable Azure and AWS cloud foundations.',
+  },
+];
+
+const steps = [
+  {
+    step: 'Step 1',
+    title: 'Plain-English discovery call',
+    detail: 'Tell me where your team is losing time or visibility. In 30 minutes we clarify whether the right answer is a web app, Power App, Power BI model, flow, or governance fix.',
+  },
+  {
+    step: 'Step 2',
+    title: 'Clear architecture & fixed proposal',
+    detail: 'You get a concise, readable blueprint outlining the recommended stack, security model, timeline, and pricing before a single line or flow is built.',
+  },
+  {
+    step: 'Step 3',
+    title: 'Built directly inside your cloud',
+    detail: 'Everything is built in your own Microsoft 365, Azure, or AWS environment with regular working demos — never trapped inside proprietary agency software.',
+  },
+  {
+    step: 'Step 4',
+    title: 'Clean handoff, docs & training',
+    detail: 'Every engagement closes with architecture runbooks, solution source control, and live walkthroughs so your team owns and operates it confidently.',
+  },
+];
+---
+
+<section class="approach surface-silk" id="approach" aria-labelledby="approach-title">
+  <div class="container">
+    <div class="approach-header" data-reveal-solo>
+      <h2 class="section-heading approach-heading" id="approach-title">
+        Flexible ways to build. <span class="serif-italic">Zero agency handoffs.</span>
+      </h2>
+
+      <p class="section-lead">
+        Whether you need a single live dashboard in a few weeks or an enterprise portal across hundreds of users, you
+        work directly with the principal architect from first conversation to production launch.
+      </p>
+    </div>
+
+    <div class="tracks-grid" data-reveal-group>
+      {
+        tracks.map((t) => (
+          <article class="track-card" data-reveal>
+            <span class="track-badge">{t.badge}</span>
+            <h3 class="track-title">{t.title}</h3>
+            <p class="track-body">{t.body}</p>
+          </article>
+        ))
+      }
+    </div>
+
+    <div class="flow-panel" data-reveal-solo>
+      <div class="flow-intro">
+        <h3 class="flow-heading">
+          Built in your own cloud, <span class="serif-italic">owned by your team.</span>
+        </h3>
+        <p class="flow-sub">
+          No black-box retainers, no surprise licensing traps, and no junior handoffs partway through delivery.
+        </p>
+        <div class="flow-cta">
+          <BookCall location="offer" variant="ink" magnetic />
+        </div>
+      </div>
+
+      <ol class="flow-steps">
+        {
+          steps.map((s) => (
+            <li class="flow-step">
+              <span class="flow-pill">{s.step}</span>
+              <div>
+                <h4 class="flow-step-title">{s.title}</h4>
+                <p class="flow-step-detail">{s.detail}</p>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </div>
+</section>
+
+<style>
+  .approach {
+    padding-block: var(--section-pad);
+  }
+
+  .approach-header {
+    display: grid;
+    gap: var(--s-4);
+    justify-items: start;
+    max-width: 52rem;
+  }
+
+  .approach-heading {
+    color: var(--c-ink);
+  }
+
+  .tracks-grid {
+    margin-top: clamp(2.25rem, 1.75rem + 2vw, 3.5rem);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .track-card {
+    padding: clamp(1.5rem, 1.25rem + 1.2vw, 2.15rem);
+    border-radius: var(--r-card);
+    background: var(--c-silk-card);
+    border: 1px solid var(--c-line-light);
+    box-shadow: var(--shadow-soft);
+    display: grid;
+    gap: 0.75rem;
+    align-content: start;
+  }
+
+  .track-badge {
+    justify-self: start;
+    padding: 0.3rem 0.78rem;
+    border-radius: var(--r-pill);
+    font-size: 0.78125rem;
+    font-weight: var(--w-semibold);
+    background: rgba(255, 107, 74, 0.12);
+    color: var(--c-coral-ink);
+  }
+
+  .track-title {
+    font-size: var(--fs-card-title);
+    line-height: 1.22;
+    color: var(--c-ink);
+  }
+
+  .track-body {
+    font-size: var(--fs-small);
+    line-height: 1.62;
+    color: var(--c-ink-2);
+  }
+
+  .flow-panel {
+    margin-top: clamp(2rem, 1.5rem + 2vw, 3rem);
+    padding: clamp(1.6rem, 1.25rem + 2vw, 3rem);
+    border-radius: var(--r-card-lg);
+    background: var(--c-silk-2);
+    border: 1px solid var(--c-line-light);
+    display: grid;
+    gap: var(--s-7);
+  }
+
+  .flow-intro {
+    display: grid;
+    gap: var(--s-4);
+    align-content: start;
+    justify-items: start;
+  }
+
+  .flow-heading {
+    font-size: var(--fs-subhead);
+    line-height: 1.12;
+    color: var(--c-ink);
+  }
+
+  .flow-sub {
+    font-size: var(--fs-body);
+    line-height: 1.6;
+    color: var(--c-ink-2);
+    max-width: 40ch;
+  }
+
+  .flow-cta {
+    margin-top: var(--s-2);
+  }
+
+  .flow-steps {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .flow-step {
+    display: grid;
+    gap: 0.5rem;
+    padding: 1.2rem 1.35rem;
+    border-radius: var(--r-dock);
+    background: var(--c-silk-card);
+    border: 1px solid var(--c-line-light);
+  }
+
+  .flow-pill {
+    justify-self: start;
+    padding: 0.22rem 0.65rem;
+    border-radius: var(--r-pill);
+    font-size: var(--fs-micro);
+    font-weight: var(--w-bold);
+    background: var(--c-silk-2);
+    color: var(--c-ink-2);
+  }
+
+  .flow-step-title {
+    font-size: 1.0625rem;
+    line-height: 1.3;
+    color: var(--c-ink);
+  }
+
+  .flow-step-detail {
+    margin-top: 0.3rem;
+    font-size: var(--fs-small);
+    line-height: 1.58;
+    color: var(--c-ink-2);
+  }
+
+  @media (min-width: 860px) {
+    .tracks-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .flow-panel {
+      grid-template-columns: 0.9fr 1.1fr;
+      align-items: start;
+    }
+
+    .flow-step {
+      grid-template-columns: auto 1fr;
+      gap: 1rem;
+      align-items: start;
+    }
+  }
+</style>

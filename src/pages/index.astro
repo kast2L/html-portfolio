@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroStudio from '../components/home/HeroStudio.astro';
+import EcosystemRibbon from '../components/home/EcosystemRibbon.astro';
+import CapabilitiesBento from '../components/home/CapabilitiesBento.astro';
+import SelectedWork from '../components/home/SelectedWork.astro';
+import EngagementFlow from '../components/home/EngagementFlow.astro';
+import ArchitectProfile from '../components/home/ArchitectProfile.astro';
+import StudioFaq from '../components/home/StudioFaq.astro';
+import ContactStudio from '../components/home/ContactStudio.astro';
+import { SITE } from '../lib/site';
+
+const title = 'Douglas Hill Consulting | Power Platform, Power BI, Web Apps & Cloud Architecture';
+const description =
+  'Full-suite Microsoft Power Platform, Power BI dashboards, custom web applications, intelligent automation, and cloud governance — architected end-to-end by Douglas Hill.';
+
+// Verified public structured data facts only.
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  '@id': 'https://william.llcdouglashill.com/#business',
+  name: SITE.business,
+  url: 'https://william.llcdouglashill.com/',
+  email: SITE.email,
+  image: 'https://william.llcdouglashill.com/assets/og-image.png',
+  description:
+    'Custom web applications, Microsoft Power Platform (Power Apps, Power Pages, Power Automate, Dataverse), Power BI executive analytics, and Azure/AWS cloud governance.',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: SITE.locality,
+    addressRegion: SITE.region,
+    addressCountry: 'US',
+  },
+  areaServed: { '@type': 'Country', name: 'United States' },
+  founder: {
+    '@type': 'Person',
+    name: SITE.person,
+    jobTitle: 'Principal Solution Architect',
+    sameAs: [SITE.linkedin],
+  },
+  knowsAbout: [
+    'Microsoft Power Platform',
+    'Power Apps',
+    'Power BI',
+    'Power Pages',
+    'Power Automate',
+    'Microsoft Dataverse',
+    'Dynamics 365',
+    'Custom Web Applications',
+    'React',
+    'TypeScript',
+    'Microsoft Azure',
+    'Amazon Web Services',
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  path="/"
+  leadForm
+  sectionNav
+  ogTitle="Douglas Hill Consulting — Apps, Power BI, Power Platform & Cloud Architecture"
+  ogDescription="Custom web applications, full-suite Microsoft Power Platform, live Power BI intelligence, and enterprise governance — built end-to-end by one senior principal."
+>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <HeroStudio />
+  <EcosystemRibbon />
+  <CapabilitiesBento />
+  <SelectedWork />
+  <EngagementFlow />
+  <ArchitectProfile />
+  <StudioFaq />
+  <ContactStudio />
+</BaseLayout>
+
+<script>
+  import '../scripts/motion';
+</script>

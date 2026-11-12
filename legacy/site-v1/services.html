@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://william.llcdouglashill.com/services.html">
+  <title>Services — Douglas Hill | Power Platform Solution Architect</title>
+  <meta name="description" content="Power Platform services from Douglas Hill Consulting — process automation, Power BI dashboards, business apps, and platform governance. Find the fix for your problem and book a call.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Services — Douglas Hill | Power Platform Solution Architect">
+  <meta property="og:description" content="Find the problem you're trying to fix, and see exactly what you get. Process automation, Power BI dashboards, business apps, and Power Platform governance.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://william.llcdouglashill.com/services.html">
+  <meta property="og:image" content="https://william.llcdouglashill.com/assets/images/IMG_9852.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    /* === PAGE HEADER === */
+    .services-page-header { padding-bottom: 0; }
+    .services-headline {
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 56px;
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: -0.5px;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+    @media (max-width: 640px) { .services-headline { font-size: 40px; } }
+    .services-intro {
+      font-size: 17px;
+      line-height: 1.75;
+      color: var(--text-secondary);
+      max-width: 620px;
+    }
+    .services-intro strong { color: var(--text); font-weight: 600; }
+
+    /* === START-HERE NOTE === */
+    .start-here {
+      max-width: var(--max-w);
+      margin: 28px auto 0;
+      padding: 0 var(--section-px);
+    }
+    .start-here-inner {
+      background: var(--bg-warm);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      padding: 20px 24px;
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text-secondary);
+    }
+    .start-here-inner strong { color: var(--text); font-weight: 600; }
+
+    /* === SERVICE CARDS === */
+    .services-list-section { padding-top: 40px; }
+    .svc-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      background: var(--bg);
+      padding: 28px;
+      margin-bottom: 24px;
+      transition: border-color 0.15s ease;
+    }
+    .svc-card:hover { border-color: var(--border-hover); }
+    .svc-card--featured {
+      border-color: var(--accent);
+      box-shadow: var(--shadow-card);
+    }
+
+    .svc-head {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 22px;
+    }
+    .svc-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      background: var(--bg-warm);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .svc-card--featured .svc-icon {
+      background: var(--accent-soft);
+      border-color: var(--accent-soft);
+    }
+    .svc-flag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent-text);
+      background: var(--accent-soft);
+      padding: 3px 9px;
+      border-radius: 100px;
+      margin-bottom: 8px;
+    }
+    .svc-title {
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 1.25;
+      letter-spacing: -0.3px;
+      color: var(--text);
+    }
+    .svc-tagline {
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-top: 4px;
+    }
+
+    .svc-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr 1fr;
+      gap: 28px;
+      padding-top: 22px;
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 767px) {
+      .svc-grid { grid-template-columns: 1fr; gap: 22px; }
+      .svc-card { padding: 22px; }
+    }
+    .svc-label {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--text-light);
+      margin-bottom: 10px;
+    }
+    .svc-block p {
+      font-size: 14px;
+      line-height: 1.65;
+      color: var(--text-secondary);
+    }
+    .svc-list { list-style: none; margin: 0; padding: 0; }
+    .svc-list li {
+      position: relative;
+      padding-left: 18px;
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+    }
+    .svc-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      opacity: 0.55;
+    }
+    .svc-steps { list-style: none; margin: 0; padding: 0; counter-reset: step; }
+    .svc-steps li {
+      position: relative;
+      padding-left: 26px;
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--text-secondary);
+      margin-bottom: 9px;
+      counter-increment: step;
+    }
+    .svc-steps li::before {
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--bg-warm);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      font-size: 11px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .svc-foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+    .svc-proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      align-items: center;
+    }
+    .svc-proof-label {
+      font-size: 12px;
+      color: var(--text-light);
+      margin-right: 2px;
+    }
+    .svc-book {
+      display: inline-block;
+      background: var(--text);
+      color: white;
+      padding: 9px 18px;
+      border-radius: var(--radius);
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: opacity 0.15s ease;
+      flex-shrink: 0;
+    }
+    .svc-book:hover { opacity: 0.85; }
+
+    /* === BOTTOM CTA STRIP === */
+    .services-cta-strip {
+      background: var(--bg-warm);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      padding: 32px 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+    .cta-strip-headline {
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px;
+      letter-spacing: -0.2px;
+    }
+    .cta-strip-sub { font-size: 14px; color: var(--text-secondary); max-width: 460px; }
+    .cta-strip-actions { display: flex; gap: 10px; flex-shrink: 0; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+
+  <!-- Skip link -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Navigation -->
+  <nav class="nav" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo">Douglas Hill</a>
+
+    <div class="nav-links">
+      <a href="services.html" class="nav-link" aria-current="page">Services</a>
+      <a href="projects.html" class="nav-link">Projects</a>
+      <a href="resume.html" class="nav-link nav-link--resume">Resume</a>
+      <a href="contact.html" class="nav-cta">Book a call</a>
+    </div>
+
+    <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile nav overlay -->
+  <nav class="nav-overlay" aria-label="Mobile navigation">
+    <a href="services.html">Services</a>
+    <a href="projects.html">Projects</a>
+    <a href="resume.html">Resume</a>
+    <a href="contact.html">Book a call</a>
+  </nav>
+
+  <!-- Main content -->
+  <main id="main">
+
+    <!-- ==================== PAGE HEADER ==================== -->
+    <section class="section services-page-header">
+      <h1 class="services-headline">Services</h1>
+      <p class="services-intro">
+        You don't need to know the technical name of the solution—you just know the friction your business is feeling. Whether you are <strong>drowning in manual approval chains</strong>, losing hours <strong>compiling weekly reports by hand</strong>, or watching <strong>a spreadsheet quietly become a system of record</strong>, you have a bottleneck that needs resolving. Find your challenge below to see the roadmap to the fix.
+      </p>
+    </section>
+
+    <!-- ==================== START HERE ==================== -->
+    <div class="start-here">
+      <div class="start-here-inner">
+        <strong>Not sure which one?</strong> Start with the closest match — or just book a 20-minute call and describe the problem in plain English. You don't need to know whether the answer is a flow, an app, a dashboard, or a governance fix. That's my job to figure out.
+      </div>
+    </div>
+
+    <!-- ==================== SERVICE CATALOG ==================== -->
+    <section class="section services-list-section" aria-label="Service catalog">
+
+      <!-- ——— 1. Replace a manual process (featured) ——— -->
+      <article class="svc-card svc-card--featured" id="process">
+        <div class="svc-head">
+          <div class="svc-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 13h5l2-5 4 10 2-5h5" stroke="var(--accent-text)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div>
+            <span class="svc-flag">Most requested</span>
+            <h2 class="svc-title">Replace a manual process</h2>
+            <p class="svc-tagline">The repetitive thing you run on email and spreadsheets — automated.</p>
+          </div>
+        </div>
+        <div class="svc-grid">
+          <div class="svc-block">
+            <h3 class="svc-label">If this is you</h3>
+            <ul class="svc-list">
+              <li>Routing approval requests by email</li>
+              <li>Tracking work or status in a shared spreadsheet</li>
+              <li>Filling out the same form and forwarding it somewhere</li>
+              <li>Chasing someone to sign off on something</li>
+            </ul>
+          </div>
+          <div class="svc-block">
+            <h3 class="svc-label">What you get</h3>
+            <p>That process rebuilt in Power Automate and Power Apps — automated routing, a status everyone can see, and an audit trail. Most processes like this take 2–4 weeks to automate.</p>
+          </div>
+          <div class="svc-block">
+            <h3 class="svc-label">How it works</h3>
+            <ol class="svc-steps">
+              <li>30-min scoping call</li>
+              <li>I map who kicks it off, who approves, where it ends up</li>
+              <li>Build, then handoff with docs</li>
+            </ol>
+          </div>
+        </div>
+        <div class="svc-foot">
+          <div class="svc-proof">
+            <span class="svc-proof-label">Proven on</span>
+            <span class="tag tag--core">Power Automate</span>
+            <span class="tag tag--impact">IRS · Nintex → Power Automate</span>
+            <span class="tag tag--impact">APS · approvals −50%</span>
+          </div>
+          <a href="https://calendly.com/douglashill-llcdouglashill/30min" class="svc-book" target="_blank" rel="noopener noreferrer">Book a 30-min call →</a>
+        </div>
+      </article>
+
+      <!-- ——— 2. Get a reporting dashboard ——— -->
+      <article class="svc-card" id="dashboard">
+        <div class="svc-head">
+          <div class="svc-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="16" width="5" height="7" rx="1.5" stroke="var(--accent-text)" stroke-width="1.6" opacity="0.5"/>
+              <rect x="10.5" y="10" width="5" height="13" rx="1.5" stroke="var(--accent-text)" stroke-width="1.6" opacity="0.75"/>
+              <rect x="18" y="4" width="5" height="19" rx="1.5" stroke="var(--accent-text)" stroke-width="1.6"/>
+            </svg>
+          </div>
+          <div>
+            <h2 class="svc-title">Get a reporting dashboard</h2>
+            <p class="svc-tagline">Stop rebuilding the same report by hand every month.</p>
+          </div>
+        </div>
+        <div class="svc-grid">
+          <div class="svc-block">
+            <h3 class="svc-label">If this is you</h3>
+            <ul class="svc-list">
+              <li>Pulling the same numbers into a report every month by hand</li>
+              <li>You want to see trends in data you already have somewhere</li>
+              <li>You need a one-page view of how something is performing</li>
+            </ul>
+          </div>
+          <div class="svc-block">
+            <h3 class="svc-label">What you get</h3>
+            <p>A Power BI dashboard wired straight to your live data — SharePoint, Dataverse, Excel, or SQL. It refreshes itself and is shared with exactly the people who need it. No more copy-paste.</p>
+          </div>
+          <div class="svc-block">
+            <h3 class="svc-label">How it works</h3>
+            <ol class="svc-steps">
+              <li>30-min scoping call</li>
+              <li>Confirm the metrics and where the data lives</li>
+              <li>Build, then share with your audience</li>
+            </ol>
+          </div>
+        </div>
+        <div class="svc-foot">
+          <div class="svc-proof">
+            <span class="svc-proof-label">Proven on</span>
+            <span class="tag tag--core">Power BI</span>
+            <span class="tag tag--impact">DoD &amp; DHS · KPI reporting suites</span>
+          </div>
+          <a href="https://calendly.com/douglashill-llcdouglashill/30min" class="svc-book" target="_blank" rel="noopener noreferrer">Book a 30-min call →</a>
+        </div>
+      </article>
+
+      <!-- ——— 3. Get a business application ——— -->
+      <article class="svc-card" id="app">
+        <div class="svc-head">
+          <div class="svc-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="3" width="20" height="20" rx="4" stroke="var(--accent-text)" stroke-width="1.7"/>
+              <rect x="3" y="3" width="20" height="7" rx="4" fill="var(--accent-text)" opacity="0.15"/>
+              <path d="M8 15h10M8 19h6" stroke="var(--accent-text)" stroke-width="1.4" stroke-linecap="round" opacity="0.6"/>
+            </svg>
+          </div>
+          <div>
+            <h2 class="svc-title">Get a business application</h2>
+            <p class="svc-tagline">A process that outgrew its spreadsheet needs a real app.</p>
+          </div>
+        </div>
+        <div class="svc-grid">
+          <div class="svc-block">
+            <h3 class="svc-label">If this is you</h3>
+            <ul class="svc-list">
+              <li>A complex process has outgrown your spreadsheet</li>
+              <li>Different roles need different views</li>
+              <li>Multiple people — or external users — need to use it</li>
+              <li>You need reporting tied directly to data entry</li>
+            </ul>
+          </div>
+          <div class="svc-block">
+            <h3 class="svc-label">What you get</h3>
+            <p>A proper application on Dataverse — Canvas or Model-Driven, or a Power Pages portal for external users — with the right security model and ALM across DEV/TEST/PROD. Built to be maintained, not abandoned.</p>
+          </div>
+          <div class="svc-block">
+            <h3 class="svc-label">How it works</h3>
+            <ol class="svc-steps">
+              <li>30-min scoping call</li>
+              <li>I recommend the right app type + a build plan and timeline</li>
+              <li>Build, then handoff</li>
+            </ol>
+          </div>
+        </div>
+        <div class="svc-foot">
+          <div class="svc-proof">
+            <span class="svc-proof-label">Proven on</span>
+            <span class="tag tag--core">Dataverse</span>
+            <span class="tag tag--core">Power Pages</span>
+            <span class="tag tag--impact">PetroFund · 1,188+ records</span>
+          </div>
+          <a href="https://calendly.com/douglashill-llcdouglashill/30min" class="svc-book" target="_blank" rel="noopener noreferrer">Book a 30-min call →</a>
+        </div>
+      </article>
+
+      <!-- ——— 4. Govern your Power Platform ——— -->
+      <article class="svc-card" id="governance">
+        <div class="svc-head">
+          <div class="svc-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="6" width="20" height="14" rx="3" stroke="var(--accent-text)" stroke-width="1.7"/>
+              <path d="M3 10h20" stroke="var(--accent-text)" stroke-width="1.5" opacity="0.5"/>
+              <circle cx="7" cy="8" r="1" fill="var(--accent-text)" opacity="0.5"/>
+              <circle cx="10" cy="8" r="1" fill="var(--accent-text)" opacity="0.35"/>
+            </svg>
+          </div>
+          <div>
+            <h2 class="svc-title">Govern your Power Platform</h2>
+            <p class="svc-tagline">Apps and flows multiplying with no oversight? Put guardrails on it.</p>
+          </div>
+        </div>
+        <div class="svc-grid">
+          <div class="svc-block">
+            <h3 class="svc-label">If this is you</h3>
+            <ul class="svc-list">
+              <li>Power Apps and flows are multiplying with no oversight</li>
+              <li>No DLP, and you're unsure who owns what</li>
+              <li>Worried about security exposure or licensing sprawl</li>
+              <li>You want to scale the platform without it turning to chaos</li>
+            </ul>
+          </div>
+          <div class="svc-block">
+            <h3 class="svc-label">What you get</h3>
+            <p>A governance baseline: CoE Starter Kit, DLP policies, an environment strategy, ALM and pipelines, and licensing guidance — so makers can build safely and the platform scales under control.</p>
+          </div>
+          <div class="svc-block">
+            <h3 class="svc-label">How it works</h3>
+            <ol class="svc-steps">
+              <li>30-min scoping call</li>
+              <li>Assess current state and risks</li>
+              <li>Governance plan, then implement</li>
+            </ol>
+          </div>
+        </div>
+        <div class="svc-foot">
+          <div class="svc-proof">
+            <span class="svc-proof-label">Proven on</span>
+            <span class="tag tag--core">CoE Starter Kit</span>
+            <span class="tag tag--core">ALM</span>
+            <span class="tag tag--impact">Humana · 200+ environments</span>
+          </div>
+          <a href="https://calendly.com/douglashill-llcdouglashill/30min" class="svc-book" target="_blank" rel="noopener noreferrer">Book a 30-min call →</a>
+        </div>
+      </article>
+
+      <!-- ==================== BOTTOM CTA STRIP ==================== -->
+      <div class="services-cta-strip">
+        <div class="cta-strip-text-group">
+          <p class="cta-strip-headline">Still not sure which fits?</p>
+          <p class="cta-strip-sub">Book a 30-minute call and describe the problem in plain English. If it's a fit, I'll tell you what I'd build and roughly how long it'd take. If it isn't, I'll tell you that too.</p>
+        </div>
+        <div class="cta-strip-actions">
+          <a href="https://calendly.com/douglashill-llcdouglashill/30min" class="btn-dark" target="_blank" rel="noopener noreferrer">Book a 30-minute call</a>
+          <a href="projects.html" class="btn-outline">See the work →</a>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <span>&copy; 2026 Douglas Hill</span>
+    <nav class="footer-links" aria-label="Social links">
+      <a href="https://linkedin.com/in/w-douglas-hill-mba/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://github.com/kast2L" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="mailto:DouglasHill@llcdouglashill.com">Email</a>
+    </nav>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

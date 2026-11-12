@@ -1,0 +1,87 @@
+---
+import { Font } from 'astro:assets';
+import '../styles/global.css';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  /** Clean path without trailing slash, e.g. "/" or "/privacy". */
+  path: string;
+  noindex?: boolean;
+  /** Load /js/lead-form.js (only the page with the lead form). */
+  leadForm?: boolean;
+  /** Header shows the in-page section links (home page only). */
+  sectionNav?: boolean;
+  ogTitle?: string;
+  ogDescription?: string;
+}
+
+const {
+  title,
+  description,
+  path,
+  noindex = false,
+  leadForm = false,
+  sectionNav = false,
+  ogTitle = title,
+  ogDescription = description,
+} = Astro.props;
+
+const site = Astro.site ?? new URL('https://william.llcdouglashill.com');
+const canonical = new URL(path, site).href;
+const ogImage = new URL('/assets/og-image.png', site).href;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex ? <meta name="robots" content="noindex, follow" /> : <meta name="robots" content="index, follow" />}
+    <meta name="theme-color" content="#0b0c14" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Douglas Hill Consulting" />
+    <meta property="og:title" content={ogTitle} />
+    <meta property="og:description" content={ogDescription} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={ogTitle} />
+    <meta name="twitter:description" content={ogDescription} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <Font cssVariable="--font-sans" preload />
+    <Font cssVariable="--font-serif" preload />
+
+    <slot name="head" />
+
+    <!-- Existing client scripts, external and deferred, in the order docs/markup-contract.md sets. -->
+    <script is:inline defer src="/js/attribution.js"></script>
+    <script is:inline defer src="/js/analytics.js"></script>
+    {leadForm && <script is:inline defer src="/js/lead-form.js"></script>}
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <SiteHeader sectionNav={sectionNav} />
+    <main id="main" tabindex="-1">
+      <slot />
+    </main>
+    <SiteFooter />
+  </body>
+</html>
+
+<script>
+  import '../scripts/nav';
+</script>
