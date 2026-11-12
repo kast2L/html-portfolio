@@ -1,0 +1,584 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-12T10:48:00-07:00",
+  "title": "Design System: Douglas Hill Consulting Studio",
+  "extensions": {
+    "colorMeta": {
+      "coral": {
+        "role": "primary",
+        "displayName": "Luminous Studio Coral",
+        "canonical": "oklch(70.2% 0.194 34.5)",
+        "tonalRamp": [
+          "oklch(22% 0.08 34.5)",
+          "oklch(32% 0.12 34.5)",
+          "oklch(44% 0.16 34.5)",
+          "oklch(56% 0.185 34.5)",
+          "oklch(70.2% 0.194 34.5)",
+          "oklch(80% 0.13 34.5)",
+          "oklch(89% 0.07 34.5)",
+          "oklch(95% 0.03 34.5)"
+        ]
+      },
+      "coral-hover": {
+        "role": "primary",
+        "displayName": "Coral Hover Lift",
+        "canonical": "oklch(73.1% 0.181 35.1)",
+        "tonalRamp": [
+          "oklch(22% 0.08 35.1)",
+          "oklch(33% 0.12 35.1)",
+          "oklch(45% 0.155 35.1)",
+          "oklch(58% 0.175 35.1)",
+          "oklch(73.1% 0.181 35.1)",
+          "oklch(82% 0.12 35.1)",
+          "oklch(90% 0.065 35.1)",
+          "oklch(96% 0.025 35.1)"
+        ]
+      },
+      "coral-ink": {
+        "role": "primary",
+        "displayName": "Deep Terracotta Coral Ink",
+        "canonical": "oklch(52.8% 0.178 33.8)",
+        "tonalRamp": [
+          "oklch(20% 0.07 33.8)",
+          "oklch(30% 0.11 33.8)",
+          "oklch(41% 0.15 33.8)",
+          "oklch(52.8% 0.178 33.8)",
+          "oklch(65% 0.15 33.8)",
+          "oklch(76% 0.11 33.8)",
+          "oklch(87% 0.06 33.8)",
+          "oklch(95% 0.025 33.8)"
+        ]
+      },
+      "amber": {
+        "role": "primary",
+        "displayName": "Warm Kinetic Amber",
+        "canonical": "oklch(80.6% 0.144 62.4)",
+        "tonalRamp": [
+          "oklch(24% 0.06 62.4)",
+          "oklch(35% 0.09 62.4)",
+          "oklch(48% 0.12 62.4)",
+          "oklch(64% 0.14 62.4)",
+          "oklch(80.6% 0.144 62.4)",
+          "oklch(86% 0.105 62.4)",
+          "oklch(92% 0.06 62.4)",
+          "oklch(96.5% 0.025 62.4)"
+        ]
+      },
+      "amber-hover": {
+        "role": "primary",
+        "displayName": "Amber Hover Glow",
+        "canonical": "oklch(79.2% 0.142 58.0)",
+        "tonalRamp": [
+          "oklch(24% 0.06 58)",
+          "oklch(35% 0.09 58)",
+          "oklch(48% 0.12 58)",
+          "oklch(63% 0.138 58)",
+          "oklch(79.2% 0.142 58)",
+          "oklch(86% 0.10 58)",
+          "oklch(92% 0.055 58)",
+          "oklch(96% 0.025 58)"
+        ]
+      },
+      "amber-ink": {
+        "role": "primary",
+        "displayName": "Burnished Ochre Ink",
+        "canonical": "oklch(48.9% 0.121 56.8)",
+        "tonalRamp": [
+          "oklch(20% 0.05 56.8)",
+          "oklch(30% 0.08 56.8)",
+          "oklch(40% 0.105 56.8)",
+          "oklch(48.9% 0.121 56.8)",
+          "oklch(62% 0.115 56.8)",
+          "oklch(75% 0.09 56.8)",
+          "oklch(87% 0.05 56.8)",
+          "oklch(95% 0.02 56.8)"
+        ]
+      },
+      "sky": {
+        "role": "secondary",
+        "displayName": "Glacier Intelligence Sky",
+        "canonical": "oklch(77.9% 0.133 241.5)",
+        "tonalRamp": [
+          "oklch(22% 0.055 241.5)",
+          "oklch(33% 0.085 241.5)",
+          "oklch(46% 0.115 241.5)",
+          "oklch(61% 0.13 241.5)",
+          "oklch(77.9% 0.133 241.5)",
+          "oklch(85% 0.095 241.5)",
+          "oklch(91% 0.055 241.5)",
+          "oklch(96% 0.022 241.5)"
+        ]
+      },
+      "sky-ink": {
+        "role": "secondary",
+        "displayName": "Deep Cobalt Sky Ink",
+        "canonical": "oklch(45.8% 0.118 245.2)",
+        "tonalRamp": [
+          "oklch(19% 0.05 245.2)",
+          "oklch(29% 0.08 245.2)",
+          "oklch(38% 0.105 245.2)",
+          "oklch(45.8% 0.118 245.2)",
+          "oklch(60% 0.11 245.2)",
+          "oklch(74% 0.085 245.2)",
+          "oklch(86% 0.048 245.2)",
+          "oklch(95% 0.02 245.2)"
+        ]
+      },
+      "mint": {
+        "role": "tertiary",
+        "displayName": "Jade Governance Mint",
+        "canonical": "oklch(85.4% 0.126 182.0)",
+        "tonalRamp": [
+          "oklch(23% 0.05 182)",
+          "oklch(34% 0.08 182)",
+          "oklch(47% 0.105 182)",
+          "oklch(64% 0.12 182)",
+          "oklch(85.4% 0.126 182)",
+          "oklch(90% 0.085 182)",
+          "oklch(94% 0.045 182)",
+          "oklch(97% 0.02 182)"
+        ]
+      },
+      "mint-ink": {
+        "role": "tertiary",
+        "displayName": "Deep Pine Teal Ink",
+        "canonical": "oklch(48.2% 0.088 186.4)",
+        "tonalRamp": [
+          "oklch(19% 0.04 186.4)",
+          "oklch(29% 0.06 186.4)",
+          "oklch(39% 0.078 186.4)",
+          "oklch(48.2% 0.088 186.4)",
+          "oklch(62% 0.085 186.4)",
+          "oklch(75% 0.065 186.4)",
+          "oklch(87% 0.04 186.4)",
+          "oklch(95% 0.016 186.4)"
+        ]
+      },
+      "night": {
+        "role": "neutral",
+        "displayName": "Deep Velvet Night",
+        "canonical": "oklch(15.6% 0.021 275.0)",
+        "tonalRamp": [
+          "oklch(15.6% 0.021 275)",
+          "oklch(20.1% 0.027 275)",
+          "oklch(24.3% 0.034 275)",
+          "oklch(36% 0.032 275)",
+          "oklch(50% 0.028 275)",
+          "oklch(66% 0.024 275)",
+          "oklch(80% 0.018 275)",
+          "oklch(94% 0.008 275)"
+        ]
+      },
+      "night-elevated": {
+        "role": "neutral",
+        "displayName": "Elevated Night",
+        "canonical": "oklch(20.1% 0.027 275.0)",
+        "tonalRamp": [
+          "oklch(15.6% 0.021 275)",
+          "oklch(20.1% 0.027 275)",
+          "oklch(26% 0.032 275)",
+          "oklch(38% 0.03 275)",
+          "oklch(52% 0.026 275)",
+          "oklch(68% 0.022 275)",
+          "oklch(82% 0.016 275)",
+          "oklch(95% 0.007 275)"
+        ]
+      },
+      "night-surface": {
+        "role": "neutral",
+        "displayName": "Night Surface Well",
+        "canonical": "oklch(24.3% 0.034 275.0)",
+        "tonalRamp": [
+          "oklch(16% 0.022 275)",
+          "oklch(24.3% 0.034 275)",
+          "oklch(32% 0.034 275)",
+          "oklch(44% 0.03 275)",
+          "oklch(58% 0.025 275)",
+          "oklch(72% 0.02 275)",
+          "oklch(85% 0.014 275)",
+          "oklch(95% 0.006 275)"
+        ]
+      },
+      "on-night": {
+        "role": "neutral",
+        "displayName": "Ivory On-Night",
+        "canonical": "oklch(96.8% 0.007 78.0)",
+        "tonalRamp": [
+          "oklch(20% 0.01 78)",
+          "oklch(32% 0.01 78)",
+          "oklch(46% 0.01 78)",
+          "oklch(60% 0.009 78)",
+          "oklch(74% 0.008 78)",
+          "oklch(85% 0.008 78)",
+          "oklch(92% 0.007 78)",
+          "oklch(96.8% 0.007 78)"
+        ]
+      },
+      "on-night-muted": {
+        "role": "neutral",
+        "displayName": "Muted Velvet Slate",
+        "canonical": "oklch(79.6% 0.024 272.0)",
+        "tonalRamp": [
+          "oklch(20% 0.024 272)",
+          "oklch(32% 0.024 272)",
+          "oklch(45% 0.024 272)",
+          "oklch(58% 0.024 272)",
+          "oklch(70% 0.024 272)",
+          "oklch(79.6% 0.024 272)",
+          "oklch(88% 0.016 272)",
+          "oklch(95% 0.008 272)"
+        ]
+      },
+      "on-night-subtle": {
+        "role": "neutral",
+        "displayName": "Subtle Velvet Slate",
+        "canonical": "oklch(65.6% 0.032 274.0)",
+        "tonalRamp": [
+          "oklch(20% 0.028 274)",
+          "oklch(32% 0.03 274)",
+          "oklch(44% 0.032 274)",
+          "oklch(55% 0.032 274)",
+          "oklch(65.6% 0.032 274)",
+          "oklch(77% 0.024 274)",
+          "oklch(87% 0.015 274)",
+          "oklch(95% 0.007 274)"
+        ]
+      },
+      "silk": {
+        "role": "neutral",
+        "displayName": "Warm Raw Silk",
+        "canonical": "oklch(96.2% 0.008 78.0)",
+        "tonalRamp": [
+          "oklch(22% 0.012 78)",
+          "oklch(35% 0.012 78)",
+          "oklch(48% 0.012 78)",
+          "oklch(62% 0.011 78)",
+          "oklch(76% 0.01 78)",
+          "oklch(88% 0.009 78)",
+          "oklch(93.4% 0.012 78)",
+          "oklch(96.2% 0.008 78)"
+        ]
+      },
+      "silk-sunken": {
+        "role": "neutral",
+        "displayName": "Sunken Raw Silk",
+        "canonical": "oklch(93.4% 0.012 78.0)",
+        "tonalRamp": [
+          "oklch(22% 0.012 78)",
+          "oklch(35% 0.012 78)",
+          "oklch(48% 0.012 78)",
+          "oklch(62% 0.012 78)",
+          "oklch(76% 0.012 78)",
+          "oklch(86% 0.012 78)",
+          "oklch(93.4% 0.012 78)",
+          "oklch(97% 0.006 78)"
+        ]
+      },
+      "silk-card": {
+        "role": "neutral",
+        "displayName": "Pure Silk Card",
+        "canonical": "oklch(100% 0 0)",
+        "tonalRamp": [
+          "oklch(20% 0 0)",
+          "oklch(34% 0 0)",
+          "oklch(48% 0 0)",
+          "oklch(62% 0 0)",
+          "oklch(76% 0 0)",
+          "oklch(88% 0 0)",
+          "oklch(95% 0 0)",
+          "oklch(100% 0 0)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Deep Studio Ink",
+        "canonical": "oklch(18.8% 0.024 274.0)",
+        "tonalRamp": [
+          "oklch(18.8% 0.024 274)",
+          "oklch(25.4% 0.032 274)",
+          "oklch(39.4% 0.028 274)",
+          "oklch(49.2% 0.032 274)",
+          "oklch(63% 0.026 274)",
+          "oklch(76% 0.02 274)",
+          "oklch(87% 0.012 274)",
+          "oklch(95% 0.006 274)"
+        ]
+      },
+      "ink-hover": {
+        "role": "neutral",
+        "displayName": "Ink Hover Lift",
+        "canonical": "oklch(25.4% 0.032 274.0)",
+        "tonalRamp": [
+          "oklch(18.8% 0.024 274)",
+          "oklch(25.4% 0.032 274)",
+          "oklch(37% 0.03 274)",
+          "oklch(49% 0.03 274)",
+          "oklch(62% 0.025 274)",
+          "oklch(75% 0.018 274)",
+          "oklch(86% 0.012 274)",
+          "oklch(95% 0.006 274)"
+        ]
+      },
+      "ink-secondary": {
+        "role": "neutral",
+        "displayName": "Secondary Studio Ink",
+        "canonical": "oklch(39.4% 0.028 274.0)",
+        "tonalRamp": [
+          "oklch(19% 0.024 274)",
+          "oklch(29% 0.026 274)",
+          "oklch(39.4% 0.028 274)",
+          "oklch(50% 0.028 274)",
+          "oklch(63% 0.024 274)",
+          "oklch(76% 0.018 274)",
+          "oklch(87% 0.012 274)",
+          "oklch(95% 0.006 274)"
+        ]
+      },
+      "ink-muted": {
+        "role": "neutral",
+        "displayName": "Muted Studio Ink",
+        "canonical": "oklch(49.2% 0.032 274.0)",
+        "tonalRamp": [
+          "oklch(19% 0.024 274)",
+          "oklch(30% 0.028 274)",
+          "oklch(40% 0.03 274)",
+          "oklch(49.2% 0.032 274)",
+          "oklch(62% 0.026 274)",
+          "oklch(75% 0.02 274)",
+          "oklch(87% 0.012 274)",
+          "oklch(95% 0.006 274)"
+        ]
+      },
+      "error": {
+        "role": "tertiary",
+        "displayName": "Validation Crimson",
+        "canonical": "oklch(61.5% 0.205 24.5)",
+        "tonalRamp": [
+          "oklch(22% 0.08 24.5)",
+          "oklch(34% 0.13 24.5)",
+          "oklch(48% 0.18 24.5)",
+          "oklch(61.5% 0.205 24.5)",
+          "oklch(74% 0.15 24.5)",
+          "oklch(80.2% 0.118 19.5)",
+          "oklch(90% 0.06 24.5)",
+          "oklch(96% 0.025 24.5)"
+        ]
+      },
+      "error-on-night": {
+        "role": "tertiary",
+        "displayName": "Soft Rose Alert",
+        "canonical": "oklch(80.2% 0.118 19.5)",
+        "tonalRamp": [
+          "oklch(24% 0.08 19.5)",
+          "oklch(36% 0.12 19.5)",
+          "oklch(50% 0.16 19.5)",
+          "oklch(64% 0.15 19.5)",
+          "oklch(80.2% 0.118 19.5)",
+          "oklch(86% 0.085 19.5)",
+          "oklch(92% 0.05 19.5)",
+          "oklch(96.5% 0.02 19.5)"
+        ]
+      },
+      "error-ink": {
+        "role": "tertiary",
+        "displayName": "Deep Crimson Alert Ink",
+        "canonical": "oklch(50.5% 0.188 26.8)",
+        "tonalRamp": [
+          "oklch(20% 0.08 26.8)",
+          "oklch(30% 0.12 26.8)",
+          "oklch(40% 0.16 26.8)",
+          "oklch(50.5% 0.188 26.8)",
+          "oklch(64% 0.16 26.8)",
+          "oklch(77% 0.11 26.8)",
+          "oklch(88% 0.06 26.8)",
+          "oklch(95% 0.025 26.8)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Hero Display",
+        "purpose": "Primary hero statement (max-width 14.5ch) paired with one italic Instrument Serif focal word."
+      },
+      "headline": {
+        "displayName": "Section Headline",
+        "purpose": "Chapter-opening h2 headings across both Deep Velvet Night and Warm Raw Silk sections."
+      },
+      "editorial-accent": {
+        "displayName": "Editorial Serif Inflection",
+        "purpose": "Single italic focal noun/phrase inside Display and Section Headlines, plus roman impact numerals."
+      },
+      "title": {
+        "displayName": "Card & Track Title",
+        "purpose": "Capability bento titles, enterprise case-study headlines, and engagement track headers."
+      },
+      "body": {
+        "displayName": "Editorial Body",
+        "purpose": "Long-form architectural narrative and case-study summaries (48ch–58ch measure)."
+      },
+      "label": {
+        "displayName": "Control & Metadata Label",
+        "purpose": "Pill buttons, discipline switcher tabs, stack tags, and form field hints."
+      }
+    },
+    "shadows": [
+      {
+        "name": "shadow-soft",
+        "value": "0 18px 48px -18px rgba(17, 19, 32, 0.1), 0 2px 10px -2px rgba(17, 19, 32, 0.04)",
+        "purpose": "Default resting elevation for Pure Silk bento and FAQ cards."
+      },
+      {
+        "name": "shadow-lift",
+        "value": "0 28px 64px -20px rgba(17, 19, 32, 0.16), 0 6px 18px -4px rgba(17, 19, 32, 0.06)",
+        "purpose": "Hover elevation for interactive Silk cards."
+      },
+      {
+        "name": "shadow-glow",
+        "value": "0 24px 70px -20px rgba(255, 107, 74, 0.28)",
+        "purpose": "Warm coral directional glow beneath primary conversion CTAs."
+      },
+      {
+        "name": "shadow-stage",
+        "value": "0 32px 80px -28px rgba(0, 0, 0, 0.75)",
+        "purpose": "Deep structural shadow grounding the 3D Continuum dock and dark-glass form card."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-fluid",
+        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Standard smooth deceleration for color, border, opacity, and drawer transitions."
+      },
+      {
+        "name": "ease-spring",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Buoyant tactile response for button hover lifts and icon nudges."
+      },
+      {
+        "name": "dur-fast",
+        "value": "180ms",
+        "purpose": "Micro-interaction state feedback (preserved under prefers-reduced-motion)."
+      },
+      {
+        "name": "dur",
+        "value": "340ms",
+        "purpose": "Card elevation and header pill condensation transitions."
+      },
+      {
+        "name": "dur-slow",
+        "value": "650ms",
+        "purpose": "Scroll-triggered section entrance choreography when motion is permitted."
+      }
+    ],
+    "breakpoints": [
+      { "name": "dock-row", "value": "520px" },
+      { "name": "form-2col", "value": "640px" },
+      { "name": "bento-2col", "value": "860px" },
+      { "name": "tracks-3col", "value": "900px" },
+      { "name": "split-layout", "value": "960px" },
+      { "name": "hero-split", "value": "1024px" },
+      { "name": "desktop-nav", "value": "65em" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Glow CTA Button",
+      "kind": "button",
+      "refersTo": "button-glow",
+      "description": "Primary warm coral-to-amber pill CTA used for booking a 30-minute architecture call on dark velvet stages.",
+      "html": "<a class=\"ds-btn-glow\" href=\"#contact\"><span>Book a 30-minute call</span><svg class=\"ds-icon\" viewBox=\"0 0 20 20\" width=\"17\" height=\"17\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5.5 14.5L14.5 5.5M7.5 5.5h7v7\"/></svg></a>",
+      "css": ".ds-btn-glow { display: inline-flex; align-items: center; gap: 0.65rem; min-height: 3.25rem; padding: 0.72rem 1.45rem; border-radius: var(--r-pill, 999px); background: linear-gradient(135deg, var(--c-coral, #ff6b4a) 0%, var(--c-amber, #ffaa5c) 140%); color: var(--c-night, #0b0c14); font-family: var(--font-ui, 'Plus Jakarta Sans', system-ui, sans-serif); font-size: 0.96875rem; font-weight: 700; letter-spacing: -0.01em; text-decoration: none; box-shadow: 0 12px 32px -10px rgba(255, 107, 74, 0.45); transition: transform 340ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 340ms cubic-bezier(0.22, 1, 0.36, 1), background 180ms ease; } .ds-btn-glow .ds-icon { transition: transform 340ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-glow:hover { transform: translateY(-2px); background: linear-gradient(135deg, var(--c-coral-hover, #ff7b5c) 0%, var(--c-amber-hover, #ffa066) 100%); box-shadow: 0 18px 40px -10px rgba(255, 107, 74, 0.62); } .ds-btn-glow:hover .ds-icon { transform: translateX(3px); } .ds-btn-glow:focus-visible { outline: 2px solid var(--c-coral, #ff6b4a); outline-offset: 3px; } .ds-btn-glow:active { transform: translateY(0) scale(0.99); }"
+    },
+    {
+      "name": "Ink CTA Button",
+      "kind": "button",
+      "refersTo": "button-ink",
+      "description": "High-contrast Deep Studio Ink pill CTA used on Warm Raw Silk chapters.",
+      "html": "<a class=\"ds-btn-ink\" href=\"#contact\"><span>Schedule architecture review</span><svg class=\"ds-icon\" viewBox=\"0 0 20 20\" width=\"17\" height=\"17\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5.5 14.5L14.5 5.5M7.5 5.5h7v7\"/></svg></a>",
+      "css": ".ds-btn-ink { display: inline-flex; align-items: center; gap: 0.65rem; min-height: 3.25rem; padding: 0.72rem 1.45rem; border-radius: var(--r-pill, 999px); background: var(--c-ink, #111320); color: var(--c-silk, #f6f3ee); font-family: var(--font-ui, 'Plus Jakarta Sans', system-ui, sans-serif); font-size: 0.96875rem; font-weight: 600; letter-spacing: -0.01em; text-decoration: none; box-shadow: 0 14px 30px -12px rgba(17, 19, 32, 0.35); transition: transform 340ms cubic-bezier(0.16, 1, 0.3, 1), background-color 180ms ease, box-shadow 340ms ease; } .ds-btn-ink .ds-icon { transition: transform 340ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-ink:hover { transform: translateY(-2px); background: var(--c-ink-hover, #1f2338); box-shadow: 0 18px 36px -12px rgba(17, 19, 32, 0.45); } .ds-btn-ink:hover .ds-icon { transform: translateX(3px); } .ds-btn-ink:focus-visible { outline: 2px solid var(--c-coral, #ff6b4a); outline-offset: 3px; }"
+    },
+    {
+      "name": "Glass Pill Button",
+      "kind": "button",
+      "refersTo": "button-glass",
+      "description": "Translucent secondary pill action for exploring work, downloading PDF résumé, or visiting LinkedIn.",
+      "html": "<a class=\"ds-btn-glass\" href=\"#work\"><span>Explore selected work</span><svg viewBox=\"0 0 20 20\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4.5 10h11M11 5.5L15.5 10 11 14.5\"/></svg></a>",
+      "css": ".ds-btn-glass { display: inline-flex; align-items: center; gap: 0.6rem; min-height: 3.25rem; padding: 0.72rem 1.45rem; border-radius: var(--r-pill, 999px); background: rgba(255, 255, 255, 0.06); border: 1px solid var(--c-line-dark-strong, rgba(247, 244, 239, 0.22)); color: var(--c-on-night, #f7f4ef); font-family: var(--font-ui, 'Plus Jakarta Sans', system-ui, sans-serif); font-size: 0.96875rem; font-weight: 600; text-decoration: none; -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); transition: transform 340ms cubic-bezier(0.16, 1, 0.3, 1), background-color 180ms ease, border-color 180ms ease; } .ds-btn-glass:hover { transform: translateY(-2px); background: rgba(255, 255, 255, 0.12); border-color: rgba(255, 255, 255, 0.35); } .ds-btn-glass:focus-visible { outline: 2px solid var(--c-coral, #ff6b4a); outline-offset: 3px; }"
+    },
+    {
+      "name": "Navigation Pill",
+      "kind": "nav",
+      "description": "Floating dark-glass header pill housing brand emblem, 44px anchor links, and compact glow CTA.",
+      "html": "<div class=\"ds-nav-pill\"><span class=\"ds-nav-brand\">Douglas Hill <em>Studio</em></span><nav class=\"ds-nav-links\" aria-label=\"Preview\"><a class=\"ds-nav-link\" href=\"#capabilities\" aria-current=\"true\">Capabilities</a><a class=\"ds-nav-link\" href=\"#work\">Selected Work</a><a class=\"ds-nav-link\" href=\"#approach\">Approach</a></nav></div>",
+      "css": ".ds-nav-pill { display: inline-flex; align-items: center; gap: 1rem; min-height: 3.6rem; padding: 0.4rem 0.65rem 0.4rem 1.1rem; border-radius: var(--r-pill, 999px); background: var(--c-glass-pill, rgba(14, 16, 28, 0.74)); border: 1px solid var(--c-line-dark, rgba(247, 244, 239, 0.1)); -webkit-backdrop-filter: blur(18px) saturate(140%); backdrop-filter: blur(18px) saturate(140%); font-family: var(--font-ui, 'Plus Jakarta Sans', system-ui, sans-serif); } .ds-nav-brand { color: var(--c-on-night, #f7f4ef); font-weight: 700; letter-spacing: -0.025em; } .ds-nav-brand em { font-family: var(--font-editorial, 'Instrument Serif', Georgia, serif); font-weight: 400; color: var(--c-on-night-2, #b8bdd0); margin-left: 0.25rem; } .ds-nav-links { display: flex; gap: 0.2rem; } .ds-nav-link { display: inline-flex; align-items: center; min-height: 44px; padding: 0.45rem 0.85rem; border-radius: var(--r-pill, 999px); font-size: 0.875rem; font-weight: 500; color: var(--c-on-night-2, #b8bdd0); text-decoration: none; transition: color 180ms ease, background-color 180ms ease; } .ds-nav-link:hover, .ds-nav-link[aria-current='true'] { color: var(--c-on-night, #f7f4ef); background: rgba(255, 255, 255, 0.08); } .ds-nav-link:focus-visible { outline: 2px solid var(--c-coral, #ff6b4a); outline-offset: 2px; }"
+    },
+    {
+      "name": "Capability Bento Card",
+      "kind": "card",
+      "refersTo": "card-bento",
+      "description": "Pure Silk architectural capability card with paired discipline-ink kicker, outcome summary, and stack pills.",
+      "html": "<article class=\"ds-card-bento\"><p class=\"ds-card-kicker\">Executive Intelligence &amp; Analytics</p><h3 class=\"ds-card-title\">Power BI, Data Modeling &amp; Live KPI Suites</h3><p class=\"ds-card-body\">Retire manual monthly Excel packs with governed semantic models and live dashboards wired directly to SQL and Dataverse.</p><div class=\"ds-card-tags\"><span class=\"ds-tag\">Power BI</span><span class=\"ds-tag\">DAX &amp; SQL</span><span class=\"ds-tag\">Dataverse</span></div></article>",
+      "css": ".ds-card-bento { max-width: 28rem; padding: 2rem; border-radius: var(--r-card, 1.75rem); background: var(--c-silk-card, #ffffff); border: 1px solid var(--c-line-light, rgba(17, 19, 32, 0.09)); box-shadow: 0 18px 48px -18px rgba(17, 19, 32, 0.1), 0 2px 10px -2px rgba(17, 19, 32, 0.04); font-family: var(--font-ui, 'Plus Jakarta Sans', system-ui, sans-serif); transition: transform 340ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 340ms cubic-bezier(0.22, 1, 0.36, 1), border-color 180ms ease; } .ds-card-bento:hover { transform: translateY(-4px); border-color: var(--c-line-light-strong, rgba(17, 19, 32, 0.18)); box-shadow: 0 28px 64px -20px rgba(17, 19, 32, 0.16), 0 6px 18px -4px rgba(17, 19, 32, 0.06); } .ds-card-kicker { margin: 0; font-size: 0.8125rem; font-weight: 600; color: var(--c-sky-ink, #135d96); } .ds-card-title { margin: 0.45rem 0 0; font-size: 1.4rem; font-weight: 700; letter-spacing: -0.03em; line-height: 1.22; color: var(--c-ink, #111320); } .ds-card-body { margin: 0.65rem 0 0; font-size: 0.96875rem; line-height: 1.6; color: var(--c-ink-2, #434759); } .ds-card-tags { margin: 1.15rem 0 0; display: flex; flex-wrap: wrap; gap: 0.4rem; } .ds-tag { padding: 0.3rem 0.75rem; border-radius: 999px; font-size: 0.78125rem; font-weight: 500; background: var(--c-silk, #f6f3ee); border: 1px solid var(--c-line-light, rgba(17, 19, 32, 0.09)); color: var(--c-ink-2, #434759); }"
+    },
+    {
+      "name": "Dark Glass Input Field",
+      "kind": "input",
+      "refersTo": "input-dark",
+      "description": "High-contrast dark-velvet form control with coral focus halo and accessible placeholder legibility.",
+      "html": "<div class=\"ds-field\"><label class=\"ds-label\" for=\"ds-demo-email\">Work email</label><input class=\"ds-input\" id=\"ds-demo-email\" type=\"email\" placeholder=\"alex@organization.gov\" /></div>",
+      "css": ".ds-field { display: grid; gap: 0.42rem; max-width: 22rem; font-family: var(--font-ui, 'Plus Jakarta Sans', system-ui, sans-serif); } .ds-label { font-size: 0.9375rem; font-weight: 600; color: var(--c-on-night, #f7f4ef); } .ds-input { min-height: 3.1rem; padding: 0.78rem 1rem; border-radius: var(--r-control, 0.95rem); border: 1px solid var(--c-line-dark, rgba(247, 244, 239, 0.1)); background: var(--c-input-bg, rgba(11, 12, 20, 0.65)); color: var(--c-on-night, #f7f4ef); font-size: 1rem; transition: border-color 180ms ease, background-color 180ms ease, box-shadow 180ms ease; } .ds-input::placeholder { color: var(--c-on-night-3, #8a91ab); } .ds-input:hover { border-color: var(--c-line-dark-strong, rgba(247, 244, 239, 0.22)); background: var(--c-input-bg-hover, rgba(11, 12, 20, 0.82)); } .ds-input:focus-visible { outline: none; border-color: var(--c-coral, #ff6b4a); background: var(--c-input-bg-focus, rgba(11, 12, 20, 0.92)); box-shadow: 0 0 0 3px var(--c-focus-ring-coral, rgba(255, 107, 74, 0.24)); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Living Continuum",
+    "overview": "Douglas Hill Consulting Studio balances calm principal-architect authority with kinetic architectural craft. Rather than presenting enterprise work as a rigid spreadsheet or a generic SaaS feature grid, the interface alternates deliberately between sculptural Deep Velvet Night stages (#0b0c14) and breathable Warm Raw Silk editorial canvases (#f6f3ee). Every interactive artifact — from the four-mode iridescent continuum sculpture to outcome-led case filtering — demonstrates senior fluency across custom web applications, Microsoft Power Platform, Power BI intelligence, and cloud governance without swagger or clutter.\n\nTypography and proportion carry the hierarchy. Crisp geometric headlines in Plus Jakarta Sans anchor each section directly without formulaic section kickers, punctuated selectively by italic Instrument Serif inflections that warm technical subject matter. Whitespace is generous, surfaces curve softly at architectural radii, and every screen funnels naturally toward a single clear invitation: booking a 30-minute conversation directly with the principal architect.\n\nWe explicitly reject generic SaaS gradient-text clichés, navy-and-gray corporate stock templates, rigid single-track boxed grids, and gratuitous motion theatrics that penalize reduced-motion visitors.",
+    "keyCharacteristics": [
+      "Alternating Dual Atmosphere: Deep Velvet Night stages frame interactive proof and conversion moments; Warm Raw Silk chapters give long-form architectural substance calm reading room.",
+      "Four-Discipline Spectrum: Luminous Coral, Glacier Sky, Warm Amber, and Jade Mint map 1:1 to Applications & Web, Power BI Intelligence, System Automation, and Cloud Governance.",
+      "Editorial-Geometric Tension: Tightly tracked Plus Jakarta Sans (-0.032em to -0.036em) paired with fluid Instrument Serif italics (1.09em) for deliberate focal inflection.",
+      "Tactile Pill Ergonomics: Full-pill interactive controls (999px radius, >= 44px touch targets) contrast against generous rounded architectural cards (1.75rem to 2.5rem).",
+      "Respectful Kinetic Craft: Idle-deferred custom GLSL/WebGL sculpture and exponential ease-out choreography degrade cleanly to crisp static geometry and 180ms color/opacity feedback under prefers-reduced-motion: reduce."
+    ],
+    "rules": [
+      {
+        "name": "The Surface-Paired Accent Rule",
+        "body": "Luminous accents (#ff6b4a, #5ec2ff, #ffaa5c, #5eead4) appear as text only on Deep Velvet Night surfaces; on Warm Raw Silk, always switch to their paired ink tokens (#c2391a, #135d96, #964d08, #0e6f65) so body and label contrast stays comfortably above 4.5:1.",
+        "section": "colors"
+      },
+      {
+        "name": "The Solid Letterform Rule",
+        "body": "Never apply multi-stop CSS background-clip: text gradients to headlines or impact counters; typographic emphasis comes from solid coral or ivory contrast, scale, and italic serif form.",
+        "section": "colors"
+      },
+      {
+        "name": "The Self-Sufficient Heading Rule",
+        "body": "Section headings never carry a decorative eyebrow badge or uppercase kicker above them; only the hero may display an operational scope pill, leaving every subsequent <h2> to lead its chapter cleanly.",
+        "section": "typography"
+      },
+      {
+        "name": "The Single Italic Inflection Rule",
+        "body": "Use Instrument Serif italic at most once per heading so the contrast reads as deliberate editorial authorship rather than ornament.",
+        "section": "typography"
+      },
+      {
+        "name": "The Single-Pass Glass Rule",
+        "body": "Apply backdrop-filter only to top-level floating chrome (the sticky header pill, mobile menu drawer, secondary glass CTA, and standalone form shell); nested controls inside an already-framed dark container use solid translucent surface tokens (rgba(11, 12, 20, 0.72)) with 1px hairlines.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do alternate Deep Velvet Night (#0b0c14) and Warm Raw Silk (#f6f3ee) chapters so dense enterprise proof and calm architectural reading balance each other.",
+      "Do lead every case study and capability card with concrete business outcomes (1,188+ records migrated, 200+ environments governed, 1.2M customers reached) before listing stack tags.",
+      "Do enforce >= 44×44px hit targets on every interactive control, including standalone inline email and legal links.",
+      "Do keep all styling in external hashed Astro stylesheets (style-src 'self') with zero inline style=\"\" attributes or inline event handlers.",
+      "Do gate heavy WebGL imports behind !prefers-reduced-motion and preserve 180ms non-spatial hover/focus state feedback for reduced-motion users."
+    ],
+    "donts": [
+      "Don't place decorative eyebrow badges or uppercase kickers above section <h2> headings; let the headline scale and serif inflection carry the entry.",
+      "Don't use CSS background-clip: text gradients on headings, counters, or labels.",
+      "Don't auto-activate role=\"tab\" panels on pointerenter hover; require intentional click or keyboard selection.",
+      "Don't use filter: blur(80px+) offscreen divs or nested backdrop-filter layers when a multi-stop radial-gradient or translucent token achieves the same depth at zero GPU cost.",
+      "Don't narrow the studio narrative to a single tool — always represent custom web apps, Power Apps/Pages, Power BI, Power Automate, and cloud governance as one cohesive practice."
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+---
+import SimpleLayout from '../layouts/SimpleLayout.astro';
+import { SITE } from '../lib/site';
+---
+
+<SimpleLayout
+  title="Terms | Douglas Hill Consulting"
+  description="The website terms for Douglas Hill Consulting LLC are being prepared."
+  path="/terms"
+  heading="Terms"
+>
+  <p>This page is being prepared and will be published here shortly.</p>
+  <p>Questions can go to <a class="text-link" href={`mailto:${SITE.email}`}>{SITE.email}</a>.</p>
+  <p><a class="text-link" href="/">Back to the home page</a></p>
+</SimpleLayout>

@@ -1,0 +1,272 @@
+---
+import { Picture } from 'astro:assets';
+import portrait from '../../assets/images/douglas-hill-portrait.jpg';
+import Icon from '../Icon.astro';
+import { SITE } from '../../lib/site';
+
+const certifications = [
+  'AWS Solutions Architect Associate',
+  'Scrum Product Owner',
+  'Microsoft Azure Fundamentals',
+  'Power Platform Fundamentals',
+  'Azure Data Fundamentals',
+];
+
+const stackGroups = [
+  'Power Apps · Power Pages · Dataverse',
+  'Power BI · DAX · SQL Data Modeling',
+  'Power Automate · Dynamics 365',
+  'React · TypeScript · Modern Web',
+  'Azure · AWS · Azure DevOps & GitHub',
+];
+---
+
+<section class="architect surface-night" id="about" aria-labelledby="about-title">
+  <div class="container architect-grid">
+    <figure class="portrait-card" data-reveal-solo>
+      <div class="portrait-media">
+        <Picture
+          src={portrait}
+          formats={['avif', 'webp']}
+          widths={[340, 520]}
+          sizes="(min-width: 1024px) 400px, (min-width: 640px) 360px, 86vw"
+          alt="Douglas Hill, Principal Solution Architect, smiling head and shoulders portrait."
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <figcaption class="portrait-caption">
+        <div>
+          <p class="portrait-name">{SITE.person}, MBA</p>
+          <p class="portrait-role">Principal Solution Architect</p>
+        </div>
+        <span class="portrait-loc">{SITE.locality}, {SITE.region}</span>
+      </figcaption>
+    </figure>
+
+    <div class="architect-body" data-reveal-group>
+      <h2 class="section-heading architect-heading" id="about-title" data-reveal>
+        Engineering depth paired with <span class="serif-italic">executive clarity.</span>
+      </h2>
+
+      <div class="architect-copy" data-reveal>
+        <p class="section-lead">
+          I’m Douglas Hill — a solution architect with 7+ years designing custom web applications, Microsoft Power
+          Platform ecosystems, Power&nbsp;BI intelligence suites, and cloud infrastructure for Fortune&nbsp;50
+          enterprises, utilities, and federal and state agencies.
+        </p>
+        <p class="architect-sub">
+          With a BS in Information Technology and an MBA in Finance, I bridge both sides of the room: speaking fluent
+          ROI and operational governance with leadership while writing the code, data models, DAX measures, and cloud
+          flows myself. The person on your first call is the person building your system.
+        </p>
+      </div>
+
+      <div class="cred-columns" data-reveal>
+        <div class="cred-box">
+          <h3 class="cred-label">Credentials &amp; Education</h3>
+          <p class="cred-edu">MBA in Finance &amp; BS in Information Technology — Grand Canyon University</p>
+          <ul class="cred-pills">
+            {certifications.map((c) => <li class="pill-tag">{c}</li>)}
+          </ul>
+        </div>
+
+        <div class="cred-box">
+          <h3 class="cred-label">Core Architecture Stack</h3>
+          <ul class="stack-lines">
+            {
+              stackGroups.map((g) => (
+                <li>
+                  <Icon name="sparkles" class="stack-icon" />
+                  <span>{g}</span>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+
+      <div class="architect-links" data-reveal>
+        <a class="btn btn-glass btn-small" href={SITE.resumePdf}>
+          <span>Download Résumé (PDF)</span>
+          <Icon name="arrow-up-right" class="btn-icon" />
+        </a>
+        <a class="btn btn-glass btn-small" href={SITE.linkedin} target="_blank" rel="noopener noreferrer">
+          <span>LinkedIn<span class="sr-only"> (opens in a new tab)</span></span>
+          <Icon name="external" class="btn-icon" />
+        </a>
+        <a class="text-link architect-email" href={`mailto:${SITE.email}`}>{SITE.email}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .architect {
+    padding-block: var(--section-pad);
+  }
+
+  .architect-grid {
+    display: grid;
+    gap: clamp(2.5rem, 2rem + 3vw, 4.5rem);
+    align-items: start;
+  }
+
+  .portrait-card {
+    max-width: 24rem;
+    padding: 0.85rem;
+    border-radius: var(--r-card-lg);
+    background: linear-gradient(160deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02));
+    border: 1px solid var(--c-line-dark-strong);
+    box-shadow: var(--shadow-stage);
+  }
+
+  .portrait-media {
+    overflow: hidden;
+    border-radius: var(--r-card);
+    background: var(--c-night-3);
+  }
+
+  .portrait-media :global(img) {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+  }
+
+  .portrait-caption {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--s-3);
+    padding: 1rem 0.65rem 0.35rem;
+  }
+
+  .portrait-name {
+    font-weight: var(--w-bold);
+    font-size: 1.05rem;
+    color: var(--c-on-night);
+  }
+
+  .portrait-role {
+    font-size: var(--fs-label);
+    color: var(--c-on-night-2);
+    margin-top: 0.1rem;
+  }
+
+  .portrait-loc {
+    padding: 0.28rem 0.7rem;
+    border-radius: var(--r-pill);
+    font-size: var(--fs-micro);
+    font-weight: var(--w-semibold);
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--c-on-night-2);
+    white-space: nowrap;
+  }
+
+  .architect-body {
+    display: grid;
+    gap: 1.35rem;
+    justify-items: start;
+  }
+
+  .architect-copy {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .architect-sub {
+    font-size: var(--fs-body);
+    line-height: 1.65;
+    color: var(--c-on-night-2);
+    max-width: 58ch;
+  }
+
+  .cred-columns {
+    width: 100%;
+    margin-top: 0.5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.15rem;
+  }
+
+  .cred-box {
+    padding: 1.35rem 1.5rem;
+    border-radius: var(--r-card);
+    background: var(--c-night-2);
+    border: 1px solid var(--c-line-dark);
+    display: grid;
+    gap: 0.85rem;
+    align-content: start;
+  }
+
+  .cred-label {
+    font-size: var(--fs-label);
+    font-weight: var(--w-semibold);
+    color: var(--c-coral);
+  }
+
+  .cred-edu {
+    font-size: var(--fs-small);
+    line-height: 1.5;
+    color: var(--c-on-night);
+    font-weight: var(--w-medium);
+  }
+
+  .cred-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.42rem;
+  }
+
+  .stack-lines {
+    display: grid;
+    gap: 0.55rem;
+  }
+
+  .stack-lines li {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: var(--fs-small);
+    color: var(--c-on-night-2);
+  }
+
+  .stack-icon {
+    width: 1rem;
+    height: 1rem;
+    color: var(--c-sky);
+    flex: none;
+  }
+
+  .architect-links {
+    margin-top: 0.35rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem 1.25rem;
+  }
+
+  .architect-email {
+    min-height: 44px;
+    font-size: var(--fs-small);
+    overflow-wrap: anywhere;
+  }
+
+  @media (min-width: 720px) {
+    .cred-columns {
+      grid-template-columns: 1.1fr 0.9fr;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .architect-grid {
+      grid-template-columns: 23rem 1fr;
+    }
+
+    .portrait-card {
+      position: sticky;
+      top: calc(var(--header-h) + 1.5rem);
+    }
+  }
+</style>

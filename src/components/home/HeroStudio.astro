@@ -1,0 +1,473 @@
+---
+import BookCall from '../BookCall.astro';
+import Icon from '../Icon.astro';
+
+const modes = [
+  {
+    id: 'apps',
+    label: 'Apps & Web',
+    accent: 'coral',
+    eyebrow: 'Applications & Portals',
+    title: 'Bespoke web apps, Power Apps, and external portals',
+    summary:
+      'From modern React & TypeScript web apps to Canvas apps, Model-Driven apps, and public Power Pages portals backed by Dataverse.',
+    tags: ['React & TypeScript', 'Power Apps', 'Power Pages', 'Dataverse'],
+  },
+  {
+    id: 'bi',
+    label: 'Power BI',
+    accent: 'sky',
+    eyebrow: 'Executive Intelligence',
+    title: 'Live Power BI suites wired straight to your data',
+    summary:
+      'Semantic data models and automated KPI dashboards over SQL, Dataverse, and SharePoint — retiring manual monthly Excel reporting.',
+    tags: ['Power BI', 'Semantic Models', 'SQL & DAX', 'Automated Refresh'],
+  },
+  {
+    id: 'automation',
+    label: 'Automation',
+    accent: 'amber',
+    eyebrow: 'System Orchestration',
+    title: 'Resilient cloud workflows with full audit history',
+    summary:
+      'End-to-end Power Automate orchestration and REST API integrations replacing fragile Nintex, Access, and inbox approval chains.',
+    tags: ['Power Automate', 'REST APIs', 'Legacy Migration', 'Audit Trails'],
+  },
+  {
+    id: 'governance',
+    label: 'Governance',
+    accent: 'mint',
+    eyebrow: 'Cloud & Tenant Guardrails',
+    title: 'CoE governance, DLP strategy, and Azure / AWS cloud',
+    summary:
+      'Environment architecture across 200+ tenants, CoE Starter Kit rollouts, DEV/TEST/PROD ALM pipelines, and cloud infrastructure.',
+    tags: ['CoE Starter Kit', 'DLP & ALM', 'Azure', 'AWS Certified'],
+  },
+];
+---
+
+<section class="hero" id="hero" aria-labelledby="hero-title">
+  <!-- Soft ambient aurora pools behind content -->
+  <div class="hero-glow hero-glow--warm" aria-hidden="true"></div>
+  <div class="hero-glow hero-glow--cool" aria-hidden="true"></div>
+
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <div class="eyebrow-pill" data-hero-item>
+        <span class="eyebrow-dot" aria-hidden="true"></span>
+        <span>Power Platform &middot; Power BI &middot; Web Apps &middot; Cloud</span>
+      </div>
+
+      <h1 class="hero-title" id="hero-title" data-hero-item>
+        Custom apps, live <span class="serif-italic hero-accent-word">intelligence,</span> and systems built to flow.
+      </h1>
+
+      <p class="hero-lead" data-hero-item>
+        I help organizations replace tangled spreadsheets, manual reporting, and aging legacy tools with modern web
+        applications, the full Microsoft Power Platform, Power&nbsp;BI analytics, and governed cloud architecture.
+      </p>
+
+      <div class="hero-actions" data-hero-item>
+        <BookCall location="hero" variant="glow" magnetic />
+        <a class="btn btn-glass" href="#capabilities">
+          <span>Explore capabilities</span>
+          <Icon name="arrow-down" class="btn-icon" />
+        </a>
+      </div>
+
+      <ul class="hero-trust" aria-label="Studio highlights" data-hero-item>
+        <li><strong>7+ yrs</strong> enterprise &amp; cloud architecture</li>
+        <li><strong>Fortune 50</strong> &amp; federal delivery</li>
+        <li><strong>100%</strong> senior principal led</li>
+      </ul>
+    </div>
+
+    <div class="hero-visual" data-hero-item>
+      <div class="continuum-shell">
+        <div class="continuum-stage" data-continuum-stage>
+          <!-- Graceful vector fallback visible prior to or without WebGL -->
+          <svg
+            class="continuum-fallback"
+            viewBox="0 0 480 420"
+            fill="none"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <defs>
+              <linearGradient id="fb-ribbon-1" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#ff6b4a" stop-opacity="0.85" />
+                <stop offset="50%" stop-color="#ffaa5c" stop-opacity="0.65" />
+                <stop offset="100%" stop-color="#5ec2ff" stop-opacity="0.85" />
+              </linearGradient>
+              <linearGradient id="fb-ribbon-2" x1="1" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#5eead4" stop-opacity="0.6" />
+                <stop offset="100%" stop-color="#ff6b4a" stop-opacity="0.4" />
+              </linearGradient>
+            </defs>
+            <ellipse cx="240" cy="210" rx="178" ry="112" transform="rotate(-18 240 210)" stroke="url(#fb-ribbon-1)" stroke-width="2" stroke-opacity="0.45" />
+            <ellipse cx="240" cy="210" rx="158" ry="96" transform="rotate(24 240 210)" stroke="url(#fb-ribbon-2)" stroke-width="1.5" stroke-opacity="0.4" />
+            <path
+              d="M110 225C110 140 185 105 240 165C295 225 370 190 370 125C370 72 300 70 240 135C180 200 110 295 195 315C265 330 345 275 355 215"
+              stroke="url(#fb-ribbon-1)"
+              stroke-width="18"
+              stroke-linecap="round"
+            />
+          </svg>
+          <canvas class="continuum-canvas" data-continuum-canvas aria-hidden="true"></canvas>
+        </div>
+
+        <!-- Interactive 4-Discipline Switcher -->
+        <div class="studio-dock">
+          <div class="mode-pills" role="tablist" aria-label="Interactive studio disciplines">
+            {
+              modes.map((m, idx) => (
+                <button
+                  type="button"
+                  role="tab"
+                  id={`mode-tab-${m.id}`}
+                  aria-controls={`mode-panel-${m.id}`}
+                  aria-selected={idx === 0 ? 'true' : 'false'}
+                  tabindex={idx === 0 ? 0 : -1}
+                  class:list={['mode-pill', `mode-pill--${m.accent}`, idx === 0 && 'is-active']}
+                  data-mode-btn
+                >
+                  {m.label}
+                </button>
+              ))
+            }
+          </div>
+
+          <div class="mode-panels">
+            {
+              modes.map((m, idx) => (
+                <div
+                  role="tabpanel"
+                  id={`mode-panel-${m.id}`}
+                  aria-labelledby={`mode-tab-${m.id}`}
+                  class:list={['mode-card', `mode-card--${m.accent}`]}
+                  data-mode-panel
+                  hidden={idx !== 0 ? true : undefined}
+                >
+                  <p class="mode-eyebrow">{m.eyebrow}</p>
+                  <h2 class="mode-title">{m.title}</h2>
+                  <p class="mode-summary">{m.summary}</p>
+                  <ul class="mode-tags" aria-label={`${m.label} technologies`}>
+                    {m.tags.map((t) => <li>{t}</li>)}
+                  </ul>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    padding-block: clamp(1.5rem, 1rem + 2.5vw, 3.5rem) clamp(3.25rem, 2.25rem + 4vw, 5.5rem);
+    overflow: hidden;
+  }
+
+  .hero-glow {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .hero-glow--warm {
+    top: -10rem;
+    right: -10rem;
+    width: 46rem;
+    height: 46rem;
+    background: radial-gradient(
+      circle,
+      rgba(255, 107, 74, 0.16) 0%,
+      rgba(255, 170, 92, 0.06) 36%,
+      transparent 70%
+    );
+  }
+
+  .hero-glow--cool {
+    bottom: -12rem;
+    left: -12rem;
+    width: 44rem;
+    height: 44rem;
+    background: radial-gradient(
+      circle,
+      rgba(94, 194, 255, 0.12) 0%,
+      rgba(94, 234, 212, 0.04) 38%,
+      transparent 70%
+    );
+  }
+
+  .hero-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: clamp(2rem, 1.5rem + 2.5vw, 3.5rem);
+    align-items: center;
+  }
+
+  .hero-copy {
+    display: grid;
+    gap: clamp(1rem, 0.8rem + 0.7vw, 1.45rem);
+    justify-items: start;
+  }
+
+  .hero-title {
+    font-size: var(--fs-display);
+    line-height: var(--lh-display);
+    letter-spacing: -0.036em;
+    color: var(--c-on-night);
+    max-width: 14.5ch;
+  }
+
+  .hero-accent-word {
+    color: var(--c-coral);
+    padding-right: 0.04em;
+  }
+
+  .hero-lead {
+    font-size: var(--fs-lead);
+    line-height: 1.56;
+    color: var(--c-on-night-2);
+    max-width: 50ch;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 0.2rem;
+    width: 100%;
+  }
+
+  .hero-trust {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.35rem;
+    margin-top: 0.35rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--c-line-dark);
+    font-size: var(--fs-label);
+    color: var(--c-on-night-2);
+    width: 100%;
+  }
+
+  .hero-trust strong {
+    color: var(--c-on-night);
+    font-weight: var(--w-semibold);
+  }
+
+  /* ==================== 3D Continuum & Interactive Dock ==================== */
+  .continuum-shell {
+    position: relative;
+    border-radius: var(--r-card-lg);
+    background: radial-gradient(
+        120% 100% at 50% 12%,
+        rgba(255, 107, 74, 0.12) 0%,
+        rgba(94, 194, 255, 0.08) 45%,
+        rgba(18, 21, 36, 0.88) 100%
+      ),
+      var(--c-night-2);
+    border: 1px solid var(--c-line-dark);
+    box-shadow: var(--shadow-stage);
+    overflow: hidden;
+  }
+
+  .continuum-stage {
+    position: relative;
+    width: 100%;
+    height: clamp(14.5rem, 48vw, 22.5rem);
+    display: grid;
+    place-items: center;
+  }
+
+  .continuum-fallback {
+    width: 82%;
+    max-width: 24rem;
+    height: auto;
+    transition: opacity var(--dur) var(--ease-fluid);
+  }
+
+  :global(html.has-webgl) .continuum-fallback {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .continuum-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .studio-dock {
+    position: relative;
+    z-index: 2;
+    padding: 0 1rem 1rem;
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .mode-pills {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.35rem;
+    padding: 0.35rem;
+    border-radius: var(--r-dock);
+    background: var(--c-glass-dock);
+    border: 1px solid var(--c-line-dark);
+  }
+
+  @media (min-width: 520px) {
+    .mode-pills {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      border-radius: var(--r-pill);
+    }
+  }
+
+  .mode-pill {
+    min-height: 44px;
+    padding: 0.45rem 0.65rem;
+    border-radius: var(--r-pill);
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--c-on-night-2);
+    font-size: 0.8125rem;
+    font-weight: var(--w-semibold);
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+    transition:
+      color var(--dur-fast) var(--ease-fluid),
+      background-color var(--dur-fast) var(--ease-fluid),
+      border-color var(--dur-fast) var(--ease-fluid);
+  }
+
+  .mode-pill:hover {
+    color: var(--c-on-night);
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  .mode-pill.is-active {
+    color: var(--c-night);
+    font-weight: var(--w-bold);
+  }
+
+  .mode-pill--coral.is-active {
+    background: var(--c-coral);
+  }
+
+  .mode-pill--sky.is-active {
+    background: var(--c-sky);
+  }
+
+  .mode-pill--amber.is-active {
+    background: var(--c-amber);
+  }
+
+  .mode-pill--mint.is-active {
+    background: var(--c-mint);
+  }
+
+  .mode-card {
+    padding: 1.15rem 1.25rem;
+    border-radius: var(--r-dock);
+    background: var(--c-glass-dock);
+    border: 1px solid var(--c-line-dark);
+  }
+
+  .mode-eyebrow {
+    font-size: var(--fs-micro);
+    font-weight: var(--w-semibold);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--c-coral);
+  }
+
+  .mode-card--sky .mode-eyebrow {
+    color: var(--c-sky);
+  }
+
+  .mode-card--amber .mode-eyebrow {
+    color: var(--c-amber);
+  }
+
+  .mode-card--mint .mode-eyebrow {
+    color: var(--c-mint);
+  }
+
+  .mode-title {
+    margin-top: 0.25rem;
+    font-size: 1.0625rem;
+    line-height: 1.28;
+    color: var(--c-on-night);
+  }
+
+  .mode-summary {
+    margin-top: 0.4rem;
+    font-size: var(--fs-compact);
+    line-height: 1.52;
+    color: var(--c-on-night-2);
+  }
+
+  .mode-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.38rem;
+    margin-top: 0.75rem;
+  }
+
+  .mode-tags li {
+    padding: 0.24rem 0.65rem;
+    border-radius: var(--r-pill);
+    font-size: var(--fs-micro);
+    font-weight: var(--w-medium);
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--c-line-dark);
+    color: var(--c-on-night);
+  }
+
+  @media (max-width: 639px) {
+    .hero {
+      padding-top: 1rem;
+    }
+
+    .hero-copy {
+      gap: 0.82rem;
+    }
+
+    .hero-title {
+      font-size: var(--fs-display-compact);
+    }
+
+    .hero-lead {
+      font-size: var(--fs-btn);
+      line-height: 1.48;
+    }
+
+    .hero-actions .btn {
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .hero-grid {
+      grid-template-columns: 1.06fr 0.94fr;
+      gap: clamp(2.5rem, 3.5vw, 4.5rem);
+    }
+
+    .continuum-stage {
+      height: 21.5rem;
+    }
+
+    .studio-dock {
+      padding: 0 1.25rem 1.25rem;
+    }
+  }
+</style>

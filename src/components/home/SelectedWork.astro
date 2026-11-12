@@ -1,0 +1,360 @@
+---
+const metrics = [
+  { value: '7+', count: 7, decimals: 0, suffix: '+', label: 'Years architecting Microsoft, web & cloud systems' },
+  { value: '200+', count: 200, decimals: 0, suffix: '+', label: 'Power Platform environments governed at Fortune 50 scale' },
+  { value: '1.2M', count: 1.2, decimals: 1, suffix: 'M', label: 'Utility customers reached via automated cloud journeys' },
+  { value: '1,188+', count: 1188, decimals: 0, suffix: '+', label: 'State cleanup records migrated off Excel onto Dataverse' },
+];
+
+const filters = [
+  { id: 'all', label: 'All Work' },
+  { id: 'apps', label: 'Apps & Portals' },
+  { id: 'bi', label: 'Power BI & Data' },
+  { id: 'automation', label: 'Automation' },
+  { id: 'governance', label: 'Governance & Cloud' },
+];
+
+const cases = [
+  {
+    title: 'PetroFund External Portal & Case Platform',
+    client: 'Minnesota Dept. of Commerce',
+    accent: 'coral',
+    categories: 'apps automation',
+    impact: '1,188+ records modernized',
+    summary:
+      'Replaced an error-prone Excel and inbox process with a public Power Pages portal, a relational Dataverse data model, a staff Model-Driven app, multi-stage Power Automate approvals, and DEV/TEST/PROD ALM.',
+    stack: ['Power Pages', 'Dataverse', 'Model-Driven App', 'Power Automate', 'ALM'],
+  },
+  {
+    title: 'IRS Legacy Modernization & Live BI Suite',
+    client: 'Federal Program · ECS Tech',
+    accent: 'sky',
+    categories: 'bi automation',
+    impact: 'IRS-compliant live reporting',
+    summary:
+      'Migrated fragile Nintex workflows and an aging Access database onto Power Automate and Dataverse, pairing automated compliance trails with live Power BI dashboards that retired manual Excel reports.',
+    stack: ['Power BI', 'Power Automate', 'Dataverse', 'Legacy Migration'],
+  },
+  {
+    title: 'DHS Security Operations & Analyst KPIs',
+    client: 'Homeland Security · ECS Tech',
+    accent: 'coral',
+    categories: 'apps bi',
+    impact: 'Hardened intake + KPI suite',
+    summary:
+      'Delivered a security-hardened Model-Driven intake platform with an embedded Canvas app, custom JavaScript controls, cloud orchestration, and a real-time Power BI operational dashboard for analysts.',
+    stack: ['Model-Driven & Canvas', 'JavaScript', 'Power BI', 'Power Automate'],
+  },
+  {
+    title: 'Fortune 50 Tenant Governance at Scale',
+    client: 'Humana',
+    accent: 'mint',
+    categories: 'governance',
+    impact: '200+ environments governed',
+    summary:
+      'Brought sprawling enterprise maker growth under control across 200+ environments with tenant- and environment-level DLP policies, CoE Starter Kit visibility, and licensing & capacity strategy.',
+    stack: ['CoE Starter Kit', 'DLP Policies', 'Tenant Strategy', 'Governance'],
+  },
+  {
+    title: 'Customer Journey Platform & Cloud Migration',
+    client: 'Arizona Public Service',
+    accent: 'amber',
+    categories: 'apps automation governance',
+    impact: '1.2M customers · 1 mo early',
+    summary:
+      'Implemented Dynamics 365 multi-channel journeys reaching 1.2M utility customers, cut internal workflow approval time by 50%, and led a SharePoint-to-Azure cloud migration delivered a month ahead of schedule.',
+    stack: ['Dynamics 365', 'Azure', 'SharePoint', 'Cloud Migration'],
+  },
+  {
+    title: 'Defense Data Architecture & Reporting',
+    client: 'Dept. of Defense · ECS Tech',
+    accent: 'sky',
+    categories: 'bi governance',
+    impact: 'Self-sustaining BI architecture',
+    summary:
+      'Modeled program data cleanly for cost and security, built a repeatable Power BI reporting suite, and delivered complete operational runbooks so the team could run without ongoing vendor dependency.',
+    stack: ['Power BI', 'Data Modeling', 'SharePoint', 'Runbooks'],
+  },
+];
+---
+
+<section class="work surface-night" id="work" aria-labelledby="work-title">
+  <div class="container">
+    <!-- Animated Impact Strip -->
+    <dl class="metrics-strip" data-reveal-group>
+      {
+        metrics.map((m) => (
+          <div class="metric-card" data-reveal>
+            <dt class="metric-label">{m.label}</dt>
+            <dd
+              class="metric-value"
+              data-count={m.count}
+              data-decimals={m.decimals}
+              data-suffix={m.suffix}
+            >
+              {m.value}
+            </dd>
+          </div>
+        ))
+      }
+    </dl>
+
+    <div class="work-header" data-reveal-solo>
+      <div>
+        <h2 class="section-heading work-heading" id="work-title">
+          Proven in Fortune&nbsp;50, utilities, and <span class="serif-italic">federal programs.</span>
+        </h2>
+      </div>
+
+      <div class="filter-pills" role="group" aria-label="Filter case studies by discipline">
+        {
+          filters.map((f, idx) => (
+            <button
+              type="button"
+              class:list={['filter-pill', idx === 0 && 'is-active']}
+              aria-pressed={idx === 0 ? 'true' : 'false'}
+              data-work-filter={f.id}
+            >
+              {f.label}
+            </button>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="work-grid" data-reveal-group>
+      {
+        cases.map((c) => (
+          <article
+            class:list={['case-card', `case-card--${c.accent}`]}
+            data-work-card
+            data-categories={c.categories}
+            data-reveal
+            data-spotlight
+          >
+            <div class="case-meta">
+              <span class="case-client">{c.client}</span>
+              <span class="case-impact">{c.impact}</span>
+            </div>
+
+            <h3 class="case-title">{c.title}</h3>
+            <p class="case-summary">{c.summary}</p>
+
+            <ul class="case-stack" aria-label="Technologies used">
+              {c.stack.map((s) => (
+                <li class="pill-tag">{s}</li>
+              ))}
+            </ul>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .work {
+    padding-block: var(--section-pad);
+  }
+
+  .metrics-strip {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    padding-bottom: clamp(3.25rem, 2.25rem + 3vw, 5rem);
+    border-bottom: 1px solid var(--c-line-dark);
+  }
+
+  .metric-card {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    gap: 0.55rem;
+    padding: clamp(1.25rem, 1rem + 1vw, 1.85rem);
+    border-radius: var(--r-card);
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid var(--c-line-dark);
+  }
+
+  .metric-value {
+    font-family: var(--font-editorial);
+    font-size: var(--fs-metric);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--c-on-night);
+  }
+
+  .metric-label {
+    font-size: var(--fs-label);
+    line-height: 1.45;
+    color: var(--c-on-night-2);
+  }
+
+  .work-header {
+    margin-top: clamp(3rem, 2rem + 3vw, 4.5rem);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--s-5);
+  }
+
+  .work-heading {
+    max-width: 19ch;
+  }
+
+  .filter-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+  }
+
+  .filter-pill {
+    min-height: 44px;
+    padding: 0.5rem 1rem;
+    border-radius: var(--r-pill);
+    border: 1px solid var(--c-line-dark-strong);
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--c-on-night-2);
+    font-size: 0.84375rem;
+    font-weight: var(--w-semibold);
+    cursor: pointer;
+    transition:
+      background-color var(--dur-fast) var(--ease-fluid),
+      border-color var(--dur-fast) var(--ease-fluid),
+      color var(--dur-fast) var(--ease-fluid);
+  }
+
+  .filter-pill:hover {
+    color: var(--c-on-night);
+    background: rgba(255, 255, 255, 0.09);
+  }
+
+  .filter-pill.is-active {
+    background: var(--c-on-night);
+    border-color: var(--c-on-night);
+    color: var(--c-night);
+  }
+
+  .work-grid {
+    margin-top: clamp(2rem, 1.5rem + 2vw, 3rem);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.35rem;
+  }
+
+  .case-card {
+    --spot-x: 50%;
+    --spot-y: 0%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.95rem;
+    padding: clamp(1.5rem, 1.2rem + 1.2vw, 2.15rem);
+    border-radius: var(--r-card);
+    background:
+      radial-gradient(
+        380px circle at var(--spot-x) var(--spot-y),
+        var(--case-glow, rgba(255, 107, 74, 0.12)),
+        transparent 70%
+      ),
+      var(--c-night-2);
+    border: 1px solid var(--c-line-dark);
+    transition:
+      transform var(--dur) var(--ease-spring),
+      border-color var(--dur-fast) var(--ease-fluid);
+  }
+
+  .case-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--c-line-dark-strong);
+  }
+
+  .case-card--coral {
+    --case-glow: rgba(255, 107, 74, 0.13);
+    --badge-col: var(--c-coral);
+    --badge-bg: var(--c-coral-soft);
+  }
+
+  .case-card--sky {
+    --case-glow: rgba(94, 194, 255, 0.13);
+    --badge-col: var(--c-sky);
+    --badge-bg: var(--c-sky-soft);
+  }
+
+  .case-card--amber {
+    --case-glow: rgba(255, 170, 92, 0.13);
+    --badge-col: var(--c-amber);
+    --badge-bg: var(--c-amber-soft);
+  }
+
+  .case-card--mint {
+    --case-glow: rgba(94, 234, 212, 0.13);
+    --badge-col: var(--c-mint);
+    --badge-bg: var(--c-mint-soft);
+  }
+
+  .case-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .case-client {
+    font-size: var(--fs-label);
+    font-weight: var(--w-medium);
+    color: var(--c-on-night-3);
+  }
+
+  .case-impact {
+    padding: 0.26rem 0.72rem;
+    border-radius: var(--r-pill);
+    font-size: var(--fs-micro);
+    font-weight: var(--w-semibold);
+    color: var(--badge-col);
+    background: var(--badge-bg);
+  }
+
+  .case-title {
+    font-size: var(--fs-card-title);
+    line-height: 1.24;
+    color: var(--c-on-night);
+  }
+
+  .case-summary {
+    font-size: var(--fs-small);
+    line-height: 1.62;
+    color: var(--c-on-night-2);
+  }
+
+  .case-stack {
+    margin-top: auto;
+    padding-top: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  @media (min-width: 860px) {
+    .work-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .metrics-strip {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .case-card {
+      transition: border-color var(--dur-fast) ease;
+    }
+
+    .case-card:hover {
+      transform: none;
+    }
+  }
+</style>

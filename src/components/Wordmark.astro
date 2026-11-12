@@ -1,0 +1,119 @@
+---
+/** Fluid Continuum Emblem: two smooth harmonic waves weaving together. */
+interface Props {
+  tone?: 'ink' | 'light';
+  instance?: string;
+}
+const { tone = 'light', instance = 'main' } = Astro.props;
+const gradId = `wm-grad-${instance}`;
+---
+
+<span class:list={['wordmark', `wordmark--${tone}`]}>
+  <svg class="wordmark-mark" viewBox="0 0 32 32" width="32" height="32" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id={gradId} x1="0" y1="0" x2="1" y2="1">
+        <stop class="wm-stop-1" offset="0%" />
+        <stop class="wm-stop-2" offset="52%" />
+        <stop class="wm-stop-3" offset="100%" />
+      </linearGradient>
+    </defs>
+    <rect class="wordmark-plate" x="0.75" y="0.75" width="30.5" height="30.5" rx="9.5" />
+    <path
+      d="M7.5 18.5C7.5 13 11.2 9.8 16 13.8C20.8 17.8 24.5 14.2 24.5 9.8"
+      fill="none"
+      stroke={`url(#${gradId})`}
+      stroke-width="2.4"
+      stroke-linecap="round"
+    />
+    <path
+      class="wordmark-wave-sub"
+      d="M7.5 22.2C11.2 22.2 13.8 17.2 18.5 17.2C21.8 17.2 23.2 20.4 24.5 20.4"
+      fill="none"
+      stroke-width="1.9"
+      stroke-linecap="round"
+    />
+  </svg>
+  <span class="wordmark-copy">
+    <span class="wordmark-name">Douglas Hill</span>
+    <span class="wordmark-sub">Studio</span>
+  </span>
+</span>
+
+<style>
+  .wordmark {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-family: var(--font-ui);
+    font-size: 1.0625rem;
+    font-weight: var(--w-bold);
+    letter-spacing: -0.025em;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .wordmark-mark {
+    width: 1.95rem;
+    height: 1.95rem;
+    flex: none;
+  }
+
+  .wm-stop-1 {
+    stop-color: var(--c-coral);
+  }
+
+  .wm-stop-2 {
+    stop-color: var(--c-amber);
+  }
+
+  .wm-stop-3 {
+    stop-color: var(--c-sky);
+  }
+
+  .wordmark-plate {
+    fill: rgba(255, 255, 255, 0.05);
+    stroke: rgba(255, 255, 255, 0.14);
+    stroke-width: 1;
+  }
+
+  .wordmark-wave-sub {
+    stroke: rgba(247, 244, 239, 0.85);
+  }
+
+  .wordmark--ink .wordmark-plate {
+    fill: var(--c-ink);
+    stroke: var(--c-ink);
+  }
+
+  .wordmark-copy {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.35rem;
+  }
+
+  .wordmark-name {
+    color: var(--c-on-night);
+  }
+
+  .wordmark-sub {
+    font-family: var(--font-editorial);
+    font-style: italic;
+    font-weight: 400;
+    font-size: var(--fs-body);
+    color: var(--c-on-night-2);
+  }
+
+  .wordmark--ink .wordmark-name {
+    color: var(--c-ink);
+  }
+
+  .wordmark--ink .wordmark-sub {
+    color: var(--c-ink-3);
+  }
+
+  @media (max-width: 420px) {
+    .wordmark-sub {
+      display: none;
+    }
+  }
+</style>

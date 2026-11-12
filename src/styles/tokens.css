@@ -1,0 +1,130 @@
+/*
+  Fluid Studio Design Tokens — Douglas Hill Consulting LLC
+  Palette: Deep Velvet Night (#0b0c14) + Warm Raw Silk (#f6f3ee) + Iridescent Studio Accents
+  Typography: Plus Jakarta Sans + Instrument Serif (normal & italic)
+*/
+
+:root {
+  /* ---------- Warm Silk Light Surfaces ---------- */
+  --c-silk: #f6f3ee;
+  --c-silk-2: #ede8df;
+  --c-silk-card: #ffffff;
+  --c-ink: #111320;
+  --c-ink-hover: #1f2338;
+  --c-ink-2: #434759;
+  --c-ink-3: #5b6075;
+  --c-line-light: rgba(17, 19, 32, 0.09);
+  --c-line-light-strong: rgba(17, 19, 32, 0.18);
+
+  /* ---------- Deep Velvet Night Surfaces ---------- */
+  --c-night: #0b0c14;
+  --c-night-2: #121524;
+  --c-night-3: #191d31;
+  --c-night-glass: rgba(20, 23, 39, 0.68);
+  --c-glass-pill: rgba(14, 16, 28, 0.74);
+  --c-glass-pill-condensed: rgba(11, 12, 20, 0.92);
+  --c-glass-drawer: rgba(16, 19, 33, 0.96);
+  --c-glass-card: rgba(20, 23, 38, 0.82);
+  --c-glass-dock: rgba(11, 12, 20, 0.72);
+  --c-input-bg: rgba(11, 12, 20, 0.65);
+  --c-input-bg-hover: rgba(11, 12, 20, 0.82);
+  --c-input-bg-focus: rgba(11, 12, 20, 0.92);
+  --c-on-night: #f7f4ef;
+  --c-on-night-2: #b8bdd0;
+  --c-on-night-3: #8a91ab;
+  --c-line-dark: rgba(247, 244, 239, 0.1);
+  --c-line-dark-strong: rgba(247, 244, 239, 0.22);
+
+  /* ---------- Studio Spectrum Accents ---------- */
+  --c-coral: #ff6b4a;
+  --c-coral-hover: #ff7b5c;
+  --c-coral-soft: rgba(255, 107, 74, 0.14);
+  --c-coral-ink: #c2391a;
+  --c-focus-ring-coral: rgba(255, 107, 74, 0.24);
+
+  --c-sky: #5ec2ff;
+  --c-sky-soft: rgba(94, 194, 255, 0.14);
+  --c-sky-ink: #135d96;
+
+  --c-amber: #ffaa5c;
+  --c-amber-hover: #ffa066;
+  --c-amber-soft: rgba(255, 170, 92, 0.15);
+  --c-amber-ink: #964d08;
+
+  --c-mint: #5eead4;
+  --c-mint-soft: rgba(94, 234, 212, 0.14);
+  --c-mint-ink: #0e6f65;
+
+  --c-error: #e5484d;
+  --c-error-on-night: #ff9497;
+  --c-error-bg-dark: rgba(229, 72, 77, 0.12);
+  --c-error-ink: #b42318;
+
+  /* ---------- Typography ---------- */
+  --font-ui: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-editorial: var(--font-serif), Georgia, 'Times New Roman', serif;
+
+  --w-regular: 400;
+  --w-medium: 500;
+  --w-semibold: 600;
+  --w-bold: 700;
+  --w-extrabold: 800;
+
+  --fs-display: clamp(2.55rem, 1.75rem + 3.9vw, 5.15rem);
+  --fs-display-compact: clamp(2.15rem, 8.8vw, 2.75rem);
+  --fs-metric: clamp(2.5rem, 2rem + 2.4vw, 4rem);
+  --fs-h2: clamp(2rem, 1.45rem + 2.5vw, 3.6rem);
+  --fs-subhead: clamp(1.65rem, 1.3rem + 1.5vw, 2.4rem);
+  --fs-h3: clamp(1.25rem, 1.08rem + 0.65vw, 1.6rem);
+  --fs-card-title: 1.35rem;
+  --fs-lead: clamp(1.0625rem, 1rem + 0.32vw, 1.25rem);
+  --fs-body: 1.03125rem;
+  --fs-btn: 0.96875rem;
+  --fs-small: 0.9375rem;
+  --fs-compact: 0.875rem;
+  --fs-label: 0.8125rem;
+  --fs-micro: 0.75rem;
+
+  --lh-display: 1.02;
+  --lh-tight: 1.08;
+  --lh-snug: 1.24;
+  --lh-body: 1.62;
+
+  /* ---------- Fluid Spacing & Layout ---------- */
+  --s-1: 0.25rem;
+  --s-2: 0.5rem;
+  --s-3: 0.75rem;
+  --s-4: 1rem;
+  --s-5: 1.5rem;
+  --s-6: 2rem;
+  --s-7: 3rem;
+  --s-8: 4.5rem;
+  --s-9: 6.5rem;
+
+  --gutter: clamp(1.125rem, 0.65rem + 2.4vw, 3rem);
+  --container-max: 82rem;
+  --section-pad: clamp(4.25rem, 3rem + 5.5vw, 8rem);
+  --header-h: 4.75rem;
+
+  /* ---------- Organic Radii & Shadows ---------- */
+  --r-pill: 999px;
+  --r-control: 0.95rem;
+  --r-dock: 1.35rem;
+  --r-card: 1.75rem;
+  --r-card-lg: 2.5rem;
+  --r-stage: clamp(1.75rem, 1.1rem + 2vw, 3rem);
+
+  --shadow-soft: 0 18px 48px -18px rgba(17, 19, 32, 0.1), 0 2px 10px -2px rgba(17, 19, 32, 0.04);
+  --shadow-lift: 0 28px 64px -20px rgba(17, 19, 32, 0.16), 0 6px 18px -4px rgba(17, 19, 32, 0.06);
+  --shadow-glow: 0 24px 70px -20px rgba(255, 107, 74, 0.28);
+  --shadow-pill: 0 14px 40px -16px rgba(0, 0, 0, 0.55);
+  --shadow-pill-condensed: 0 20px 46px -16px rgba(0, 0, 0, 0.72);
+  --shadow-stage: 0 32px 80px -28px rgba(0, 0, 0, 0.75);
+
+  /* ---------- Motion ---------- */
+  --ease-fluid: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 180ms;
+  --dur: 340ms;
+  --dur-slow: 650ms;
+}

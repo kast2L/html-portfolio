@@ -1,0 +1,291 @@
+---
+import BookCall from './BookCall.astro';
+import Wordmark from './Wordmark.astro';
+
+interface Props {
+  /** On the home page the links are in-page anchors; elsewhere they point back to the home page. */
+  sectionNav?: boolean;
+}
+const { sectionNav = false } = Astro.props;
+const base = sectionNav ? '' : '/';
+const links = [
+  { href: `${base}#capabilities`, label: 'Capabilities' },
+  { href: `${base}#work`, label: 'Selected Work' },
+  { href: `${base}#approach`, label: 'Approach' },
+  { href: `${base}#about`, label: 'About' },
+  { href: `${base}#faq`, label: 'FAQ' },
+];
+---
+
+<header class="site-header" data-header>
+  <div class="container header-shell">
+    <div class="header-pill">
+      <a class="header-home" href="/" aria-label="Douglas Hill Consulting, home">
+        <Wordmark tone="light" instance="header" />
+      </a>
+
+      <nav class="nav-desktop" aria-label="Main">
+        <ul>
+          {
+            links.map((l) => (
+              <li>
+                <a class="nav-link" href={l.href}>
+                  {l.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <BookCall location="nav" variant="glow" size="small" label="Book a call" class="header-book" />
+        <button
+          class="menu-btn"
+          type="button"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          data-menu-button
+        >
+          <span class="sr-only">Menu</span>
+          <span class="menu-btn-bars" aria-hidden="true"><span></span><span></span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu" data-menu hidden>
+      <nav aria-label="Main mobile">
+        <ul class="mobile-links">
+          {
+            links.map((l) => (
+              <li>
+                <a class="mobile-link" href={l.href} data-menu-link>
+                  <span>{l.label}</span>
+                  <span class="mobile-arrow" aria-hidden="true">&rarr;</span>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+      <div class="mobile-menu-cta">
+        <BookCall location="nav" variant="glow" />
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding-top: 0.75rem;
+    pointer-events: none;
+  }
+
+  .header-shell {
+    position: relative;
+  }
+
+  .header-pill {
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+    gap: var(--s-3);
+    min-height: 3.6rem;
+    padding: 0.4rem 0.55rem 0.4rem 1rem;
+    border-radius: var(--r-pill);
+    background: var(--c-glass-pill);
+    border: 1px solid var(--c-line-dark);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    backdrop-filter: blur(18px) saturate(140%);
+    box-shadow: var(--shadow-pill);
+    transition:
+      background-color var(--dur) var(--ease-fluid),
+      border-color var(--dur) var(--ease-fluid),
+      box-shadow var(--dur) var(--ease-fluid);
+  }
+
+  .site-header.is-condensed .header-pill {
+    background: var(--c-glass-pill-condensed);
+    border-color: var(--c-line-dark-strong);
+    box-shadow: var(--shadow-pill-condensed);
+  }
+
+  .header-home {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    margin-right: auto;
+    text-decoration: none;
+  }
+
+  .nav-desktop {
+    display: none;
+  }
+
+  .nav-desktop ul {
+    display: flex;
+    align-items: center;
+    gap: 0.15rem;
+  }
+
+  .nav-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0.45rem clamp(0.6rem, 0.9vw, 0.9rem);
+    border-radius: var(--r-pill);
+    font-size: var(--fs-compact);
+    font-weight: var(--w-medium);
+    color: var(--c-on-night-2);
+    text-decoration: none;
+    white-space: nowrap;
+    transition:
+      color var(--dur-fast) var(--ease-fluid),
+      background-color var(--dur-fast) var(--ease-fluid);
+  }
+
+  .nav-link:hover,
+  .nav-link[aria-current='true'] {
+    color: var(--c-on-night);
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+  }
+
+  .header-actions :global(.header-book) {
+    white-space: nowrap;
+  }
+
+  .menu-btn {
+    display: inline-grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--c-on-night);
+    cursor: pointer;
+    transition:
+      border-color var(--dur-fast) var(--ease-fluid),
+      background-color var(--dur-fast) var(--ease-fluid);
+  }
+
+  .menu-btn:hover {
+    border-color: rgba(255, 255, 255, 0.32);
+    background: rgba(255, 255, 255, 0.11);
+  }
+
+  .menu-btn-bars {
+    position: relative;
+    display: inline-block;
+    width: 16px;
+    height: 10px;
+  }
+
+  .menu-btn-bars span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 1.6px;
+    border-radius: var(--r-pill);
+    background: currentColor;
+    transition:
+      transform var(--dur) var(--ease-fluid),
+      top var(--dur) var(--ease-fluid);
+  }
+
+  .menu-btn-bars span:first-child {
+    top: 1px;
+  }
+
+  .menu-btn-bars span:last-child {
+    top: 7.5px;
+  }
+
+  .menu-btn[aria-expanded='true'] .menu-btn-bars span:first-child {
+    top: 4.25px;
+    transform: rotate(45deg);
+  }
+
+  .menu-btn[aria-expanded='true'] .menu-btn-bars span:last-child {
+    top: 4.25px;
+    transform: rotate(-45deg);
+  }
+
+  .mobile-menu {
+    pointer-events: auto;
+    margin-top: 0.6rem;
+    padding: 1rem 1.25rem 1.35rem;
+    border-radius: var(--r-card);
+    background: var(--c-glass-drawer);
+    border: 1px solid var(--c-line-dark-strong);
+    -webkit-backdrop-filter: blur(22px);
+    backdrop-filter: blur(22px);
+    box-shadow: var(--shadow-stage);
+    max-height: calc(100dvh - 5.5rem);
+    overflow-y: auto;
+  }
+
+  .mobile-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 3.25rem;
+    padding-block: 0.65rem;
+    border-bottom: 1px solid var(--c-line-dark);
+    font-size: var(--fs-lead);
+    font-weight: var(--w-semibold);
+    letter-spacing: -0.02em;
+    color: var(--c-on-night);
+    text-decoration: none;
+  }
+
+  .mobile-arrow {
+    color: var(--c-coral);
+    font-size: 1rem;
+  }
+
+  .mobile-menu-cta {
+    padding-top: 1.15rem;
+  }
+
+  .mobile-menu-cta :global(.btn) {
+    width: 100%;
+  }
+
+  @media (max-width: 374px) {
+    .header-actions :global(.header-book) {
+      display: none;
+    }
+  }
+
+  @media (min-width: 65em) {
+    .nav-desktop {
+      display: block;
+    }
+
+    .menu-btn,
+    .mobile-menu {
+      display: none;
+    }
+
+    .header-actions {
+      margin-left: var(--s-2);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .menu-btn-bars span {
+      transition: none;
+    }
+  }
+</style>

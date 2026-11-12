@@ -1,0 +1,26 @@
+{
+  "name": "douglas-hill-consulting-site",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "engines": {
+    "node": ">=22.23.4"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@types/three": "^0.187.0",
+    "astro": "^7.4.10",
+    "gsap": "^3.15.1",
+    "three": "^0.187.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.12",
+    "typescript": "^6.0.3"
+  }
+}

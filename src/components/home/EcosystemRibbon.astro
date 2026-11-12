@@ -1,0 +1,120 @@
+---
+const items = [
+  'Custom Web Applications',
+  'Power BI & DAX Analytics',
+  'Power Apps (Canvas & Model-Driven)',
+  'Power Pages External Portals',
+  'Microsoft Dataverse',
+  'Power Automate Orchestration',
+  'React & TypeScript',
+  'Dynamics 365',
+  'CoE & Tenant Governance',
+  'Azure & AWS Architecture',
+];
+---
+
+<div class="ribbon-wrap" aria-label="Technologies and platforms">
+  <div class="ribbon-track">
+    <ul class="ribbon-list">
+      {
+        items.map((item) => (
+          <li class="ribbon-item">
+            <span class="ribbon-spark" aria-hidden="true"></span>
+            <span>{item}</span>
+          </li>
+        ))
+      }
+    </ul>
+    <ul class="ribbon-list" aria-hidden="true">
+      {
+        items.map((item) => (
+          <li class="ribbon-item">
+            <span class="ribbon-spark" aria-hidden="true"></span>
+            <span>{item}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>
+
+<style>
+  .ribbon-wrap {
+    position: relative;
+    padding-block: 1.35rem 2.75rem;
+    overflow: hidden;
+    mask-image: linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%);
+  }
+
+  .ribbon-track {
+    display: flex;
+    width: max-content;
+    gap: 0.85rem;
+    animation: ribbon-glide 38s linear infinite;
+  }
+
+  .ribbon-wrap:hover .ribbon-track {
+    animation-play-state: paused;
+  }
+
+  .ribbon-list {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+  }
+
+  .ribbon-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.58rem 1.15rem;
+    border-radius: var(--r-pill);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--c-line-dark);
+    font-size: var(--fs-small);
+    font-weight: var(--w-medium);
+    color: var(--c-on-night-2);
+    white-space: nowrap;
+  }
+
+  .ribbon-spark {
+    width: 0.42rem;
+    height: 0.42rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--c-coral), var(--c-sky));
+    flex: none;
+  }
+
+  @keyframes ribbon-glide {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(calc(-50% - 0.425rem), 0, 0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ribbon-wrap {
+      mask-image: none;
+      -webkit-mask-image: none;
+    }
+
+    .ribbon-track {
+      width: 100%;
+      justify-content: center;
+      animation: none;
+      padding-inline: var(--gutter);
+    }
+
+    .ribbon-list {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .ribbon-list[aria-hidden='true'] {
+      display: none;
+    }
+  }
+</style>

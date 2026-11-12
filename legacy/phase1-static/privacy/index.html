@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy policy | Douglas Hill Consulting LLC</title>
+  <meta name="description" content="What william.llcdouglashill.com collects, where it goes, how long it is kept, and how to ask for a copy or deletion.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://william.llcdouglashill.com/privacy">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <!-- Google Fonts (same URL as the rest of the site, so the cache is shared) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/legal.css">
+
+  <!-- Scripts -->
+  <script src="/js/attribution.js" defer></script>
+  <script src="/js/analytics.js" defer></script>
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="legal-header">
+    <a href="/" class="legal-brand" aria-label="Douglas Hill, home page">Douglas Hill</a>
+  </header>
+
+  <main id="main">
+    <article class="section legal">
+      <h1 class="legal-title">Privacy policy</h1>
+      <p class="legal-meta">Effective date: __REQUIRED_INPUT:EFFECTIVE_DATE__</p>
+
+      <!-- Delete this whole notice block once Douglas has reviewed and approved
+           this page and the approval is recorded in marketing-launch/progress.md. -->
+      <div class="legal-notice" role="note">
+        <p><strong>Draft, not approved for publication.</strong> __REQUIRED_INPUT:LEGAL_REVIEW__</p>
+      </div>
+
+      <p class="legal-intro">
+        This page explains what william.llcdouglashill.com collects, where it goes, and how long it is kept. It covers the whole site.
+      </p>
+
+      <div class="legal-body">
+
+        <h2 id="who">Who runs this site</h2>
+        <p>
+          Douglas Hill Consulting LLC, based in Tempe, Arizona, runs this site. In this policy, &ldquo;I&rdquo; and &ldquo;me&rdquo; mean Douglas Hill, acting for the business.
+        </p>
+        <p>
+          Send privacy questions to <a href="mailto:DouglasHill@llcdouglashill.com">DouglasHill@llcdouglashill.com</a>.
+        </p>
+
+        <h2 id="form">What the sprint request form collects</h2>
+        <p>
+          The request form on the <a href="/lp/process-automation">Process Automation Sprint page</a> asks for:
+        </p>
+        <ul>
+          <li>your name</li>
+          <li>your work email address</li>
+          <li>your company</li>
+          <li>a description of the process you want fixed.</li>
+        </ul>
+        <p>When you send it, the page adds:</p>
+        <ul>
+          <li>the campaign tags in the link you followed, if it had any (<code>utm_source</code>, <code>utm_medium</code>, <code>utm_campaign</code>, <code>utm_term</code>). I add these tags to the links I send so I can tell which outreach brought you here;</li>
+          <li>a Google Ads click ID (<code>gclid</code>), if the link you followed had one;</li>
+          <li>the path of the page you sent the form from.</li>
+        </ul>
+        <p>
+          Your IP address, browser details, and cookies are not stored with your request. The form also has a hidden field that should stay empty, and it reports how long the page was open before you sent it. Both are spam checks. Neither is stored.
+        </p>
+
+        <h2 id="why">Why I use it</h2>
+        <p>
+          I use your request to reply to you, to judge whether the sprint fits and prepare for a call, and to see which outreach channels bring in requests. I do not sell it, add you to a mailing list, or use it for advertising.
+        </p>
+
+        <h2 id="where">Where form data goes</h2>
+        <p>
+          Your request travels from your browser through Amazon CloudFront and Amazon API Gateway to an AWS Lambda function in my own Amazon Web Services (AWS) account. From there:
+        </p>
+        <ul>
+          <li>It is stored in Amazon DynamoDB in the AWS region US East (N. Virginia), <code>us-east-1</code>.<!-- __REQUIRED_INPUT:AWS_REGION__ Confirm the region the lead API stack was deployed to, correct the sentence if it differs, then delete this comment. --></li>
+          <li>A copy is emailed to me through Amazon SES. That email lands in my Microsoft 365 mailbox, which Microsoft holds as my email provider. The site does not send any email to you.</li>
+          <li>Amazon CloudWatch keeps operational logs for 30 days. Each log line records a request ID, whether the request worked, and the length of each field. The logs never contain what you typed.</li>
+          <li>API Gateway access logging is off, so the form&rsquo;s API does not log IP addresses.</li>
+          <li>I copy a short summary of your request into the tracker I use to follow up on outreach.</li>
+        </ul>
+        <p>
+          AWS handles this data as my service provider. The <a href="https://aws.amazon.com/privacy/">AWS Privacy Notice</a> describes how AWS treats it.
+        </p>
+
+        <h2 id="retention">How long it is kept</h2>
+        <table class="legal-table">
+          <thead>
+            <tr>
+              <th scope="col">Where</th>
+              <th scope="col">How long</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Your request, in DynamoDB</th>
+              <td>__REQUIRED_INPUT:RETENTION_PERIOD__ after I receive it. DynamoDB then deletes it on its own, usually within a few days of that date.</td>
+            </tr>
+            <tr>
+              <th scope="row">The notification email, in my mailbox</th>
+              <td>__REQUIRED_INPUT:MAILBOX_RETENTION__</td>
+            </tr>
+            <tr>
+              <th scope="row">The summary, in my outreach tracker</th>
+              <td>__REQUIRED_INPUT:TRACKER_RETENTION__</td>
+            </tr>
+            <tr>
+              <th scope="row">CloudWatch logs (no form contents)</th>
+              <td>30 days</td>
+            </tr>
+            <tr>
+              <th scope="row">Campaign tags, in your browser</th>
+              <td>30 days (see <a href="#storage">storage in your browser</a>)</td>
+            </tr>
+            <tr>
+              <th scope="row">Google Analytics data</th>
+              <td>__REQUIRED_INPUT:GA4_RETENTION__</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          Each copy follows its own period. When DynamoDB deletes your request, the email and the tracker summary stay until their own periods end.
+        </p>
+
+        <h2 id="contact-form">The contact page form</h2>
+        <p>
+          The form on the <a href="/contact.html">contact page</a> is a separate form. Formspree handles it and stores those messages under its own retention rules and its <a href="https://formspree.io/legal/privacy-policy">privacy policy</a>.
+        </p>
+        <p>
+          On the contact page, the booking button opens Calendly in a window over the page. Doing so loads Calendly&rsquo;s code from Calendly&rsquo;s servers.
+        </p>
+
+        <h2 id="analytics">Analytics</h2>
+        <p>
+          Google Analytics 4 runs on four pages: the Process Automation Sprint page, the page you see after sending the request form, this page, and the <a href="/terms">terms of use</a>. The other pages on the site do not load it. On those four pages it records:
+        </p>
+        <ul>
+          <li>which pages you viewed, and the page that sent you here</li>
+          <li>two actions: clicking a booking link, and sending a request form that the server confirmed it received</li>
+          <li>your device type, browser type, and approximate location</li>
+          <li>the campaign tags described above.</li>
+        </ul>
+        <p>
+          Nothing you type into the form is sent to Google Analytics.
+        </p>
+        <p>
+          Google Analytics sets cookies on this site named <code>_ga</code> and <code>_ga_</code> followed by an ID. Google signals and advertising features are turned off, and the analytics property is not linked to Google Ads.
+        </p>
+        <p>
+          If your browser sends the Global Privacy Control signal, these pages do not load Google Analytics at all. You can also opt out with <a href="https://tools.google.com/dlpage/gaoptout">Google&rsquo;s opt-out browser add-on</a>, or by blocking cookies or scripts in your browser. The <a href="https://policies.google.com/privacy">Google Privacy Policy</a> covers how Google treats this data.
+        </p>
+
+        <h2 id="storage">Storage in your browser</h2>
+        <p>
+          On the four pages listed under analytics, a script saves the campaign tags and ad click ID from the link you followed, and the time it saved them, under one key in your browser&rsquo;s local storage. It uses them to fill the form&rsquo;s hidden fields and to add the campaign tags (not the ad click ID) to booking links. It never stores anything you type into the form.
+        </p>
+        <p>
+          After 30 days, the script deletes the saved values the next time you open one of those pages. You can delete them sooner by clearing this site&rsquo;s data in your browser settings.
+        </p>
+
+        <h2 id="booking">Booking a call</h2>
+        <p>
+          Booking links open Calendly, a separate scheduling service, in a new tab. Calendly collects what you enter when you book, such as your name, email address, and answers to its questions, and shares it with me. The booking link carries the campaign tags described above. No Calendly code runs on the four pages listed under analytics. <a href="https://calendly.com/legal/privacy-notice">Calendly&rsquo;s privacy notice</a> covers your booking.
+        </p>
+
+        <h2 id="fonts">Fonts</h2>
+        <p>
+          Pages on this site load their fonts from Google Fonts. Your browser fetches the fonts from Google&rsquo;s servers, which receive your IP address and browser details with that request. Google explains this in its <a href="https://developers.google.com/fonts/faq/privacy">Google Fonts privacy notes</a>.
+        </p>
+
+        <h2 id="hosting">Hosting</h2>
+        <p>
+          The site is served from Amazon S3 through Amazon CloudFront, both AWS services. __REQUIRED_INPUT:CLOUDFRONT_LOGS__<!-- State whether CloudFront access logging is on (PRD §7.1 check 8) and, if it is, what the logs hold and how long they are kept. Then delete this comment. -->
+        </p>
+
+        <h2 id="requests">Asking for a copy or deletion</h2>
+        <p>
+          To ask for a copy of what you sent, a correction, or deletion, email <a href="mailto:DouglasHill@llcdouglashill.com">DouglasHill@llcdouglashill.com</a> and tell me the email address you used. I will reply within __REQUIRED_INPUT:REQUEST_REPLY_TIMEFRAME__. When I delete a request, I remove it from DynamoDB, my mailbox, and my outreach tracker.
+        </p>
+        <p>
+          Requests you sent through the contact page form are also held by Formspree, and bookings are also held by Calendly. You can contact either service directly as well.
+        </p>
+
+        <h2 id="children">Children</h2>
+        <p>
+          This site is meant for businesses. It is not directed at children.
+        </p>
+
+        <h2 id="changes">Changes to this policy</h2>
+        <p>
+          If this policy changes, I will post the new version on this page with a new effective date.
+        </p>
+
+        <h2 id="contact">Contact</h2>
+        <p>
+          Douglas Hill Consulting LLC, Tempe, Arizona<br>
+          <a href="mailto:DouglasHill@llcdouglashill.com">DouglasHill@llcdouglashill.com</a>
+        </p>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer legal-footer">
+    <span>&copy; 2026 Douglas Hill Consulting LLC</span>
+    <nav class="footer-links" aria-label="Legal">
+      <a href="/privacy" aria-current="page">Privacy</a>
+      <a href="/terms">Terms</a>
+      <a href="mailto:DouglasHill@llcdouglashill.com">Email</a>
+    </nav>
+  </footer>
+
+</body>
+</html>

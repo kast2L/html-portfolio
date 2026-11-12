@@ -1,0 +1,74 @@
+---
+/** Smooth rounded 1.75px stroke icons. Always aria-hidden. */
+interface Props {
+  name:
+    | 'arrow-right'
+    | 'arrow-up-right'
+    | 'arrow-down'
+    | 'check'
+    | 'plus'
+    | 'layers'
+    | 'chart'
+    | 'flow'
+    | 'shield'
+    | 'sparkles'
+    | 'external';
+  class?: string;
+}
+const { name, class: className } = Astro.props;
+---
+
+<svg
+  class:list={['icon', className]}
+  viewBox="0 0 24 24"
+  width="24"
+  height="24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.8"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  aria-hidden="true"
+  focusable="false"
+>
+  {name === 'arrow-right' && <path d="M5 12h14M13 6l6 6-6 6" />}
+  {name === 'arrow-up-right' && <path d="M7 17L17 7M9 7h8v8" />}
+  {name === 'arrow-down' && <path d="M12 5v14M6 13l6 6 6-6" />}
+  {name === 'check' && <path d="M5 12.5l4.5 4.5L19 7" />}
+  {name === 'plus' && <path d="M12 5v14M5 12h14" />}
+  {name === 'layers' && (
+    <>
+      <path d="M12 3L3 8l9 5 9-5-9-5z" />
+      <path d="M3 12.5l9 5 9-5" />
+      <path d="M3 17l9 5 9-5" />
+    </>
+  )}
+  {name === 'chart' && (
+    <>
+      <path d="M4 19.5h16" />
+      <rect x="5.5" y="11" width="3.2" height="5.5" rx="1" />
+      <rect x="10.4" y="7.5" width="3.2" height="9" rx="1" />
+      <rect x="15.3" y="4.5" width="3.2" height="12" rx="1" />
+    </>
+  )}
+  {name === 'flow' && (
+    <>
+      <circle cx="6" cy="7" r="2.5" />
+      <circle cx="18" cy="17" r="2.5" />
+      <path d="M8.5 7h4a3.5 3.5 0 0 1 0 7h-1a3.5 3.5 0 0 0 0 3h4" />
+    </>
+  )}
+  {name === 'shield' && (
+    <>
+      <path d="M12 3.2l7.2 3v5.4c0 4.5-3 7.5-7.2 9.1-4.2-1.6-7.2-4.6-7.2-9.1V6.2L12 3.2z" />
+      <path d="M9 12.2l2.1 2.1 4.2-4.3" />
+    </>
+  )}
+  {name === 'sparkles' && (
+    <>
+      <path d="M12 3c.7 3.8 2.2 5.3 6 6-3.8.7-5.3 2.2-6 6-.7-3.8-2.2-5.3-6-6 3.8-.7 5.3-2.2 6-6z" />
+      <path d="M18.5 15.5c.3 1.5.9 2.1 2.5 2.5-1.6.4-2.2 1-2.5 2.5-.3-1.5-.9-2.1-2.5-2.5 1.6-.4 2.2-1 2.5-2.5z" />
+    </>
+  )}
+  {name === 'external' && <path d="M14 5h5v5M19 5l-8.5 8.5M17 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h4" />}
+</svg>

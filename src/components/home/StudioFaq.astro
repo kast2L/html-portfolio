@@ -1,0 +1,198 @@
+---
+import Icon from '../Icon.astro';
+
+const faqs = [
+  {
+    q: 'Do I need to know whether I need a web app, a Power App, a Power BI dashboard, or a workflow before we talk?',
+    a: 'Not at all. Most clients come to the call describing an operational headache — a spreadsheet that turned into a mission-critical database, a monthly report built by hand, or an approval chain lost in email. Recommending the cleanest, most cost-effective architecture is my job.',
+  },
+  {
+    q: 'Can you build custom full-stack web apps when low-code hits its limits?',
+    a: 'Yes. Alongside the full Microsoft Power Platform suite, I build custom web applications in React, TypeScript, Astro, and modern JavaScript, integrate REST APIs, and architect cloud services on Azure and AWS — or blend pro-code components directly inside Power Apps and Power Pages.',
+  },
+  {
+    q: 'Where does the software live, and who owns it after launch?',
+    a: 'Everything is deployed directly inside your own Microsoft 365 tenant, Azure subscription, or AWS account. You retain 100% ownership of the source code, Dataverse schemas, Power BI models, and cloud flows from day one — with zero vendor lock-in.',
+  },
+  {
+    q: 'How are engagements scoped and priced?',
+    a: 'After a free 30-minute discovery call, you receive a written architecture brief with clear deliverables, milestones, and fixed project pricing (or a structured advisory cadence for ongoing governance). You always know the investment and scope up front.',
+  },
+  {
+    q: 'Have you worked in regulated government and enterprise security environments?',
+    a: 'Yes. I have delivered compliant, security-hardened systems for federal programs (IRS, DHS, DoD), state government (Minnesota Dept. of Commerce), regulated electric utilities, and Fortune 50 healthcare — including DLP policies, role-based security, and full DEV/TEST/PROD ALM.',
+  },
+  {
+    q: 'Will our internal team be able to maintain what you build?',
+    a: 'Every build is designed to be maintained, not abandoned. I hand over clean architecture documentation, admin runbooks, source-controlled solutions, and live walkthroughs so your internal IT or operations team can manage it confidently.',
+  },
+];
+---
+
+<section class="faq surface-silk" id="faq" aria-labelledby="faq-title">
+  <div class="container faq-layout">
+    <div class="faq-intro" data-reveal-solo>
+      <h2 class="section-heading faq-heading" id="faq-title">
+        Clear answers <span class="serif-italic">up front.</span>
+      </h2>
+
+      <p class="section-lead">
+        Straightforward details on stack choices, security, ownership, and how projects run.
+      </p>
+    </div>
+
+    <div class="faq-list" data-reveal-group>
+      {
+        faqs.map((item, idx) => (
+          <div class="faq-item" data-faq-item data-reveal>
+            <h3 class="faq-q">
+              <button
+                type="button"
+                class="faq-btn"
+                id={`faq-btn-${idx}`}
+                aria-expanded="false"
+                aria-controls={`faq-panel-${idx}`}
+                data-faq-btn
+              >
+                <span>{item.q}</span>
+                <span class="faq-toggle" aria-hidden="true">
+                  <Icon name="plus" class="faq-plus" />
+                </span>
+              </button>
+            </h3>
+            <div
+              class="faq-panel"
+              id={`faq-panel-${idx}`}
+              role="region"
+              aria-labelledby={`faq-btn-${idx}`}
+              data-faq-panel
+              hidden
+            >
+              <p class="faq-a">{item.a}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq {
+    padding-block: var(--section-pad);
+  }
+
+  .faq-layout {
+    display: grid;
+    gap: var(--s-7);
+    align-items: start;
+  }
+
+  .faq-intro {
+    display: grid;
+    gap: var(--s-4);
+    justify-items: start;
+  }
+
+  .faq-heading {
+    color: var(--c-ink);
+  }
+
+  .faq-list {
+    display: grid;
+    gap: 0.85rem;
+  }
+
+  .faq-item {
+    border-radius: var(--r-dock);
+    background: var(--c-silk-card);
+    border: 1px solid var(--c-line-light);
+    box-shadow: var(--shadow-soft);
+    overflow: hidden;
+    transition: border-color var(--dur-fast) var(--ease-fluid);
+  }
+
+  .faq-item:hover,
+  .faq-item.is-open {
+    border-color: var(--c-line-light-strong);
+  }
+
+  .faq-q {
+    font-size: 1.0625rem;
+    font-weight: var(--w-semibold);
+  }
+
+  .faq-btn {
+    width: 100%;
+    min-height: 4rem;
+    padding: 1.15rem 1.35rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    background: transparent;
+    border: 0;
+    text-align: left;
+    color: var(--c-ink);
+    cursor: pointer;
+    line-height: 1.35;
+  }
+
+  .faq-toggle {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    background: var(--c-silk);
+    color: var(--c-ink);
+    display: grid;
+    place-items: center;
+    flex: none;
+    transition:
+      transform var(--dur) var(--ease-spring),
+      background-color var(--dur-fast) var(--ease-fluid),
+      color var(--dur-fast) var(--ease-fluid);
+  }
+
+  .faq-plus {
+    width: 1.05rem;
+    height: 1.05rem;
+  }
+
+  .faq-item.is-open .faq-toggle {
+    transform: rotate(45deg);
+    background: var(--c-coral);
+    color: #0b0c14;
+  }
+
+  .faq-panel {
+    overflow: hidden;
+  }
+
+  .faq-a {
+    padding: 0 1.35rem 1.35rem;
+    font-size: var(--fs-small);
+    line-height: 1.65;
+    color: var(--c-ink-2);
+    max-width: 64ch;
+  }
+
+  @media (min-width: 960px) {
+    .faq-layout {
+      grid-template-columns: 0.78fr 1.22fr;
+      gap: clamp(2.5rem, 4vw, 5rem);
+    }
+
+    .faq-intro {
+      position: sticky;
+      top: calc(var(--header-h) + 1.5rem);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .faq-toggle {
+      transition:
+        background-color var(--dur-fast) ease,
+        color var(--dur-fast) ease;
+    }
+  }
+</style>

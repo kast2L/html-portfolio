@@ -1,0 +1,295 @@
+---
+/*
+  The lead form. IDs, names, attributes and structure follow docs/markup-contract.md ("Lead form")
+  exactly, so public/js/lead-form.js works unchanged. Behaviour lives in that script only.
+*/
+import { SITE } from '../lib/site';
+---
+
+<form id="lead-form" class="lead-form" method="post" action="/api/lead" novalidate hidden>
+  <div id="lead-errors" class="lead-errors" role="alert" tabindex="-1" hidden>
+    <h4 class="lead-errors-title">Please check these fields</h4>
+    <ul class="lead-errors-list"></ul>
+  </div>
+
+  <div class="field">
+    <label for="lead-name">Your name <span class="field-req">(required)</span></label>
+    <input type="text" id="lead-name" name="name" autocomplete="name" maxlength="120" placeholder="Alex Morgan" required />
+    <p class="field-error" id="lead-name-error" hidden></p>
+  </div>
+
+  <div class="field">
+    <label for="lead-email">Work email <span class="field-req">(required)</span></label>
+    <input type="email" id="lead-email" name="email" autocomplete="email" inputmode="email" maxlength="254" placeholder="alex@company.com" required />
+    <p class="field-error" id="lead-email-error" hidden></p>
+  </div>
+
+  <div class="field field--full">
+    <label for="lead-company">Company or organization <span class="field-req">(required)</span></label>
+    <input type="text" id="lead-company" name="company" autocomplete="organization" maxlength="120" placeholder="Acme Operations" required />
+    <p class="field-error" id="lead-company-error" hidden></p>
+  </div>
+
+  <div class="field field--full">
+    <label for="lead-process">What are you looking to build or solve? <span class="field-req">(required)</span></label>
+    <p class="field-hint" id="lead-process-hint">
+      Tell me briefly about the web app, Power App, Power BI dashboard, workflow, or platform challenge on your plate.
+    </p>
+    <textarea id="lead-process" name="process" rows="4" maxlength="2000" aria-describedby="lead-process-hint" required></textarea>
+    <p class="field-error" id="lead-process-error" hidden></p>
+  </div>
+
+  <div class="hp-field" aria-hidden="true">
+    <label for="lead-website">Leave this field empty</label>
+    <input type="text" id="lead-website" name="website" tabindex="-1" autocomplete="off" />
+  </div>
+
+  <input type="hidden" name="utm_source" />
+  <input type="hidden" name="utm_medium" />
+  <input type="hidden" name="utm_campaign" />
+  <input type="hidden" name="utm_term" />
+  <input type="hidden" name="gclid" />
+  <input type="hidden" name="landing_path" />
+
+  <p class="lead-privacy field--full">
+    Your note goes directly to me via my own AWS infrastructure — never sold, shared, or added to a marketing list.
+    <a class="text-link" href="/privacy">Privacy notice</a>
+  </p>
+
+  <div class="lead-submit-row field--full">
+    <button
+      type="submit"
+      id="lead-submit"
+      class="btn btn-glow lead-submit"
+      data-label-idle="Send message"
+      data-label-busy="Sending…"
+    >
+      <span class="btn-label">Send message</span>
+    </button>
+  </div>
+
+  <div id="lead-status" class="lead-status field--full" role="status" aria-live="polite"></div>
+
+  <div id="lead-fallback" class="lead-fallback field--full" hidden>
+    <p>You can also grab a time directly on my calendar, or email me.</p>
+    <p class="lead-fallback-links">
+      <a class="text-link" data-book-call="form-fallback" href={SITE.bookingUrl} target="_blank" rel="noopener noreferrer">Book a 30-minute call<span class="sr-only"> (opens in a new tab)</span></a>
+      <a class="text-link" href={`mailto:${SITE.email}`}>{SITE.email}</a>
+    </p>
+  </div>
+</form>
+
+<noscript>
+  <div class="lead-noscript">
+    <p>The interactive form requires JavaScript. You can book a 30-minute call or email me directly instead.</p>
+    <p class="lead-fallback-links">
+      <a class="text-link" data-book-call="noscript" href={SITE.bookingUrl} target="_blank" rel="noopener noreferrer">Book a 30-minute call<span class="sr-only"> (opens in a new tab)</span></a>
+      <a class="text-link" href={`mailto:${SITE.email}`}>{SITE.email}</a>
+    </p>
+  </div>
+</noscript>
+
+<style is:global>
+  .lead-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.15rem;
+    color: var(--c-on-night);
+  }
+
+  .lead-form[hidden] {
+    display: none;
+  }
+
+  @media (min-width: 640px) {
+    .lead-form {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .lead-form .lead-errors,
+    .lead-form .field--full {
+      grid-column: 1 / -1;
+    }
+  }
+
+  .lead-errors {
+    padding: var(--s-4) var(--s-5);
+    border: 1.5px solid var(--c-error);
+    border-radius: var(--r-control);
+    background: var(--c-error-bg-dark);
+  }
+
+  .lead-errors-title {
+    font-size: 1rem;
+    font-weight: var(--w-semibold);
+    color: var(--c-error-on-night);
+  }
+
+  .lead-errors ul {
+    margin-top: var(--s-2);
+    padding-left: 1.15rem;
+    list-style: disc;
+  }
+
+  .lead-errors a {
+    color: var(--c-on-night);
+    text-underline-offset: 0.22em;
+  }
+
+  .field {
+    display: grid;
+    gap: 0.42rem;
+    align-content: start;
+  }
+
+  .field label {
+    font-size: var(--fs-small);
+    font-weight: var(--w-semibold);
+    color: var(--c-on-night);
+  }
+
+  .field-req {
+    font-size: var(--fs-micro);
+    font-weight: var(--w-regular);
+    color: var(--c-on-night-3);
+  }
+
+  .field-hint {
+    margin-top: -0.1rem;
+    font-size: var(--fs-label);
+    line-height: 1.45;
+    color: var(--c-on-night-2);
+  }
+
+  .field input,
+  .field textarea {
+    width: 100%;
+    min-height: 3.1rem;
+    padding: 0.78rem 1rem;
+    border: 1px solid var(--c-line-dark);
+    border-radius: var(--r-control);
+    background: var(--c-input-bg);
+    color: var(--c-on-night);
+    font-size: 1rem;
+    line-height: 1.45;
+    transition:
+      border-color var(--dur-fast) var(--ease-fluid),
+      background-color var(--dur-fast) var(--ease-fluid),
+      box-shadow var(--dur-fast) var(--ease-fluid);
+  }
+
+  .field input::placeholder,
+  .field textarea::placeholder {
+    color: var(--c-on-night-3);
+  }
+
+  .field textarea {
+    resize: vertical;
+    min-height: 7.75rem;
+  }
+
+  .field input:hover,
+  .field textarea:hover {
+    border-color: var(--c-line-dark-strong);
+    background: var(--c-input-bg-hover);
+  }
+
+  .field input:focus-visible,
+  .field textarea:focus-visible {
+    outline: none;
+    border-color: var(--c-coral);
+    box-shadow: 0 0 0 3px var(--c-focus-ring-coral);
+    background: var(--c-input-bg-focus);
+  }
+
+  .field.is-invalid input,
+  .field.is-invalid textarea {
+    border-color: var(--c-error);
+    border-width: 1.5px;
+  }
+
+  .field-error {
+    display: flex;
+    gap: 0.4rem;
+    font-size: var(--fs-label);
+    font-weight: var(--w-medium);
+    color: var(--c-error-on-night);
+  }
+
+  .field-error::before {
+    content: '';
+    flex: none;
+    width: 0.82rem;
+    height: 0.82rem;
+    margin-top: 0.22rem;
+    border-radius: 50%;
+    border: 2px solid currentColor;
+    box-sizing: border-box;
+  }
+
+  .field-error[hidden] {
+    display: none;
+  }
+
+  /* Honeypot: off screen for people, still in the form for bots. */
+  .hp-field {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  .lead-privacy {
+    font-size: var(--fs-label);
+    line-height: 1.55;
+    color: var(--c-on-night-3);
+    max-width: 60ch;
+  }
+
+  .lead-submit {
+    min-width: 13rem;
+  }
+
+  .lead-form.is-sending .lead-submit {
+    cursor: progress;
+    opacity: 0.72;
+  }
+
+  .lead-status:empty {
+    margin-top: -1.15rem;
+  }
+
+  .lead-status {
+    font-size: var(--fs-small);
+    color: var(--c-on-night);
+  }
+
+  .lead-fallback,
+  .lead-noscript {
+    padding: var(--s-4) var(--s-5);
+    border-radius: var(--r-control);
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--c-line-dark);
+    color: var(--c-on-night);
+    font-size: var(--fs-small);
+  }
+
+  .lead-fallback[hidden] {
+    display: none;
+  }
+
+  .lead-fallback-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-2) var(--s-5);
+    margin-top: var(--s-2);
+  }
+
+  .lead-fallback-links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    overflow-wrap: anywhere;
+  }
+</style>

@@ -1,0 +1,45 @@
+---
+import Icon from './Icon.astro';
+import { SITE } from '../lib/site';
+
+/**
+ * Primary booking link per docs/markup-contract.md ("Booking links"):
+ * data-book-call, Calendly URL, new tab, and visually hidden "(opens in a new tab)".
+ */
+interface Props {
+  location: string;
+  label?: string;
+  variant?: 'glow' | 'ink' | 'glass' | 'link';
+  size?: 'default' | 'small';
+  magnetic?: boolean;
+  class?: string;
+}
+
+const {
+  location,
+  label = 'Book a 30-minute call',
+  variant = 'glow',
+  size = 'default',
+  magnetic = false,
+  class: className,
+} = Astro.props;
+
+const classes =
+  variant === 'link'
+    ? ['text-link', className]
+    : [
+        'btn',
+        variant === 'glow' ? 'btn-glow' : variant === 'ink' ? 'btn-ink' : 'btn-glass',
+        size === 'small' && 'btn-small',
+        className,
+      ];
+---
+
+<a
+  class:list={classes}
+  data-book-call={location}
+  data-magnetic={magnetic ? '' : undefined}
+  href={SITE.bookingUrl}
+  target="_blank"
+  rel="noopener noreferrer"
+>{label}<span class="sr-only"> (opens in a new tab)</span>{variant !== 'link' && size !== 'small' && <Icon name="arrow-up-right" class="btn-icon" />}</a>
